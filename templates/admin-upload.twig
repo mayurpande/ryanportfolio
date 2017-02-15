@@ -1,0 +1,44 @@
+{% extends 'main.twig' %}
+
+{% block title %}Admin - Update Content{% endblock %}
+
+
+{% block heading %}Upload Image{% endblock %}
+
+{% block admin %}
+
+	<div class="row">
+
+		<div class=".col-md-6 col-md-offset-3 for">
+
+			<div class="panel panel-default">
+
+				<div class="panel-heading">Upload Image</div>
+
+				<div class="panel-body">
+
+					<form action="{{ path_for('adminUpload.update') }}" method="post" enctype="multipart/form-data" autcomplete="off">
+
+						<div class="form-group{{ errors.email ? ' has-error' : '' }}">
+
+							<label for="upload">Select a file to upload:</label>
+
+							<input type="file" name="upload" id="upload" class="form-control" >
+
+
+						</div>
+
+            <button type="submit" class="btn btn-default">Upload Image</button>
+
+						{{ csrf.field | raw }}
+
+					</form>
+
+				</div>
+
+			</div>
+
+		</div>
+    </div>
+
+{% endblock %}
