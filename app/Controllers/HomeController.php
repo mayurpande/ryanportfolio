@@ -14,8 +14,8 @@ class HomeController extends Controller{
 	public function index($request, $response){
 	 //now we can use this view object and render the views
 	//we now have access to our whole container because we have the container in our base controller 
-		$home_page = Home_Page::all();
-		foreach($home_page as $id){
+		$homePage = Home_Page::all();
+		foreach($homePage as $id){
 			$homeItem = $id->id;
 		}
 
