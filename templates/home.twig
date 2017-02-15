@@ -10,8 +10,15 @@
 <div class="cycle-slideshow" data-cycle-slides="a">
 	{% for homeItem in homePage %}
 		<a href='#'><img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" /></a>
-	{% endfor %}
-</div>	
+    {% endfor %}
+</div>
+
+
+<ul class="ul-list" id="home-ul">
+    {% for homeItem in homePage %}
+        <li><img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/></li>
+    {% endfor %}
+</ul>
 	
 {% endblock %}
 
