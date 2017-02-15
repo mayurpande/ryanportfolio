@@ -19,6 +19,13 @@
         <li id="{{ homeItem.id }}"><img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/></li>
     {% endfor %}
 </ul>
+
+
+<ul class="ul-list" id="port-ul">
+    {% for portItem in portPage %}
+        <li id="{{ portItem.id }}"><img src="img/{{ portItem.port_img }}" alt="{{ portItem.port_img }}"/></li>
+    {% endfor %}
+</ul>
 	
 {% endblock %}
 
