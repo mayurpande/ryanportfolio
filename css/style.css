@@ -75,10 +75,17 @@ FOOTER
 }
 
 .ul-list li{
-  width:30%;
-  margin: 1%;
   float:left;
+  width:45%;
+  margin: 2.5%;
+  
 }
+
+.ul-list li:nth-child(3){
+    clear:left;
+}
+
+
 
 
 /****************************
