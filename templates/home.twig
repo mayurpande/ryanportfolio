@@ -7,9 +7,9 @@
 
 {% block content %}
 		
-<div class="cycle-slideshow">
+<div class="cycle-slideshow" data-cycle-slides="a">
 	{% for homeItem in homePage %}
-		<a href="#"><img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" /></a>
+		<a href='#'><img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" /></a>
 	{% endfor %}
 </div>	
 	
