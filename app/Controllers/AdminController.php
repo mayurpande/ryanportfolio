@@ -2,12 +2,11 @@
 
 namespace App\Controllers;
 
-use App\Models\About_Us;
+
 use App\Models\Home_Page;
-use App\Models\What_We_Do_Info;
-use App\Models\Port_Page;
+use App\Models\Portrait;
 use App\Controllers\Controller;
-use App\Models\What_We_Do;
+
 //import validator
 use Respect\Validation\Validator as v;
 
