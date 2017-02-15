@@ -119,9 +119,6 @@ $container['HomeController'] = function($container){
 	return new \App\Controllers\HomeController($container);
 };
 
-$container['PortfolioController'] = function($container){
-	return new \App\Controllers\PortfolioController($container);
-};
 
 $container['ContactUsController'] = function($container){
 	return new \App\Controllers\ContactUsController($container);
