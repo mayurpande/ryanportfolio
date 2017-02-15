@@ -7,11 +7,18 @@
 
 {% block content %}
 		
-<div class="cycle-slideshow" data-cycle-slides="a">
+<div class="cycle-slideshow" data-cycle-slides="li">
 	{% for homeItem in homePage %}
-		<a href='#'><img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" /></a>
-	{% endfor %}
-</div>	
+		<li id="{{ homeItem.id }}"><img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" /></li>
+    {% endfor %}
+</div>
+
+
+<ul class="ul-list" id="home-ul">
+    {% for homeItem in homePage %}
+        <li id="{{ homeItem.id }}"><img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/></li>
+    {% endfor %}
+</ul>
 	
 {% endblock %}
 

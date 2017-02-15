@@ -31,9 +31,10 @@ $app->group('', function () {
 $app->group('', function () {
 
     $this->get('/signout','AuthController:getSignOut')->setName('auth.signout');
-
+    
     $this->get('/admin-update-site','AdminController:getUpdateSite')->setName('admin.update');
-
+    
+    //for home page
     $this->get('/admin-create-home','AdminController:getHomeCreate')->setName('adminHome.create');
 
     $this->post('/admin-create-home','AdminController:postHomeCreate');
@@ -41,6 +42,18 @@ $app->group('', function () {
     $this->get('/admin-update-home','AdminController:getHomeUpdate')->setName('adminHome.update');
 
     $this->post('/admin-update-home','AdminController:postHomeUpdate');
+    
+    //for portrait page
+    
+    $this->get('/admin-create-portrait','AdminController:getPortraitCreate')->setName('adminPortrait.create');
+
+    $this->post('/admin-create-portrait','AdminController:postPortraitCreate');
+
+    $this->get('/admin-update-portrait','AdminController:getPortraitUpdate')->setName('adminPortrait.update');
+
+    $this->post('/admin-update-portrait','AdminController:postPortraitUpdate');
+    
+    
 
     //auth controller routes
     $this->get('/admin-password-change','PasswordController:getChangePassword')->setName('auth.password.change');

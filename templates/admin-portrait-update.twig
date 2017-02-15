@@ -3,7 +3,7 @@
 {% block title %}Admin - Update Content{% endblock %}
 
 
-{% block heading %}Update home page{% endblock %}
+{% block heading %}Update Portrait page{% endblock %}
 
 {% block admin %}
 	
@@ -13,17 +13,17 @@
 
 			<div class="panel panel-default">
 				
-				<div class="panel-heading">Update Home Page</div>
+				<div class="panel-heading">Update Portrait Page</div>
 
 				<div class="panel-body">
 					
-					<form action="{{ path_for('adminHome.update') }}" method="post" autcomplete="off">
+					<form action="{{ path_for('adminPortrait.update') }}" method="post" autcomplete="off">
 						
 						<div class="form-group{{ errors.email ? ' has-error' : '' }}">
 							
-							<label for="home_img">Update Home Page Img Url</label>
+							<label for="port_img">Update Portrait Page Img Url</label>
 
-							<input type="text" name="home_img" id="home_img" class="form-control" >
+							<input type="text" name="port_img" id="port_img" class="form-control" >
                             
                             <label for="port_id">Update ID no</label>
                             
@@ -32,7 +32,7 @@
 						</div>
 					
 
-						<button type="submit" class="btn btn-default">Update home page img url</button>
+						<button type="submit" class="btn btn-default">Update portrait page img url</button>
 
 						{{ csrf.field | raw }}
 						

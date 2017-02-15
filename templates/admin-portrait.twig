@@ -1,0 +1,48 @@
+{% extends 'main.twig' %}
+
+{% block title %}Admin - Update Content{% endblock %}
+
+
+{% block heading %}Add to portrait page{% endblock %}
+
+{% block admin %}
+
+	<div class="row">
+
+		<div class=".col-md-6 col-md-offset-3 for">
+
+			<div class="panel panel-default">
+
+				<div class="panel-heading">Add to Portrait Page</div>
+
+				<div class="panel-body">
+
+					<form action="{{ path_for('adminPortrait.create') }}" method="post" autcomplete="off">
+
+						<div class="form-group{{ errors.email ? ' has-error' : '' }}">
+
+							<label for="port_img">Portrait Page Img Url</label>
+
+							<input type"text" name="port_img" id="port_img" class="form-control" >
+
+
+						</div>
+
+
+						<button type="submit" class="btn btn-default">Add portrait page img url</button>
+
+						{{ csrf.field | raw }}
+
+					</form>
+
+				</div>
+
+
+            </div>
+
+		</div>
+
+	</div>
+
+
+{% endblock %}
