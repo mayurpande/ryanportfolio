@@ -77,7 +77,7 @@ class AdminController extends Controller{
 	public function postPortraitCreate($request,$response){
 
 
-        $port_page = Port_Page::create([
+        $port_page = Portrait:create([
               'port_img' => $request->getParam('port_img'),
           ]);
         if ($home_page) {
@@ -99,7 +99,7 @@ class AdminController extends Controller{
 	public function postPortraitUpdate($request,$response){
 
         $id = $request->getParam('id');
-        $port_page = Port_Page::where("id",$id)->first();
+        $port_page = Portrait::where("id",$id)->first();
         $new_portrait_data = array(
             'port_img' => $request->getParam('port_img')
         );
