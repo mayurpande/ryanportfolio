@@ -21,7 +21,7 @@ body{
 	margin: 0 auto;
 }
 p{
-	font-size:1.2em;
+	font-size:1em;
 }
 a {
    text-decoration:none;
@@ -47,7 +47,14 @@ FOOTER
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
+  text-align: center;
 }
+
+#footer-link{
+	margin-right: 20px;
+}
+
+
 
 /***************************
 * HOMEPAGE (PORTFOLIO)
@@ -97,5 +104,6 @@ FOOTER
  * COLOURS
  * *****************************/
 body{
-	color: #fff;
+	background-color: #fff;
+	color: #777;
 }
