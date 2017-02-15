@@ -68,5 +68,58 @@ class AdminController extends Controller{
 
 
 	}
+    
+    
+    public function getPortraitCreate($request,$response){
+		return $this->view->render($response,'admin-portrait.twig');
+	}
+
+	public function postPortraitCreate($request,$response){
+
+
+        $port_page = Port_Page::create([
+              'port_img' => $request->getParam('port_img'),
+          ]);
+        if ($home_page) {
+                $this->flash->addMessage('success','You have added item to portrait page');
+                return $response->withRedirect($this->router->pathFor('admin.update'));
+        } else {
+                $this->flash->addMessage('error','You have not added item to portrait page');
+                return $response->withRedirect($this->router->pathFor('admin.update'));
+        }
+
+	}
+
+
+
+	public function getPortraitUpdate($request,$response){
+		return $this->view->render($response,'admin-portrait-update.twig');
+	}
+
+	public function postPortraitUpdate($request,$response){
+
+        $id = $request->getParam('id');
+        $port_page = Port_Page::where("id",$id)->first();
+        $new_portrait_data = array(
+            'port_img' => $request->getParam('port_img')
+        );
+
+        if ($port_page->fill($new_portrait_data) && $port_page->save()) {
+
+            $this->flash->addMessage('success','You have updated Portrait page');
+
+            return $response->withRedirect($this->router->pathFor('admin.update'));
+
+        } else {
+
+            $this->flash->addMessage('error','You have not updated Portrait page');
+
+            return $response->withRedirect($this->router->pathFor('admin.update'));
+        }
+
+
+	}
+    
+
 
 }
