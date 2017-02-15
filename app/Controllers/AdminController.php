@@ -76,10 +76,10 @@ class AdminController extends Controller{
 	public function postPortraitCreate($request,$response){
 
 
-        $port_page = Portrait:create([
+        $port_page = Portrait::create([
               'port_img' => $request->getParam('port_img'),
           ]);
-        if ($home_page) {
+        if ($port_page) {
                 $this->flash->addMessage('success','You have added item to portrait page');
                 return $response->withRedirect($this->router->pathFor('admin.update'));
         } else {
@@ -97,7 +97,7 @@ class AdminController extends Controller{
 
 	public function postPortraitUpdate($request,$response){
 
-        $id = $request->getParam('id');
+        $id = $request->getParam('port_id');
         $port_page = Portrait::where("id",$id)->first();
         $new_portrait_data = array(
             'port_img' => $request->getParam('port_img')
