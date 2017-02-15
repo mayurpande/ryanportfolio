@@ -1,0 +1,85 @@
+/************************
+GENERAL
+************************/
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html{
+  position:relative;
+  min-height: 100%;
+}
+body{
+	font-family: cambria,georgia, serif;
+
+}
+#wrapper{
+	max-width: 940px;
+	min-width: 280px;
+	margin: 0 auto;
+}
+p{
+	font-size:1.2em;
+}
+a {
+   text-decoration:none;
+}
+
+img{
+  max-width: 100%;
+}
+
+/****************************
+ * NAVBAR (HEADER)
+ * **************************/
+
+
+
+
+
+/***************************
+* HOMEPAGE (PORTFOLIO)
+***************************/
+
+.ul-list{
+  margin: 0;
+  padding: 0;
+  list-style:none;
+}
+
+.ul-list li{
+  width:30%;
+  margin: 1%;
+  float:left;
+}
+
+
+/****************************
+ * ADMIN PAGE (INNERBOX)
+ * ************************/
+
+
+.row{
+	margin:0 auto;
+	width:80%;
+}
+
+
+#admin-info{
+	margin:0 auto;
+	padding:0 10px;
+}
+
+
+/*************************
+ * CONTACT PAGE (INNERBOX)
+ * *********************/
+
+
+/********************************
+ * COLOURS
+ * *****************************/
+body{
+	color: #fff;
+}

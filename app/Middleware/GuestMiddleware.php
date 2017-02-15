@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Middleware;
+
+//inherits base middleware
+class GuestMiddleware extends Middleware{
+
+	//for slim middleware we have an invoke magic method
+	//we pass into here our $request and $response object. And we also have the $next callable middleware
+	//it is important that we call the next middleware because it needs to cycle through from the outside
+	//of our application much like an onion into the core.
+
+	public function __invoke($request,$response,$next){	
+		
+	
+        //check if the user is signed in
+        if ($this->container->auth->check()) {
+            
+            return $response->withRedirect($this->container->router->pathFor('admin.update'));
+        }
+
+
+
+        
+        
+        //after state has changed
+		$response = $next($request,$response);
+	
+		return $response;
+	
+
+	}
+}

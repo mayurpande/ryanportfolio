@@ -1,0 +1,7 @@
+/************************
+BOOTSTRAP CUSTOM OVERIDES
+************************/
+.navbar-default{
+  background-color:#fff;
+  border-color:#fff;
+}

@@ -1,0 +1,18 @@
+{% extends 'main.twig' %}
+{% set active_page = 'home' %}
+
+{% block title %}Ryan Site - Tell me what to put here{% endblock %}
+
+
+
+{% block content %}
+		
+<ul class="ul-list" id="home-ul">
+	{% for homeItem in homePage %}
+		<li><img src="{{ homeItem.home_img }}" alt="test" width="300px" height="300px"/>
+	{% endfor %}
+</ul>	
+	
+{% endblock %}
+
+ 
