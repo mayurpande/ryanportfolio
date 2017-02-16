@@ -54,6 +54,18 @@ $app->group('', function () {
     $this->post('/admin-update-portrait','AdminController:postPortraitUpdate');
     
     
+    //for landscape page
+    
+    $this->get('/admin-create-landscape','AdminController:getLandscapeCreate')->setName('adminLandscape.create');
+
+    $this->post('/admin-create-landscape','AdminController:postLandscapeCreate');
+
+    $this->get('/admin-update-landscape','AdminController:getLandscapeUpdate')->setName('adminLandscape.update');
+
+    $this->post('/admin-update-landscape','AdminController:postLandscapeUpdate');
+    
+    
+    
 
     //auth controller routes
     $this->get('/admin-password-change','PasswordController:getChangePassword')->setName('auth.password.change');
