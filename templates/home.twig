@@ -7,13 +7,13 @@
 
 {% block content %}
 		
-<ul class="cycle-slideshow" data-cycle-slides="li">
+<div class="cycle-slideshow" > <!--data-cycle-slides="li"> -->
 	{% for homeItem in homePage %}
-		<li id="{{ homeItem.id }}" onclick='crossfade(".cycle-slideshow", "#{{ homeItem.next_ul }}")'>
-            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" />
-        </li>
+	<!--	<li id="{{ homeItem.id }}" onclick='crossfade(".cycle-slideshow", "#{{ homeItem.next_ul }}")'>-->
+            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" onclick='crossfade(".cycle-slideshow", "#{{ homeItem.next_ul }}")' />
+    <!--    </li>-->
     {% endfor %}
-</ul>
+</div>
 
 
 <ul class="ul-list" id="home-ul">
@@ -36,7 +36,9 @@
 
 <ul class="ul-list" id="land-ul">
     {% for landItem in landPage %}
-        <li id="{{ landItem.id }}"><img src="img/{{ landItem.port_img }}" alt="{{ landItem.port_img }}"/></li>
+        <li id="{{ landItem.id }}">
+            <img src="img/{{ landItem.land_img }}" alt="{{ landItem.land_img }}"/>
+        </li>
     {% endfor %}
     <li onclick='crossfade("#land-ul", ".cycle-slideshow")'>
         Go back
