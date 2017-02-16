@@ -18,7 +18,7 @@ class AdminController extends Controller{
 	}
 
 
-
+    //Home Create
 	public function getHomeCreate($request,$response){
 		return $this->view->render($response,'admin-home.twig');
 	}
@@ -40,7 +40,7 @@ class AdminController extends Controller{
 	}
 
 
-
+    //Home Update
 	public function getHomeUpdate($request,$response){
 		return $this->view->render($response,'admin-home-update.twig');
 	}
@@ -69,7 +69,7 @@ class AdminController extends Controller{
 
 	}
     
-    
+    //Portrait Create
     public function getPortraitCreate($request,$response){
 		return $this->view->render($response,'admin-portrait.twig');
 	}
@@ -91,7 +91,7 @@ class AdminController extends Controller{
 	}
 
 
-
+    //Portrait Update
 	public function getPortraitUpdate($request,$response){
 		return $this->view->render($response,'admin-portrait-update.twig');
 	}
@@ -120,7 +120,7 @@ class AdminController extends Controller{
 
 	}
     
-    //Landscape
+    //Landscape Create
     public function getLandscapeCreate($request,$response){
 		return $this->view->render($response,'admin-landscape.twig');
 	}
@@ -142,7 +142,7 @@ class AdminController extends Controller{
 	}
 
 
-
+    //Landscape Update
 	public function getLandscapeUpdate($request,$response){
 		return $this->view->render($response,'admin-landscape-update.twig');
 	}
@@ -171,6 +171,57 @@ class AdminController extends Controller{
 
 	}
     
+    
+    //Miscellaneous Create
+    public function getMiscellaneousCreate($request,$response){
+		return $this->view->render($response,'admin-landscape.twig');
+	}
+
+	public function postMiscellaneousCreate($request,$response){
+
+
+        $misc_page = Miscellaneous::create([
+              'misc_img' => $request->getParam('misc_img'),
+          ]);
+        if ($misc_page) {
+                $this->flash->addMessage('success','You have added item to Miscellaneous page');
+                return $response->withRedirect($this->router->pathFor('admin.update'));
+        } else {
+                $this->flash->addMessage('error','You have not added item to Miscellaneous page');
+                return $response->withRedirect($this->router->pathFor('admin.update'));
+        }
+
+	}
+
+
+    //Miscellanous Update
+	public function getMiscellaneousUpdate($request,$response){
+		return $this->view->render($response,'admin-miscellaneous-update.twig');
+	}
+
+	public function postMiscellaneousUpdate($request,$response){
+
+        $id = $request->getParam('misc_id');
+        $misc_page = Miscellaneous::where("id",$id)->first();
+        $new_misc_data = array(
+            'misc_img' => $request->getParam('misc_img')
+        );
+
+        if ($misc_page->fill($new_miscellaneous_data) && $misc_page->save()) {
+
+            $this->flash->addMessage('success','You have updated Miscellaneous page');
+
+            return $response->withRedirect($this->router->pathFor('admin.update'));
+
+        } else {
+
+            $this->flash->addMessage('error','You have not updated Miscellaneous page');
+
+            return $response->withRedirect($this->router->pathFor('admin.update'));
+        }
+
+
+	}
 
 
 }
