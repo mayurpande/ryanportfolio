@@ -5,6 +5,7 @@ namespace App\Controllers;
 //import model name
 use App\Models\Home_Page;
 use App\Models\Portrait;
+use App\Models\Landscape;
 
 //necessary because we are passing slim views instance
 use Slim\Views\Twig as View;
@@ -19,16 +20,25 @@ class HomeController extends Controller{
 		foreach($homePage as $id){
 			$homeItem = $id->id;
 		}
+        
         $portPage = Portrait::all();
         foreach($portPage as $ids){
             $portItem = $ids->ids;
+        }
+        
+        $landPage = Landscape::all();
+        foreach($landPage as $idss){
+            $landItem = $idss->idss;
         }
 
         return $this->view->render($response, 'home.twig', [
             'homePage' => $homePage,
             'homeItem' => $homeItem,
             'portPage' => $portPage,
-            'portItem' => $portItem
+            'portItem' => $portItem,
+            'landPage' => $landPage,
+            'landItem' => $landItem
+            
         ]);
 	}
 }
