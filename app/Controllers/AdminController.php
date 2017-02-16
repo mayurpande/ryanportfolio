@@ -6,6 +6,7 @@ namespace App\Controllers;
 use App\Models\Home_Page;
 use App\Models\Portrait;
 use App\Models\Landscape;
+use App\Models\Miscellaneous;
 use App\Controllers\Controller;
 
 //import validator
