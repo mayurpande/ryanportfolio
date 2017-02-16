@@ -64,6 +64,16 @@ $app->group('', function () {
 
     $this->post('/admin-update-landscape','AdminController:postLandscapeUpdate');
     
+    //for miscellaneous page
+    
+    $this->get('/admin-create-miscellaneous','AdminController:getMiscellaneousCreate')->setName('adminMiscellaneous.create');
+
+    $this->post('/admin-create-miscellaneous','AdminController:postMiscellaneousCreate');
+
+    $this->get('/admin-update-miscellaneous','AdminController:getMiscellaneousUpdate')->setName('adminMiscellaneous.update');
+
+    $this->post('/admin-update-miscellaneous','AdminController:postMiscellaneousUpdate');
+    
     
     
 
