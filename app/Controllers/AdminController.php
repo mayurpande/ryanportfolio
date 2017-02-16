@@ -175,7 +175,7 @@ class AdminController extends Controller{
     
     //Miscellaneous Create
     public function getMiscellaneousCreate($request,$response){
-		return $this->view->render($response,'admin-landscape.twig');
+		return $this->view->render($response,'admin-miscellaneous.twig');
 	}
 
 	public function postMiscellaneousCreate($request,$response){
@@ -208,7 +208,7 @@ class AdminController extends Controller{
             'misc_img' => $request->getParam('misc_img')
         );
 
-        if ($misc_page->fill($new_miscellaneous_data) && $misc_page->save()) {
+        if ($misc_page->fill($new_misc_data) && $misc_page->save()) {
 
             $this->flash->addMessage('success','You have updated Miscellaneous page');
 
