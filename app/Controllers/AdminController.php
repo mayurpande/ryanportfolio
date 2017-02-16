@@ -119,6 +119,57 @@ class AdminController extends Controller{
 
 	}
     
+    //Landscape
+    public function getLandscapeCreate($request,$response){
+		return $this->view->render($response,'admin-landscape.twig');
+	}
+
+	public function postLandscapeCreate($request,$response){
+
+
+        $land_page = Landscape::create([
+              'land_img' => $request->getParam('land_img'),
+          ]);
+        if ($land_page) {
+                $this->flash->addMessage('success','You have added item to landscape page');
+                return $response->withRedirect($this->router->pathFor('admin.update'));
+        } else {
+                $this->flash->addMessage('error','You have not added item to landscape page');
+                return $response->withRedirect($this->router->pathFor('admin.update'));
+        }
+
+	}
+
+
+
+	public function getLandscapeUpdate($request,$response){
+		return $this->view->render($response,'admin-landscape-update.twig');
+	}
+
+	public function postLandscapeUpdate($request,$response){
+
+        $id = $request->getParam('land_id');
+        $land_page = Landscape::where("id",$id)->first();
+        $new_landscape_data = array(
+            'land_img' => $request->getParam('land_img')
+        );
+
+        if ($land_page->fill($new_landscape_data) && $land_page->save()) {
+
+            $this->flash->addMessage('success','You have updated landscape page');
+
+            return $response->withRedirect($this->router->pathFor('admin.update'));
+
+        } else {
+
+            $this->flash->addMessage('error','You have not updated landscape page');
+
+            return $response->withRedirect($this->router->pathFor('admin.update'));
+        }
+
+
+	}
+    
 
 
 }
