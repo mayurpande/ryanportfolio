@@ -7,16 +7,20 @@
 
 {% block content %}
 		
-<div class="cycle-slideshow" data-cycle-slides="li">
+<ul class="cycle-slideshow" data-cycle-slides="li">
 	{% for homeItem in homePage %}
-		<li id="{{ homeItem.id }}"><img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" /></li>
+		<li id="{{ homeItem.id }}" onclick='crossfade(".cycle-slideshow", "#{{ homeItem.next_ul }}")'>
+            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" />
+        </li>
     {% endfor %}
-</div>
+</ul>
 
 
 <ul class="ul-list" id="home-ul">
     {% for homeItem in homePage %}
-        <li id="{{ homeItem.id }}"><img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/></li>
+        <li id="{{ homeItem.id }}">
+            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
+        </li>
     {% endfor %}
 </ul>
 
@@ -25,6 +29,9 @@
     {% for portItem in portPage %}
         <li id="{{ portItem.id }}"><img src="img/{{ portItem.port_img }}" alt="{{ portItem.port_img }}"/></li>
     {% endfor %}
+    <li onclick='crossfade("#port-ul", ".cycle-slideshow")'>
+        Go back
+    </li>
 </ul>
 	
 {% endblock %}
