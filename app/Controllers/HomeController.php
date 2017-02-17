@@ -6,6 +6,7 @@ namespace App\Controllers;
 use App\Models\Home_Page;
 use App\Models\Portrait;
 use App\Models\Landscape;
+use App\Models\Miscellaneous;
 
 //necessary because we are passing slim views instance
 use Slim\Views\Twig as View;
@@ -30,6 +31,11 @@ class HomeController extends Controller{
         foreach($landPage as $idss){
             $landItem = $idss->idss;
         }
+    
+        $miscPage = Miscellaneous::all();
+        foreach($miscPage as $idsss){
+            $miscItem = $idsss->idsss;
+        }
 
         return $this->view->render($response, 'home.twig', [
             'homePage' => $homePage,
@@ -37,7 +43,9 @@ class HomeController extends Controller{
             'portPage' => $portPage,
             'portItem' => $portItem,
             'landPage' => $landPage,
-            'landItem' => $landItem
+            'landItem' => $landItem,
+            'miscPage' => $miscPage,
+            'miscItem' => $miscItem
             
         ]);
 	}
