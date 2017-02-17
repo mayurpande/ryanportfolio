@@ -7,10 +7,10 @@
 
 {% block content %}
 		
-<div class="cycle-slideshow" > <!--data-cycle-slides="li"> -->
+<div class="cycle-slideshow"  id="home-slide"> <!--data-cycle-slides="li"> -->
 	{% for homeItem in homePage %}
 	<!--	<li id="{{ homeItem.id }}" onclick='crossfade(".cycle-slideshow", "#{{ homeItem.next_ul }}")'>-->
-            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" onclick='crossfade(".cycle-slideshow", "#{{ homeItem.next_ul }}")' />
+            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" onclick='crossfade("#home-slide", "#{{ homeItem.next_ul }}")' />
     <!--    </li>-->
     {% endfor %}
 </div>
@@ -29,7 +29,7 @@
     {% for portItem in portPage %}
         <li id="{{ portItem.id }}"><img src="img/{{ portItem.port_img }}" alt="{{ portItem.port_img }}"/></li>
     {% endfor %}
-    <li onclick='crossfade("#port-ul", ".cycle-slideshow")'>
+    <li onclick='crossfade("#port-ul", "#home-slide")'>
         Go back
     </li>
 </ul>
@@ -40,22 +40,20 @@
             <img src="img/{{ landItem.land_img }}" alt="{{ landItem.land_img }}"/>
         </li>
     {% endfor %}
-    <li onclick='crossfade("#land-ul", ".cycle-slideshow")'>
+    <li onclick='crossfade("#land-ul", "#home-slide")'>
         Go back
     </li>
 </ul>
 
 
-<ul class=".cyle-slideshow" id="misc-ul" data-cycle-slides="li">
+<div class="cycle-slideshow" id="misc-ul">
     {% for miscItem in miscPage %}
-        <li id="{{ miscItem.id }}">
-            <img src="img/{{ miscItem.misc_img }}" alt="{{ miscItem.misc_img }}"/>
-        </li>
+        <img src="img/{{ miscItem.misc_img }}" alt="{{ miscItem.misc_img }}"/>
     {% endfor %}
-    <li onclick='crossfade("#misc-ul", ".cycle-slideshow")'>
+    <p onclick='crossfade("#misc-ul", "#home-slide")'>
         Go back
-    </li>
-</ul>
+    <p>
+</div>
 	
 {% endblock %}
 
