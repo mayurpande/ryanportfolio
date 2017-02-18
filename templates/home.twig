@@ -50,7 +50,7 @@
     {% for miscItem in miscPage %}
         <img src="img/{{ miscItem.misc_img }}" alt="{{ miscItem.misc_img }}"/>
     {% endfor %}
-    <p onclick='crossfade("#misc-ul", "#home-slide")'>
+    <p id="back-button" onclick='crossfade("#misc-ul", "#home-slide")'>
         Go back
     <p>
 </div>
