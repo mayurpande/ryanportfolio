@@ -85,7 +85,7 @@ FOOTER
     clear:left;
 }
 
-#home-ul{
+#home-ul,#port-ul,#land-ul,#misc-ul{
     display:none;
 }
 
