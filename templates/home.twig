@@ -25,19 +25,25 @@
 </ul>
 
 
-<ul class="ul-list" id="port-ul">
+<ul class="ul-list lightBox" id="port-ul">
     {% for portItem in portPage %}
-        <li id="{{ portItem.id }}"><img src="img/{{ portItem.port_img }}" alt="{{ portItem.port_img }}"/></li>
+        <li id="{{ portItem.id }}">
+            <a href="img/{{ portItem.port_img }}">
+                <img src="img/{{ portItem.port_img }}" alt="{{ portItem.port_img }}"/>
+            </a>
+        </li>
     {% endfor %}
     <li onclick='crossfade("#port-ul", "#home-slide")'>
         Go back
     </li>
 </ul>
 
-<ul class="ul-list" id="land-ul">
+<ul class="ul-list lightBox" id="land-ul">
     {% for landItem in landPage %}
         <li id="{{ landItem.id }}">
-            <img src="img/{{ landItem.land_img }}" alt="{{ landItem.land_img }}"/>
+            <a href="img/{{ landItem.land_img }}">
+                <img src="img/{{ landItem.land_img }}" alt="{{ landItem.land_img }}"/>
+            </a>
         </li>
     {% endfor %}
     <li onclick='crossfade("#land-ul", "#home-slide")'>
@@ -46,9 +52,11 @@
 </ul>
 
 
-<div class="cycle-slideshow" id="misc-ul">
+<div class="cycle-slideshow lightBox" id="misc-ul" data-cycle-slides="a">
     {% for miscItem in miscPage %}
-        <img src="img/{{ miscItem.misc_img }}" alt="{{ miscItem.misc_img }}"/>
+        <a href="img/{{ miscItem.misc_img }}">
+            <img src="img/{{ miscItem.misc_img }}" alt="{{ miscItem.misc_img }}"/>
+        </a>
     {% endfor %}
     <p id="back-button" onclick='crossfade("#misc-ul", "#home-slide")'>
         Go back
