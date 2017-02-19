@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 function crossfade(curr, next) {
     $(curr).fadeOut(1000, function() {
-        $(next).fadeIn(1100);
+        $(next).fadeIn(2000);
     });    
 }
     
