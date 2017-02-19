@@ -1,6 +1,6 @@
 var $overlay = $('<div id="overlay"></div>');
 var $image = $("<img>");
-var $caption = $("<p></p>");
+var $caption = $('<p></p>');
 
 //An image to overlay
 $overlay.append($image);
@@ -27,9 +27,12 @@ $(".lightBox a").click(function(event){
   //Show the overlay.
   $overlay.show();
   
-  //Get child's alt attribute and set caption
-  var captionText = $(this).children("img").attr("alt");
+  //get p element text and add it to caption
+  var captionText = $(this).children("p").text();
   $caption.text(captionText);
+  
+  
+  
 });
 
 //When overlay is clicked
