@@ -153,7 +153,8 @@ class AdminController extends Controller{
         $id = $request->getParam('land_id');
         $land_page = Landscape::where("id",$id)->first();
         $new_landscape_data = array(
-            'land_img' => $request->getParam('land_img')
+            'land_img' => $request->getParam('land_img'),
+            'land_light_text' => $request->getParam('land_light_text')
         );
 
         if ($land_page->fill($new_landscape_data) && $land_page->save()) {
