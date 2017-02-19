@@ -17,5 +17,6 @@ class Miscellaneous extends Model{
 	protected $fillable = [
 		'misc_img',
         'misc_para',
+        'misc_light_text',
 	];
 }

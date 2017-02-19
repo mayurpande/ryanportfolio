@@ -16,5 +16,6 @@ class Landscape extends Model{
 
 	protected $fillable = [
 		'land_img',
+        'land_light_text',
 	];
 }
