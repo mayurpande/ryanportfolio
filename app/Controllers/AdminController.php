@@ -80,6 +80,7 @@ class AdminController extends Controller{
 
         $port_page = Portrait::create([
               'port_img' => $request->getParam('port_img'),
+              'port_light_text' => $request->getParam('port_light_text')
           ]);
         if ($port_page) {
                 $this->flash->addMessage('success','You have added item to portrait page');
@@ -102,7 +103,8 @@ class AdminController extends Controller{
         $id = $request->getParam('port_id');
         $port_page = Portrait::where("id",$id)->first();
         $new_portrait_data = array(
-            'port_img' => $request->getParam('port_img')
+            'port_img' => $request->getParam('port_img'),
+            'port_light_text' => $request->getParam('port_light_text')
         );
 
         if ($port_page->fill($new_portrait_data) && $port_page->save()) {
@@ -131,6 +133,7 @@ class AdminController extends Controller{
 
         $land_page = Landscape::create([
               'land_img' => $request->getParam('land_img'),
+              'land_light_text' => $request->getParam('land_light_text')
           ]);
         if ($land_page) {
                 $this->flash->addMessage('success','You have added item to landscape page');
