@@ -18,8 +18,8 @@ $(".lightBox a").click(function(event){
   //Update overlay with the image linked in the link
   $image.attr("src", imageLocation);
   
-  var t = $(this).parent();
-  if(t.attr("id") == "misc-ul"){
+  var miscUl = $(this).parent();
+  if(miscUl.attr("id") == "misc-ul"){
       $('#misc-ul').hide();
       $overlay.addClass('toggleMisc');
   }
