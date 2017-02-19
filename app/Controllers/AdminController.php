@@ -187,6 +187,7 @@ class AdminController extends Controller{
 
         $misc_page = Miscellaneous::create([
               'misc_img' => $request->getParam('misc_img'),
+              'misc_light_text' => $request->getParam('misc_light_text')
           ]);
         if ($misc_page) {
                 $this->flash->addMessage('success','You have added item to Miscellaneous page');
@@ -209,7 +210,8 @@ class AdminController extends Controller{
         $id = $request->getParam('misc_id');
         $misc_page = Miscellaneous::where("id",$id)->first();
         $new_misc_data = array(
-            'misc_img' => $request->getParam('misc_img')
+            'misc_img' => $request->getParam('misc_img'),
+            'misc_light_text' => $request->getParam('misc_light_text')
         );
 
         if ($misc_page->fill($new_misc_data) && $misc_page->save()) {
