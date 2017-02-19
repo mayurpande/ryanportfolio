@@ -61,11 +61,6 @@ FOOTER
 	margin-top:110px;
 }
 
-.cycle-slideshow img{
-    width:100%;
-    height:auto;
-}
-
 
 .ul-list{
   margin: 0;
@@ -92,7 +87,9 @@ FOOTER
     margin-left:2.5%;
 }
 
-
+.lightBoxText{
+    display:none;
+}
 /******************************
 HOMEPAGE (PORTFOLIO - LIGHTBOX)
 *******************************/
@@ -113,7 +110,7 @@ HOMEPAGE (PORTFOLIO - LIGHTBOX)
 }
 
 #overlay p {
-    color: white;
+    color: #777;
 }
 
 /****************************
