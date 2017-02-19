@@ -16,5 +16,6 @@ class Portrait extends Model{
 
 	protected $fillable = [
 		'port_img',
+        'port_light_text'
 	];
 }

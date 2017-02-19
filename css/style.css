@@ -31,12 +31,6 @@ img{
   max-width: 100%;
 }
 
-/****************************
- * NAVBAR (HEADER)
- * **************************/
-
-
-
 /*************************
 FOOTER
 *************************/
@@ -64,7 +58,7 @@ FOOTER
 ***************************/
 
 .cycle-slideshow{
-	margin-top:120px;
+	margin-top:110px;
 }
 
 
@@ -93,8 +87,31 @@ FOOTER
     margin-left:2.5%;
 }
 
+.lightBoxText{
+    display:none;
+}
+/******************************
+HOMEPAGE (PORTFOLIO - LIGHTBOX)
+*******************************/
 
+#overlay {
+  background-color:#fff;
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  display:none;
+  text-align: center;
+}
 
+#overlay img {
+    margin-top: 50%;
+}
+
+#overlay p {
+    color: #777;
+}
 
 /****************************
  * ADMIN PAGE (INNERBOX)
@@ -114,7 +131,7 @@ FOOTER
 
 
 /*************************
- * CONTACT PAGE (INNERBOX)
+ * CONTACT PAGE
  * *********************/
 
 

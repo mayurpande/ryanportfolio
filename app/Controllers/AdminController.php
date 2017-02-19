@@ -80,6 +80,7 @@ class AdminController extends Controller{
 
         $port_page = Portrait::create([
               'port_img' => $request->getParam('port_img'),
+              'port_light_text' => $request->getParam('port_light_text')
           ]);
         if ($port_page) {
                 $this->flash->addMessage('success','You have added item to portrait page');
@@ -102,7 +103,8 @@ class AdminController extends Controller{
         $id = $request->getParam('port_id');
         $port_page = Portrait::where("id",$id)->first();
         $new_portrait_data = array(
-            'port_img' => $request->getParam('port_img')
+            'port_img' => $request->getParam('port_img'),
+            'port_light_text' => $request->getParam('port_light_text')
         );
 
         if ($port_page->fill($new_portrait_data) && $port_page->save()) {
@@ -131,6 +133,7 @@ class AdminController extends Controller{
 
         $land_page = Landscape::create([
               'land_img' => $request->getParam('land_img'),
+              'land_light_text' => $request->getParam('land_light_text')
           ]);
         if ($land_page) {
                 $this->flash->addMessage('success','You have added item to landscape page');
@@ -153,7 +156,8 @@ class AdminController extends Controller{
         $id = $request->getParam('land_id');
         $land_page = Landscape::where("id",$id)->first();
         $new_landscape_data = array(
-            'land_img' => $request->getParam('land_img')
+            'land_img' => $request->getParam('land_img'),
+            'land_light_text' => $request->getParam('land_light_text')
         );
 
         if ($land_page->fill($new_landscape_data) && $land_page->save()) {
@@ -183,6 +187,7 @@ class AdminController extends Controller{
 
         $misc_page = Miscellaneous::create([
               'misc_img' => $request->getParam('misc_img'),
+              'misc_light_text' => $request->getParam('misc_light_text')
           ]);
         if ($misc_page) {
                 $this->flash->addMessage('success','You have added item to Miscellaneous page');
@@ -205,7 +210,8 @@ class AdminController extends Controller{
         $id = $request->getParam('misc_id');
         $misc_page = Miscellaneous::where("id",$id)->first();
         $new_misc_data = array(
-            'misc_img' => $request->getParam('misc_img')
+            'misc_img' => $request->getParam('misc_img'),
+            'misc_light_text' => $request->getParam('misc_light_text')
         );
 
         if ($misc_page->fill($new_misc_data) && $misc_page->save()) {
