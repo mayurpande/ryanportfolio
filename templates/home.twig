@@ -44,6 +44,7 @@
         <li id="{{ landItem.id }}">
             <a href="img/{{ landItem.land_img }}">
                 <img src="img/{{ landItem.land_img }}" alt="{{ landItem.land_img }}"/>
+                <p class="lightBoxText">{{ landItem.land_light_text }}</p>
             </a>
         </li>
     {% endfor %}
@@ -57,6 +58,7 @@
     {% for miscItem in miscPage %}
         <a href="img/{{ miscItem.misc_img }}">
             <img src="img/{{ miscItem.misc_img }}" alt="{{ miscItem.misc_img }}"/>
+            <p class="lightBoxText">{{ miscItem.misc_light_text }}</p>
         </a>
     {% endfor %}
     <p id="back-button" onclick='crossfade("#misc-ul", "#home-slide")'>
