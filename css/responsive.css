@@ -59,6 +59,10 @@
 	.footer{
 		display:none;
 	}
+
+	#wrapper{
+		width:80%;
+	}
 	.container{
 		margin-left:5px;
 		width:auto;
