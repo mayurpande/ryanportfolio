@@ -72,7 +72,7 @@ FOOTER
   float:left;
   width:45%;
   margin: 2.5%;
-  
+
 }
 
 .ul-list li:nth-child(3){
@@ -83,7 +83,10 @@ FOOTER
     display:none;
 }
 
-#back-button{
+.back-tablet-pc{
+  display:none;
+}
+.back-button{
     margin-left:2.5%;
 }
 

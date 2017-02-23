@@ -2,7 +2,7 @@
   /************************
   TWO COLUMN LAYOUT
   ************************/
-	
+
 
 	/* signin admin form */
 	.row{
@@ -16,32 +16,80 @@
 
 }
 
-@media screen and (min-width:525px){
+@media screen and (min-width:568px){
+    .cycle-slideshow{
+        margin-top:0;
+    }
 
+    .footer{
+			bottom: -50px;
+		}
+
+		#overlay{
+			position:fixed;
+		}
+		#overlay img{
+			margin-top:20px;
+			width:70%;
+
+		}
 }
 
-@media screen and (min-width: 768px){
 
-	.cycle-slideshow{
-		display:none;	
+
+
+@media screen and (min-width:768px){
+
+	#home-slide{
+		display:none;
 	}
 
+	#home-ul{
+		display:block;
+	}
+
+	.back-mobile{
+		display:none;
+	}
+
+	.back-tablet-pc{
+		display:block;
+	}
+
+	.footer{
+		display:none;
+	}
+
+	#wrapper{
+		width:80%;
+	}
+
+	#overlay{
+		position:absolute;
+	}
+	#overlay img{
+		margin-top:30%;
+		width:100%;
+
+	}
+
+	#misc-ul{
+		margin-top:30%;
+	}
 	.container{
 		margin-left:5px;
 		width:auto;
-	
+
     }
-
-
 
 	.row{
 		width:50%;
 	}
-	
+
 }
 
 @media screen and (min-width: 992px){
-	
+
 	.container{
 		width:auto;
 	}
@@ -54,7 +102,7 @@
 }
 
 @media screen and (min-width:1200px){
-	
+
 	.container{
 		width:auto;
 	}
@@ -64,7 +112,7 @@
 }
 
 @media screen and (min-width:1440px){
-	
+
 
 	#admin-info{
 		width:45%;
@@ -79,6 +127,3 @@
 		width:40%;
 	}
 }
-
-
-
