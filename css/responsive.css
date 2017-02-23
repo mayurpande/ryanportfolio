@@ -56,6 +56,9 @@
 		display:block;
 	}
 
+	.footer{
+		display:none;
+	}
 	.container{
 		margin-left:5px;
 		width:auto;
