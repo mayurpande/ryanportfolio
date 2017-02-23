@@ -39,7 +39,10 @@
             </a>
         </li>
     {% endfor %}
-    <li onclick='crossfade("#port-ul", "#home-slide")'>
+    <li class="back-mobile" onclick='crossfade("#port-ul", "#home-slide")'>
+        Go back
+    </li>
+		<li class="back-tablet-pc" onclick='crossfade("#port-ul", "#home-ul")'>
         Go back
     </li>
 </ul>
@@ -53,9 +56,12 @@
             </a>
         </li>
     {% endfor %}
-    <li onclick='crossfade("#land-ul", "#home-slide")'>
+    <li class="back-mobile" onclick='crossfade("#land-ul", "#home-slide")'>
         Go back
     </li>
+		<li class="back-tablet-pc" onclick='crossfade("#land-ul", "#home-ul")'>
+				Go back
+		</li>
 </ul>
 
 
@@ -66,9 +72,12 @@
             <p class="lightBoxText">{{ miscItem.misc_light_text }}</p>
         </a>
     {% endfor %}
-    <p id="back-button" onclick='crossfade("#misc-ul", "#home-slide")'>
+    <p class="back-mobile back-button" onclick='crossfade("#misc-ul", "#home-slide")'>
         Go back
     <p>
+		<p class="back-tablet-pc back-button" onclick='crossfade("#misc-ul", "#home-ul")'>
+				Go back
+		<p>
 </div>
 
 {% endblock %}
