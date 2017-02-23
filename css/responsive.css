@@ -76,6 +76,15 @@
 	#misc-ul{
 		margin-top:30%;
 	}
+
+	.ul-list li{
+		margin-right:2%;
+	  width:28.3333%;
+	}
+
+	.ul-list li:nth-child(4n){
+	    clear:left;
+	}
 	.container{
 		margin-left:5px;
 		width:auto;
