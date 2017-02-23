@@ -83,7 +83,10 @@ FOOTER
     display:none;
 }
 
-#back-button{
+.back-tablet-pc{
+  display:none;
+}
+.back-button{
     margin-left:2.5%;
 }
 
