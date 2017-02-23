@@ -63,6 +63,19 @@
 	#wrapper{
 		width:80%;
 	}
+
+	#overlay{
+		position:absolute;
+	}
+	#overlay img{
+		margin-top:30%;
+		width:100%;
+
+	}
+
+	#misc-ul{
+		margin-top:30%;
+	}
 	.container{
 		margin-left:5px;
 		width:auto;
