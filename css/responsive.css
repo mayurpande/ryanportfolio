@@ -36,12 +36,16 @@
 }
 
 
-}
 
-@media screen and (min-width: 768px){
 
-	.cycle-slideshow{
+@media screen and (min-width:768px){
+
+	#home-slide{
 		display:none;
+	}
+
+	#home-ul{
+		display:block;
 	}
 
 	.container{
@@ -49,8 +53,6 @@
 		width:auto;
 
     }
-
-
 
 	.row{
 		width:50%;
