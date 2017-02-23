@@ -25,13 +25,14 @@
 			bottom: -50px;
 		}
 
+		#overlay{
+			position:fixed;
+		}
 		#overlay img{
 			margin-top:20px;
 			width:70%;
 
 		}
-
-
 }
 
 
