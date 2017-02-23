@@ -2,7 +2,7 @@
   /************************
   TWO COLUMN LAYOUT
   ************************/
-	
+
 
 	/* signin admin form */
 	.row{
@@ -21,19 +21,32 @@
         margin-top:0;
     }
 
-    
+    .footer{
+			bottom: -50px;
+		}
+
+		#overlay img{
+			margin-top:20px;
+			width:70%;
+
+		}
+
+
+}
+
+
 }
 
 @media screen and (min-width: 768px){
 
 	.cycle-slideshow{
-		display:none;	
+		display:none;
 	}
 
 	.container{
 		margin-left:5px;
 		width:auto;
-	
+
     }
 
 
@@ -41,11 +54,11 @@
 	.row{
 		width:50%;
 	}
-	
+
 }
 
 @media screen and (min-width: 992px){
-	
+
 	.container{
 		width:auto;
 	}
@@ -58,7 +71,7 @@
 }
 
 @media screen and (min-width:1200px){
-	
+
 	.container{
 		width:auto;
 	}
@@ -68,7 +81,7 @@
 }
 
 @media screen and (min-width:1440px){
-	
+
 
 	#admin-info{
 		width:45%;
@@ -83,6 +96,3 @@
 		width:40%;
 	}
 }
-
-
-
