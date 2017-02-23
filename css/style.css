@@ -72,18 +72,21 @@ FOOTER
   float:left;
   width:45%;
   margin: 2.5%;
-  
+
 }
 
-.ul-list li:nth-child(3){
+/*.ul-list li:nth-child(3){
     clear:left;
-}
+}*/
 
 #home-ul,#port-ul,#land-ul,#misc-ul{
     display:none;
 }
 
-#back-button{
+.back-tablet-pc{
+  display:none;
+}
+.back-button{
     margin-left:2.5%;
 }
 
