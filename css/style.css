@@ -75,9 +75,9 @@ FOOTER
 
 }
 
-.ul-list li:nth-child(3){
+/*.ul-list li:nth-child(3){
     clear:left;
-}
+}*/
 
 #home-ul,#port-ul,#land-ul,#misc-ul{
     display:none;
