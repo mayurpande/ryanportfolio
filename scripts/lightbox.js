@@ -17,7 +17,7 @@ $(".lightBox a").click(function(event){
   var imageLocation = $(this).attr("href");
   //Update overlay with the image linked in the link
   $image.attr("src", imageLocation);
-  
+
   var miscUl = $(this).parent();
   if(miscUl.attr("id") == "misc-ul"){
       $('#misc-ul').hide();
@@ -26,18 +26,18 @@ $(".lightBox a").click(function(event){
   $('.footer').hide();
   //Show the overlay.
   $overlay.show();
-  
+
   //get p element text and add it to caption
   var captionText = $(this).children("p").text();
   $caption.text(captionText);
-  
-  
-  
+
+
+
 });
 
 //When overlay is clicked
 $overlay.click(function(){
-  
+
   //console.log(t);
   if($(this).hasClass('toggleMisc')){
         $('#misc-ul').show();
@@ -47,7 +47,7 @@ $overlay.click(function(){
   $('.footer').show();
   //Hide the overlay
   $overlay.hide();
-  
 
- 
+
+
 });

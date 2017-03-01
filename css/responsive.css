@@ -97,7 +97,13 @@
 
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 940px){
+
+	#overlay img{
+		margin-top:2.5%;
+		width:60%;
+
+	}
 
 	.container{
 		width:auto;
@@ -107,6 +113,14 @@
 
 	#admin-info{
 		width:50%;
+	}
+
+	.footer{
+		display:none;
+	}
+
+	#misc-ul{
+		margin-top:2.5%;
 	}
 }
 
