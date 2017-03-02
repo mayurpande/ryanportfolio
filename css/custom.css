@@ -18,3 +18,23 @@ BOOTSTRAP CUSTOM OVERIDES
 .dropdown-menu{
   display:block !important;
 }
+
+#navInsta{
+  float:right;
+}
+.insta{
+  display:inline-block !important;
+  list-style: none;
+}
+
+.insta img{
+  margin-bottom:10px;
+}
+
+.navbar-toggle{
+  float:none;
+}
+
+#footer-social{
+  padding-bottom: 8px;
+}
