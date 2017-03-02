@@ -5,3 +5,16 @@ BOOTSTRAP CUSTOM OVERIDES
   background-color:#fff;
   border-color:#fff;
 }
+
+.nav{
+  display:block !important;
+}
+.navbar-nav{
+  display:block !important;
+}
+.navbar-right{
+  display:block !important;
+}
+.dropdown-menu{
+  display:block !important;
+}
