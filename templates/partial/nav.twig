@@ -14,8 +14,8 @@
 			</a>
 
 
-			<!-- <button type="button" class="navbar-toggle" data-toggle="collapse"
-			data-target=".navbar-collapse">-->
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+			data-target=".navbar-collapse">
 
 			<span class="sr-only">Toggle navigation</span>
 
@@ -32,6 +32,10 @@
 
 				<li{% if active_page == 'contact' %} class="active"{% endif %}><a href="{{ path_for('contact') }}">Contact</a></li>
 				<li><a href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
+			<!--	<li class="test" onclick='crossfade("#home-ul", "#{{ homeItem.next_ul }}")'>Portrait</li>
+				<li class="test">Landscape</li>-->
+
+
 				{% if auth.check %}
 
 
@@ -46,13 +50,13 @@
                             <li><a href="{{ path_for('adminHome.update') }}">Update Home Page</a></li>
                             <li><a href="{{ path_for('adminPortrait.create') }}">Add to Portrait Page</a></li>
                             <li><a href="{{ path_for('adminPortrait.update') }}">Update Portrait Page</a></li>
-                            
+
                             <li><a href="{{ path_for('adminLandscape.create') }}">Add to Lanscape Page</a></li>
                             <li><a href="{{ path_for('adminLandscape.update') }}">Update Portrait Page</a></li>
-                            
+
                             <li><a href="{{ path_for('adminMiscellaneous.create') }}">Add to Miscellaneous Page</a></li>
                             <li><a href="{{ path_for('adminMiscellaneous.update') }}">Update Miscellaneous Page</a></li>
-                            
+
 							<li><a href="{{ path_for('adminUpload.update') }}">Upload Image</a></li>
 							<li><a href="{{ path_for('auth.password.change') }}">Change Password</a></li>
 							<li><a href="{{ path_for('auth.signout') }}">Sign Out</a></li>
