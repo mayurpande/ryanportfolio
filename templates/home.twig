@@ -25,8 +25,11 @@
 {% for homeItem in homePage %}
   {% if homeItem.ul_id == "home-ul" %}
     <ul class="ul-list {{ homeItem.ul_id }}">
+
       <li class="{{ homeItem.ul_id }}" id="{{ homeItem.id }}" onclick='crossfade(".{{ homeItem.ul_id }}", ".{{ homeItem.next_ul }}")'>
+
         <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
+        <div class="test">Some text</div>
       </li>
 
     </ul>
