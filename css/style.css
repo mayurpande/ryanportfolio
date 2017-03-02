@@ -79,7 +79,7 @@ FOOTER
     clear:left;
 }*/
 
-#home-ul,#port-ul,#land-ul,#misc-ul{
+#home-ul{ /*,#port-ul,#land-ul,#misc-ul*/
     display:none;
 }
 
