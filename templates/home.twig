@@ -39,12 +39,12 @@
             </a>
         </li>
     {% endfor %}
-    <li class="back-mobile" onclick='crossfade("#port-ul", "#home-slide")'>
+    <p class="back-mobile" onclick='crossfade("#port-ul", "#home-slide")'>
         Go back
-    </li>
-		<li class="back-tablet-pc" onclick='crossfade("#port-ul", "#home-ul")'>
+    </p>
+		<p class="back-tablet-pc" onclick='crossfade("#port-ul", "#home-ul")'>
         Go back
-    </li>
+    </p>
 </ul>
 
 <ul class="ul-list lightBox" id="land-ul">
@@ -56,21 +56,23 @@
             </a>
         </li>
     {% endfor %}
-    <li class="back-mobile" onclick='crossfade("#land-ul", "#home-slide")'>
+    <p class="back-mobile" onclick='crossfade("#land-ul", "#home-slide")'>
         Go back
-    </li>
-		<li class="back-tablet-pc" onclick='crossfade("#land-ul", "#home-ul")'>
+    </p>
+		<p class="back-tablet-pc" onclick='crossfade("#land-ul", "#home-ul")'>
 				Go back
-		</li>
+		</p>
 </ul>
 
 
-<div class="cycle-slideshow lightBox" id="misc-ul" data-cycle-slides="a">
+<ul class="ul-list lightBox" id="misc-ul">
     {% for miscItem in miscPage %}
-        <a href="img/{{ miscItem.misc_img }}">
-            <img src="img/{{ miscItem.misc_img }}" alt="{{ miscItem.misc_img }}"/>
-            <p class="lightBoxText">{{ miscItem.misc_light_text }}</p>
-        </a>
+        <li id="{{ miscItem.id }}">
+          <a href="img/{{ miscItem.misc_img }}">
+              <img src="img/{{ miscItem.misc_img }}" alt="{{ miscItem.misc_img }}"/>
+              <p class="lightBoxText">{{ miscItem.misc_light_text }}</p>
+          </a>
+        </li>
     {% endfor %}
     <p class="back-mobile back-button" onclick='crossfade("#misc-ul", "#home-slide")'>
         Go back
@@ -78,6 +80,6 @@
 		<p class="back-tablet-pc back-button" onclick='crossfade("#misc-ul", "#home-ul")'>
 				Go back
 		<p>
-</div>
+</ul>
 
 {% endblock %}
