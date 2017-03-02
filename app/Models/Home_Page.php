@@ -16,5 +16,8 @@ class Home_Page extends Model{
 
 	protected $fillable = [
 		'home_img',
+		'next_ul',
+		'ul_id',
+		'ul_update_no',
 	];
 }
