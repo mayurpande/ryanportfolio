@@ -1,12 +1,8 @@
 $(document).ready(function(){
-   // $('#port-ul').hide();
-    //$('#land-ul').hide();
-    //$('#misc-ul').hide();
     $("ul").each(function(index){
-      if($(this).attr("id") != "home-ul"){
+      if(!$(this).hasClass("home-ul")){
         $(this).hide();
       }
-      console.log("this worked");
    });
 
 
