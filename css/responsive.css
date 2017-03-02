@@ -49,7 +49,7 @@
 	}
 
 	.test{
-		
+
 	}
 
 	.back-mobile{
@@ -61,6 +61,10 @@
 	}
 
 	.footer{
+		display:none;
+	}
+
+	#navInsta{
 		display:none;
 	}
 
