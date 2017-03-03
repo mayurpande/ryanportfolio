@@ -4,7 +4,7 @@
 
 		<div class="navbar-header">
 
-			<a href="{{ path_for('home') }}"
+			<a onclick='crossfade(".tempActive", ".cycle-slideshow")'
 				{% if active_page == 'home' %}
 					class="navbar-brand active"
 				{% else %}
@@ -43,6 +43,10 @@
 
 				<li{% if active_page == 'contact' %} class="active"{% endif %}><a href="{{ path_for('contact') }}">Contact</a></li>
 				<li><a href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
+				<li onclick='crossfade(".tempActive", ".port-ul")'><a>Portrait</a></li>
+				<li onclick='crossfade(".tempActive", ".land-ul")'><a>Landscape</a></li>
+				<li onclick='crossfade(".tempActive", ".misc-ul")'><a>Miscellaneous</a></li>
+
 
 
 
