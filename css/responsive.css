@@ -40,6 +40,14 @@
 
 @media screen and (min-width:768px){
 
+	#wrapper{
+		display:none;
+	}
+
+	.landing-page{
+		display:block;
+	}
+
 	#home-slide{
 		display:none;
 	}
@@ -48,9 +56,6 @@
 		display:block;
 	}
 
-	.test{
-
-	}
 
 	.back-mobile{
 		display:none;
