@@ -31,6 +31,10 @@ img{
   max-width: 100%;
 }
 
+.landing-page{
+  display:none;
+}
+
 /*************************
 FOOTER
 *************************/
