@@ -63,6 +63,18 @@
 	#nameHeader{
 		font-size:35px;
 		text-align: center;
+		opacity: 0;
+	}
+
+	#moving-line{
+		width:0;
+		margin:50px 0 50px 0;
+ 		height:2px;
+ 		background-color:red;
+	}
+	#galleryNames{
+		margin-top:50px;
+		opacity: 0;
 	}
 	.galleryItems{
 		display:inline-block;
