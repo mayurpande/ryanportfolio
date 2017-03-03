@@ -21,6 +21,12 @@ class AdminController extends Controller{
 
     //Home Create
 	public function getHomeCreate($request,$response){
+		//$c = Home_Page::table('home_page')->select('ul_id', Home_Page::raw('count(*) as total'))
+																			//->groupBy('ul_id')
+																			//->lists('total','ul_id')->all();
+		//var_dump(Home_Page::table('home_page')->selectRaw('ul_id,count(*)')->groupBy('ul_id'));
+		//var_dump($c);
+		//die();
 		return $this->view->render($response,'admin-home.twig');
 	}
 
@@ -69,7 +75,7 @@ class AdminController extends Controller{
 
 
 	}
-    
+
     //Portrait Create
     public function getPortraitCreate($request,$response){
 		return $this->view->render($response,'admin-portrait.twig');
@@ -122,7 +128,7 @@ class AdminController extends Controller{
 
 
 	}
-    
+
     //Landscape Create
     public function getLandscapeCreate($request,$response){
 		return $this->view->render($response,'admin-landscape.twig');
@@ -175,8 +181,8 @@ class AdminController extends Controller{
 
 
 	}
-    
-    
+
+
     //Miscellaneous Create
     public function getMiscellaneousCreate($request,$response){
 		return $this->view->render($response,'admin-miscellaneous.twig');

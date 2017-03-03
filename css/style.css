@@ -40,7 +40,7 @@ FOOTER
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 60px;
+  height: 30px;
   text-align: center;
 }
 
@@ -48,9 +48,6 @@ FOOTER
 	margin-right: 20px;
 }
 
-.footer-contact{
-    margin-bottom: 3px;
-}
 
 
 /***************************
@@ -79,7 +76,7 @@ FOOTER
     clear:left;
 }*/
 
-#home-ul,#port-ul,#land-ul,#misc-ul{
+.home-ul{ /*,#port-ul,#land-ul,#misc-ul*/
     display:none;
 }
 

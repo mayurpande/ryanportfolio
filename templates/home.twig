@@ -1,3 +1,4 @@
+
 {% extends 'main.twig' %}
 {% set active_page = 'home' %}
 
@@ -7,77 +8,50 @@
 
 {% block content %}
 
-<div class="cycle-slideshow" data-cycle-fx="fadeout"
+<div class="cycle-slideshow tempActive" data-cycle-fx="fadeout"
     data-cycle-speed=1500
     data-cycle-timeout=4000
     data-cycle-next="#next"
     data-cycle-manual-fx="scrollHorz"
     data-cycle-manual-speed="200" id="home-slide"> <!--data-cycle-slides="li"> -->
 	{% for homeItem in homePage %}
-	<!--	<li id="{{ homeItem.id }}" onclick='crossfade(".cycle-slideshow", "#{{ homeItem.next_ul }}")'>-->
-            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" onclick='crossfade("#home-slide", "#{{ homeItem.next_ul }}")' />
-    <!--    </li>-->
-    {% endfor %}
+    {% if homeItem.ul_id == "home-ul" %}
+            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" onclick='crossfade("#home-slide", ".{{ homeItem.next_ul }}")' />
+    {% endif %}
+  {% endfor %}
 </div>
 
 
-<ul class="ul-list" id="home-ul">
-    {% for homeItem in homePage %}
-        <li id="{{ homeItem.id }}" onclick='crossfade("#home-ul", "#{{ homeItem.next_ul }}")'>
-            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
-        </li>
-    {% endfor %}
-</ul>
+{% for homeItem in homePage %}
+  {% if homeItem.ul_id == "home-ul" %}
+    <ul class="ul-list {{ homeItem.ul_id }}">
 
+      <li class="{{ homeItem.ul_id }}" id="{{ homeItem.id }}" onclick='crossfade(".{{ homeItem.ul_id }}", ".{{ homeItem.next_ul }}")'>
 
-<ul class="ul-list lightBox" id="port-ul">
-    {% for portItem in portPage %}
-        <li id="{{ portItem.id }}">
-            <a href="img/{{ portItem.port_img }}">
-                <img src="img/{{ portItem.port_img }}" alt="{{ portItem.port_img }}"/>
-                <p class="lightBoxText">{{ portItem.port_light_text }}</p>
-            </a>
-        </li>
-    {% endfor %}
-    <li class="back-mobile" onclick='crossfade("#port-ul", "#home-slide")'>
-        Go back
-    </li>
-		<li class="back-tablet-pc" onclick='crossfade("#port-ul", "#home-ul")'>
-        Go back
-    </li>
-</ul>
+        <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
 
-<ul class="ul-list lightBox" id="land-ul">
-    {% for landItem in landPage %}
-        <li id="{{ landItem.id }}">
-            <a href="img/{{ landItem.land_img }}">
-                <img src="img/{{ landItem.land_img }}" alt="{{ landItem.land_img }}"/>
-                <p class="lightBoxText">{{ landItem.land_light_text }}</p>
-            </a>
-        </li>
-    {% endfor %}
-    <li class="back-mobile" onclick='crossfade("#land-ul", "#home-slide")'>
-        Go back
-    </li>
-		<li class="back-tablet-pc" onclick='crossfade("#land-ul", "#home-ul")'>
-				Go back
-		</li>
-</ul>
+      </li>
 
+    </ul>
 
-<div class="cycle-slideshow lightBox" id="misc-ul" data-cycle-slides="a">
-    {% for miscItem in miscPage %}
-        <a href="img/{{ miscItem.misc_img }}">
-            <img src="img/{{ miscItem.misc_img }}" alt="{{ miscItem.misc_img }}"/>
-            <p class="lightBoxText">{{ miscItem.misc_light_text }}</p>
+  {% else %}
+    <ul class="ul-list lightBox {{ homeItem.ul_id }}">
+      <li id="{{ homeItem.id }}">
+        <a href="img/{{ homeItem.home_img }}">
+          <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
+          <!--<p class="lightBoxText">{{ portItem.port_light_text }}</p>-->
         </a>
-    {% endfor %}
-    <p class="back-mobile back-button" onclick='crossfade("#misc-ul", "#home-slide")'>
-        Go back
-    <p>
-		<p class="back-tablet-pc back-button" onclick='crossfade("#misc-ul", "#home-ul")'>
-				Go back
-		<p>
-</div>
+      </li>
+      <!--  <p class="back-mobile" onclick='crossfade(".{{ homeItem.ul_id }}", "#home-slide")'>
+      Go back
+      </p>
+      <p class="back-tablet-pc" onclick='crossfade(".{{ homeItem.ul_id }}", ".home-ul")'>
+      Go back
+      </p>-->
+    </ul>
+  {% endif %}
+{% endfor %}
+
+
 
 {% endblock %}
