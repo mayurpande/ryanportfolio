@@ -22,3 +22,16 @@ function crossfade(curr, next) {
     }
 
 }
+
+
+function showGallery(curr, next) {
+
+    $(curr).fadeOut(1000, function() {
+        $('#wrapper').fadeIn(0);
+    });
+    crossfade('.home-ul',next);
+
+
+
+
+}
