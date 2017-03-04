@@ -16,7 +16,7 @@ body{
 
 }
 #wrapper{
-	max-width: 940px;
+	max-width: 1920px;
 	min-width: 280px;
 	margin: 0 auto;
 }
@@ -29,6 +29,10 @@ a {
 
 img{
   max-width: 100%;
+}
+
+.landing-page{
+  display:none;
 }
 
 /*************************
@@ -175,5 +179,5 @@ HOMEPAGE (PORTFOLIO - LIGHTBOX)
  * *****************************/
 body{
 	background-color: #fff;
-	color: #777;
+	color: rgb(42,42,42);
 }

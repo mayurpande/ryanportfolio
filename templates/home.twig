@@ -2,9 +2,20 @@
 {% extends 'main.twig' %}
 {% set active_page = 'home' %}
 
-{% block title %}Ryan Site - Tell me what to put here{% endblock %}
+{% block title %}Ryan{% endblock %}
 
+{% block landing %}
+<div id="nameHeader" onclick='crossfade(".landing-page", "#wrapper")'>
+  <h1>Ryan O Toole Collett</h1>
+</div>
+<div id="moving-line"></div>
+<div id="galleryNames">
+    <div class="galleryItems" onclick='showGallery(".landing-page", ".port-ul")'>Portrait</div>
+    <div class="galleryItems" onclick='showGallery(".landing-page", ".land-ul")'>Landscape</div>
+    <div class="galleryItems" onclick='showGallery(".landing-page", ".misc-ul")'>Miscellaneous</div>
+</div>
 
+{% endblock %}
 
 {% block content %}
 
@@ -20,6 +31,8 @@
     {% endif %}
   {% endfor %}
 </div>
+
+
 
 
 {% for homeItem in homePage %}

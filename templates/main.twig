@@ -14,6 +14,9 @@
 		{% endblock %}
 	</head>
 	<body>
+		<div class="landing-page">
+		  {% block landing %}{% endblock %}
+		</div>
 		<div id="wrapper">
 			{% include 'partial/nav.twig' %}
       {% include 'partial/flash.twig' %}
@@ -33,5 +36,6 @@
     <script type="text/javascript" src='/scripts/cycle2.js'></script>
     <script type="text/javascript" src='/scripts/app.js'></script>
     <script type="text/javascript" src='/scripts/lightbox.js'></script>
+		<script type="text/javascript" src='/scripts/landingpage.js'></script>
 	</body>
 </html>
