@@ -46,8 +46,11 @@
 
 	.landing-page{
 		display:block;
-		width: 80%;
-		margin:0 auto;
+		max-width: 1920px;
+		width:80%;
+		margin: 0 auto;
+		margin-top:38%
+
 
 	}
 
@@ -121,7 +124,7 @@
 	}
 
 	.ul-list li{
-		margin-right:2%;
+		margin:1%;
 	  width:28.3333%;
 	}
 
@@ -152,6 +155,10 @@
 		width:auto;
 	}
 
+	.landing-page{
+		margin-top: 30%;
+	}
+
 
 
 	#admin-info{
@@ -167,7 +174,57 @@
 	}
 }
 
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+		.landing-page{
+			margin-top:48%;
+		}
+
+}
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+		.landing-page{
+			margin-top:48%;
+		}
+
+}
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+		.landing-page{
+			margin-top:45%;
+		}
+
+}
+
+@media screen and (min-width:1024px){
+	.landing-page{
+		margin-top:28%;
+	}
+
+}
+
+
+
 @media screen and (min-width:1200px){
+
+	.landing-page{
+		margin-top:23%;
+	}
+
+	#nameHeader{
+		font-size: 50px;
+	}
 
 	.container{
 		width:auto;
@@ -177,7 +234,18 @@
 
 }
 
+@media screen and (min-width:1280px){
+	.landing-page{
+		margin-top:20%;
+	}
+
+}
+
 @media screen and (min-width:1440px){
+
+	.landing-page{
+		margin-top:20%;
+	}
 
 
 	#admin-info{
@@ -187,7 +255,9 @@
 
 @media screen and (min-width:1660px){
 
-
+  .landing-page{
+		margin-top:15%;
+	}
 
 	#admin-info{
 		width:40%;
