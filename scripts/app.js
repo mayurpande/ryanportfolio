@@ -9,8 +9,8 @@ $(document).ready(function(){
 });
 
 function crossfade(curr, next) {
-    $(curr).fadeOut(1000, function() {
-        $(next).fadeIn(2000);
+    $(curr).fadeOut(500, function() {
+        $(next).fadeIn(750);
     });
 
     if($(curr).closest('div')){
@@ -27,7 +27,7 @@ function crossfade(curr, next) {
 function showGallery(curr, next) {
 
     $(curr).fadeOut(1000, function() {
-        $('#wrapper').fadeIn(0);
+        $('#wrapper').fadeIn();
     });
     crossfade('.home-ul',next);
 
