@@ -48,7 +48,9 @@
 		width:100%;
 
 		text-align: center;
+
 	}
+
 
 	.landing-page{
 		display:block;
@@ -61,12 +63,14 @@
 	.navbar-header{
 		float:none;
 		width:100%;
-	}
 
+	}
 
 	.navbar .navbar-nav {
 			display: inline-block !important;
 			float: none;
+			border-top: 1px solid black;
+			color: rgb(42,42,42);
 	}
 
 	.navbar .navbar-collapse {
