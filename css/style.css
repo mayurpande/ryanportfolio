@@ -52,7 +52,13 @@ FOOTER
 	margin-right: 20px;
 }
 
+/**************************
+HEADER
+***************************/
 
+#tabPcHome{
+  display:none;
+}
 
 /***************************
 * HOMEPAGE (PORTFOLIO)
