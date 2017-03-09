@@ -1,98 +1,98 @@
 <div class="navbar navbar-default">
 
-	<div class="container">
-
-		<div class="navbar-header">
-
-			<a id="mobHome" onclick='crossfade(".tempActive", ".cycle-slideshow")'
-				{% if active_page == 'home' %}
-					class="navbar-brand active"
-				{% else %}
-					class="navbar-brand"
-				{% endif %}>
-					Ryan O Toole Collett
-			</a>
-
-			<a id="tabPcHome" onclick='crossfade(".tempActive", ".home-ul")'
-				{% if active_page == 'home' %}
-					class="navbar-brand active"
-				{% else %}
-					class="navbar-brand"
-				{% endif %}>
-					Ryan O Toole Collett
-			</a>
+	<!--<div class="container">-->
 
 
-			<div id="navInsta">
-			<div class="insta" id="footer-social">
-						<a href="https://www.instagram.com/ryanotoolecollett/"><img src="img/Instagram.png" alt="Instagram Social" width="30px" height="30px"/></a>
+
+			<div class="navbar-header">
+
+				<a id="mobHome" onclick='crossfade(".tempActive", ".cycle-slideshow")'
+					{% if active_page == 'home' %}
+						class="navbar-brand active"
+					{% else %}
+						class="navbar-brand"
+					{% endif %}>
+						Ryan O Toole Collett
+				</a>
+
+				<a id="tabPcHome" onclick='crossfade(".tempActive", ".home-ul")'
+					{% if active_page == 'home' %}
+						class="navbar-brand active"
+					{% else %}
+						class="navbar-brand"
+					{% endif %}>
+						Ryan O Toole Collett
+				</a>
+
+
+				<div id="navInsta">
+					<div class="insta" id="footer-social">
+							<a href="https://www.instagram.com/ryanotoolecollett/"><img src="img/Instagram.png" alt="Instagram Social" width="30px" height="30px"/></a>
+					</div>
+
+					<div class="insta">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</div>
+				</div>
+
 			</div>
 
-			<div class="insta">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-			data-target=".navbar-collapse">
-
-
-
-			<span class="sr-only">Toggle navigation</span>
-
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</div>
-			</div>
-
-		</div>
-
-		<div class="collapse navbar-collapse">
-
-
-			<ul class="nav navbar-nav navbar-right">
-
-
-				<li><a href="{{ path_for('contact') }}">Contact</a></li>
-				<li><a href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
-				<li class="hideNavItems" onclick='crossfade(".tempActive", ".port-ul")'><a>Portrait</a></li>
-				<li class="hideNavItems" onclick='crossfade(".tempActive", ".land-ul")'><a>Landscape</a></li>
-				<li class="hideNavItems" onclick='crossfade(".tempActive", ".misc-ul")'><a>Miscellaneous</a></li>
 
 
 
 
-				{% if auth.check %}
+				<div class="collapse navbar-collapse">
 
 
-					<li class="dropdown">
+					<ul class="nav navbar-nav">
 
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin
-						<span class="caret"></span>
-						</a>
+						<li><a href="{{ path_for('contact') }}">Contact</a></li>
+						<li><a href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
+						<li class="hideNavItems" onclick='crossfade(".tempActive", ".port-ul")'><a>Portrait</a></li>
+						<li class="hideNavItems" onclick='crossfade(".tempActive", ".land-ul")'><a>Landscape</a></li>
+						<li class="hideNavItems" onclick='crossfade(".tempActive", ".misc-ul")'><a>Miscellaneous</a></li>
 
-						<ul class="dropdown-menu">
-							<li><a href="{{ path_for('adminHome.create') }}">Add to Home Page</a></li>
-              <li><a href="{{ path_for('adminHome.update') }}">Update Home Page</a></li>
-              <li><a href="{{ path_for('adminPortrait.create') }}">Add to Portrait Page</a></li>
-              <li><a href="{{ path_for('adminPortrait.update') }}">Update Portrait Page</a></li>
+						{% if auth.check %}
 
-              <li><a href="{{ path_for('adminLandscape.create') }}">Add to Lanscape Page</a></li>
-              <li><a href="{{ path_for('adminLandscape.update') }}">Update Portrait Page</a></li>
+							<li class="dropdown">
 
-              <li><a href="{{ path_for('adminMiscellaneous.create') }}">Add to Miscellaneous Page</a></li>
-              <li><a href="{{ path_for('adminMiscellaneous.update') }}">Update Miscellaneous Page</a></li>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin
+								<span class="caret"></span>
+								</a>
 
-							<li><a href="{{ path_for('adminUpload.update') }}">Upload Image</a></li>
-							<li><a href="{{ path_for('auth.password.change') }}">Change Password</a></li>
-							<li><a href="{{ path_for('auth.signout') }}">Sign Out</a></li>
+								<ul class="dropdown-menu">
+									<li><a href="{{ path_for('adminHome.create') }}">Add to Home Page</a></li>
+		              <li><a href="{{ path_for('adminHome.update') }}">Update Home Page</a></li>
+		              <li><a href="{{ path_for('adminPortrait.create') }}">Add to Portrait Page</a></li>
+		              <li><a href="{{ path_for('adminPortrait.update') }}">Update Portrait Page</a></li>
 
-						</ul>
+		              <li><a href="{{ path_for('adminLandscape.create') }}">Add to Lanscape Page</a></li>
+		              <li><a href="{{ path_for('adminLandscape.update') }}">Update Portrait Page</a></li>
 
-					</li>
+		              <li><a href="{{ path_for('adminMiscellaneous.create') }}">Add to Miscellaneous Page</a></li>
+		              <li><a href="{{ path_for('adminMiscellaneous.update') }}">Update Miscellaneous Page</a></li>
 
-				{% endif %}
-			</ul>
+									<li><a href="{{ path_for('adminUpload.update') }}">Upload Image</a></li>
+									<li><a href="{{ path_for('auth.password.change') }}">Change Password</a></li>
+									<li><a href="{{ path_for('auth.signout') }}">Sign Out</a></li>
 
-		</div>
+								</ul>
 
-	</div>
+							</li>
+
+						{% endif %}
+
+					</ul>
+
+				</div>
+
+
+
+<!--		</div>-->
 
 </div>
