@@ -8,25 +8,24 @@ use App\Models\Portrait;
 use App\Models\Landscape;
 use App\Models\Miscellaneous;
 use App\Controllers\Controller;
-
+use Illuminate\Database\Capsule\Manager as DB;
 //import validator
 use Respect\Validation\Validator as v;
 
 class AdminController extends Controller{
 
 	public function getUpdateSite($request,$response){
+		$c = Home_Page::selectRaw('count(*) as count')->orderBy('count', 'desc')->groupBy('ul_id')->get();
+var_dump($c);
+die();
 		return $this->view->render($response,'admin.twig');
 	}
 
 
     //Home Create
 	public function getHomeCreate($request,$response){
-		//$c = Home_Page::table('home_page')->select('ul_id', Home_Page::raw('count(*) as total'))
-																			//->groupBy('ul_id')
-																			//->lists('total','ul_id')->all();
-		//var_dump(Home_Page::table('home_page')->selectRaw('ul_id,count(*)')->groupBy('ul_id'));
-		//var_dump($c);
-		//die();
+
+
 		return $this->view->render($response,'admin-home.twig');
 	}
 
