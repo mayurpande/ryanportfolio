@@ -40,8 +40,12 @@
 
 @media screen and (min-width:768px){
 
-	#wrapper{
+	#mobHome{
 		display:none;
+	}
+
+	#tabPcHome{
+		display:block;
 	}
 
 	.landing-page{
@@ -52,6 +56,9 @@
 		margin-top:38%
 
 
+	}
+	#wrapper{
+		display:none;
 	}
 
 	#home-slide{
@@ -124,8 +131,8 @@
 	}
 
 	.ul-list li{
-		margin:1%;
-	  width:28.3333%;
+		margin:0.5% 0.5% 1% 0.5%;
+	  width:32%;
 	}
 
 	.ul-list li:nth-child(4n){
