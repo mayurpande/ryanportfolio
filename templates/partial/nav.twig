@@ -4,7 +4,16 @@
 
 		<div class="navbar-header">
 
-			<a onclick='crossfade(".tempActive", ".cycle-slideshow")'
+			<a id="mobHome" onclick='crossfade(".tempActive", ".cycle-slideshow")'
+				{% if active_page == 'home' %}
+					class="navbar-brand active"
+				{% else %}
+					class="navbar-brand"
+				{% endif %}>
+					Ryan O Toole Collett
+			</a>
+
+			<a id="tabPcHome" onclick='crossfade(".tempActive", ".home-ul")'
 				{% if active_page == 'home' %}
 					class="navbar-brand active"
 				{% else %}
