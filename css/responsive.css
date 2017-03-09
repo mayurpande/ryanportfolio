@@ -37,7 +37,6 @@
 
 
 
-
 @media screen and (min-width:768px){
 
 	#mobHome{
@@ -46,6 +45,9 @@
 
 	#tabPcHome{
 		display:block;
+		width:100%;
+
+		text-align: center;
 	}
 
 	.landing-page{
@@ -53,10 +55,27 @@
 		max-width: 1920px;
 		width:80%;
 		margin: 0 auto;
-		margin-top:38%
-
-
+		margin-top:38%;
 	}
+
+	.navbar-header{
+		float:none;
+		width:100%;
+	}
+
+
+	.navbar .navbar-nav {
+			display: inline-block !important;
+			float: none;
+	}
+
+	.navbar .navbar-collapse {
+			text-align: center;
+	}
+
+
+
+
 	#wrapper{
 		display:none;
 	}
