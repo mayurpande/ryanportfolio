@@ -15,9 +15,11 @@
 	</head>
 	<body>
 		<div class="landing-page">
-		  {% block landing %}{% endblock %}
+			{% block landing %}{% endblock %}
 		</div>
+
 		<div id="wrapper">
+
 			{% include 'partial/nav.twig' %}
       {% include 'partial/flash.twig' %}
 			<h1>{% block heading %}{% endblock %}</h1>
