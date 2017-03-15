@@ -46,7 +46,7 @@
 	#tabPcHome{
 		display:block;
 		width:100%;
-
+		font-size: 40px;
 		text-align: center;
 
 	}
@@ -63,6 +63,7 @@
 	.navbar-header{
 		float:none;
 		width:100%;
+		margin-top:20px;
 
 	}
 
@@ -71,6 +72,9 @@
 			float: none;
 			border-top: 1px solid black;
 			color: rgb(42,42,42);
+			margin-top:20px;
+			font-size: 25px;
+			padding-top:8px;
 
 	}
 
