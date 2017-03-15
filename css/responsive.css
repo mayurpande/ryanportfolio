@@ -60,6 +60,7 @@
 		margin-top:38%;
 	}
 
+
 	.navbar-header{
 		float:none;
 		width:100%;
@@ -106,9 +107,13 @@
 	}
 
 	#nameHeader{
-		font-size:35px;
+
 		text-align: center;
 		opacity: 0;
+	}
+
+	#nameHeader > h1{
+		font-size:50px;
 	}
 
 	#moving-line{
@@ -260,8 +265,8 @@
 		margin-top:23%;
 	}
 
-	#nameHeader{
-		font-size: 50px;
+	#nameHeader > h1{
+		font-size: 75px;
 	}
 
 	.container{
@@ -283,6 +288,10 @@
 
 	.landing-page{
 		margin-top:20%;
+	}
+
+	#nameHeader > h1{
+		font-size: 75px;
 	}
 
 
