@@ -1,4 +1,4 @@
-<div class="navbar navbar-default">
+<div class="navbar navbar-default navbar-custom">
 
 	<!--<div class="container">-->
 
@@ -8,22 +8,21 @@
 
 				<a id="mobHome" onclick='crossfade(".tempActive", ".cycle-slideshow")'
 					{% if active_page == 'home' %}
-						class="navbar-brand active"
+						class="navbar-brand navbar-custom"
 					{% else %}
-						class="navbar-brand"
+						class="navbar-brand navbar-custom"
 					{% endif %}>
 						Ryan O Toole Collett
 				</a>
 
-				<a id="tabPcHome" onclick='crossfade(".tempActive", ".home-ul")'
+				<a id="tabPcHome" onclick='crossFadePc(".temp", ".home-ul")'
 					{% if active_page == 'home' %}
-						class="navbar-brand active"
+						class="navbar-brand navbar-custom"
 					{% else %}
-						class="navbar-brand"
+						class="navbar-brand navbar-custom"
 					{% endif %}>
 						Ryan O Toole Collett
 
-						<span id="t"></span>
 				</a>
 
 
