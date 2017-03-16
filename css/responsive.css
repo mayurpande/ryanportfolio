@@ -51,40 +51,43 @@
 
 	}
 
-   .textHover{
-		 position: absolute;
-	   top: 0;
-	   bottom: 0;
-	   left: 0;
-	   right: 0;
-	   background: rgba(0,0,0,0.5);
-	   color: #fff;
-	   visibility: hidden;
-		 height:100%;
-		 width:100%;
-	   opacity: 0;
-		 -webkit-transition: opacity 500ms;
-		 -moz-transition: opacity 500ms;
-		 -o-transition: opacity 500ms;
-		 transition: opacity 500ms;
-	 }
 
-	 .home-ul li{
-		 position:relative;
-	 }
+	.home-ul li{
+		position:relative;
+	}
 
-	 .textHover p{
-	   text-align: center;
-	   vertical-align: middle;
-		 margin-top:30%;
-		 font-size:20px;
-	 }
+	.textHover{
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width:100%;
+		height: 100%;
+		opacity: 0;
+		visibility: hidden;
+		background: rgba(0,0,0,0.5);
+		color:#fff;
+		-webkit-transition: opacity 500ms;
+		-moz-transition: opacity 500ms;
+		-o-transition: opacity 500ms;
+		transition: opacity 500ms;
 
+	}
 
-	 .home-ul li:hover .textHover{
-		 visibility: visible;
-		 opacity: 1;
-	 }
+	.textHover p{
+		text-align: center;
+		vertical-align: middle;
+		margin-top: 30%;
+		font-size: 20px;
+
+	}
+
+	.home-ul li:hover .textHover{
+		visibility: visible;
+		opacity: 1;
+	}
+
 
 
 
@@ -358,7 +361,9 @@
 
 @media screen and (min-width:1880px){
 
-  .textHover{
+
+	.textHover{
+
 		width:98%;
 	}
 }
@@ -366,6 +371,8 @@
 @media screen and (min-width:1900px){
 
   .textHover{
+
+
 		width:97%;
 	}
 }
