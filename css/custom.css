@@ -38,3 +38,14 @@ BOOTSTRAP CUSTOM OVERIDES
 #footer-social{
   padding-bottom: 8px;
 }
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+  color:rgb(7,50,150);
+}
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a{
+  color:rgb(42,42,42);
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+
+    color:rgb(7,50,150);
+}

@@ -18,9 +18,16 @@ class HomeController extends Controller{
 	 //now we can use this view object and render the views
 	//we now have access to our whole container because we have the container in our base controller
 		$homePage = Home_Page::all();
-		foreach($homePage as $id){
-			$homeItem = $id->id;
-		}
+
+			foreach($homePage as $id){
+				$homeItem = $id->id;
+				//$homeItem = $id['ul_update_no'];
+
+			}
+
+
+
+
 
         $portPage = Portrait::all();
         foreach($portPage as $ids){

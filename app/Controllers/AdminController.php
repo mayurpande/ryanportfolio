@@ -15,9 +15,7 @@ use Respect\Validation\Validator as v;
 class AdminController extends Controller{
 
 	public function getUpdateSite($request,$response){
-		$c = Home_Page::selectRaw('count(*) as count')->orderBy('count', 'desc')->groupBy('ul_id')->get();
-var_dump($c);
-die();
+		
 		return $this->view->render($response,'admin.twig');
 	}
 
