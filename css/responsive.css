@@ -81,6 +81,11 @@
 
 	}
 
+	.home-ul li:hover .textHover{
+		visibility: visible;
+		opacity: 1;
+	}
+
 
 
 
