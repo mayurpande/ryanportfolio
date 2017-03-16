@@ -78,6 +78,7 @@
 		text-align: center;
 		vertical-align: middle;
 		margin-top: 30%;
+		font-size: 20px;
 
 	}
 
@@ -353,5 +354,19 @@
 
 	#admin-info{
 		width:40%;
+	}
+}
+
+@media screen and (min-width:1880px){
+
+	.textHover{
+		width:98%;
+	}
+}
+
+@media screen and (min-width:1880px){
+
+	.textHover{
+		width:97%;
 	}
 }
