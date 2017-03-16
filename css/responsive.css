@@ -51,6 +51,10 @@
 
 	}
 
+	.home-ul li{
+		position:relative;
+	}
+
 
 	.landing-page{
 		display:block;
