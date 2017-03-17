@@ -86,26 +86,42 @@ class AdminController extends Controller{
 	}
 
     //Portrait Create
-    public function getPortraitCreate($request,$response){
+  public function getPortraitCreate($request,$response){
 		return $this->view->render($response,'admin-portrait.twig');
 	}
 
 	public function postPortraitCreate($request,$response){
 
+		$ul_id = $request->getParam('ul_id');
 
-        $port_page = Portrait::create([
-              'port_img' => $request->getParam('port_img'),
-              'port_light_text' => $request->getParam('port_light_text')
-          ]);
-        if ($port_page) {
-                $this->flash->addMessage('success','You have added item to portrait page');
-                return $response->withRedirect($this->router->pathFor('admin.update'));
-        } else {
-                $this->flash->addMessage('error','You have not added item to portrait page');
-                return $response->withRedirect($this->router->pathFor('admin.update'));
-        }
+		$c = Home_Page::selectRaw('count(*) as count')->where('ul_id','=',$ul_id)->orderBy('count', 'desc')->groupBy('ul_id')->get();
 
-	}
+		foreach($c as $obj){
+
+			$ulCount = $obj['count'] + 1;
+
+			$port_page = Home_Page::create([
+						'home_img' => $request->getParam('home_img'),
+						'ul_id' => $ul_id,
+						'ul_update_no' => $ulCount
+			]);
+
+			if ($port_page) {
+							$this->flash->addMessage('success','You have added item to ' . $port_page->ul_id .  ' gallery');
+							return $response->withRedirect($this->router->pathFor('admin.update'));
+			} else {
+							$this->flash->addMessage('error','You have not added item to ' . $port_page->ul_id .  ' gallery');
+							return $response->withRedirect($this->router->pathFor('admin.update'));
+			}
+
+		}
+}
+
+
+
+
+
+
 
 
     //Portrait Update
