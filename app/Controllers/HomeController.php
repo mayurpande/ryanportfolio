@@ -44,12 +44,7 @@ class HomeController extends Controller{
             $miscItem = $idsss->idsss;
         }
 
-				/*$c = Home_Page::selectRaw('count(*) as count')->where('ul_id','=','port-ul')->orderBy('count', 'desc')->groupBy('ul_id')->get();
 
-				foreach($c as $obj){
-						echo $obj['count'];
-
-				}*/
 
 
 
