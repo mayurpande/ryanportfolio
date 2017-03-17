@@ -61,12 +61,15 @@ class AdminController extends Controller{
 
 	public function postHomeUpdate($request,$response){
 
+				$ul_id = "home-ul";
         $id = $request->getParam('ul_update_no');
-				$home_page = Home_Page::where("ul_update_no",$id)->first();
+				$home_page = Home_Page::where("ul_update_no",$id)
+															->where("ul_id",$ul_id)
+															->first();
 				$new_home_data = array(
 					'home_img' => $request->getParam('home_img'),
 					'next_ul' => $request->getParam('next_ul'),
-					'ul_id' => 'home-ul',
+					'ul_id' => $ul_id
 				);
 
         if ($home_page->fill($new_home_data) && $home_page->save()) {
@@ -85,7 +88,7 @@ class AdminController extends Controller{
 
 	}
 
-    //Portrait Create
+  //Portrait Create
   public function getPortraitCreate($request,$response){
 		return $this->view->render($response,'admin-portrait.twig');
 	}
@@ -115,41 +118,39 @@ class AdminController extends Controller{
 			}
 
 		}
-}
+	}
 
-
-
-
-
-
-
-
-    //Portrait Update
+	//Portrait Update
 	public function getPortraitUpdate($request,$response){
 		return $this->view->render($response,'admin-portrait-update.twig');
 	}
 
 	public function postPortraitUpdate($request,$response){
 
-        $id = $request->getParam('port_id');
-        $port_page = Portrait::where("id",$id)->first();
-        $new_portrait_data = array(
-            'port_img' => $request->getParam('port_img'),
-            'port_light_text' => $request->getParam('port_light_text')
-        );
+		$id = $request->getParam('ul_update_no');
+		$ul_id = $request->getParam('ul_id');
+		$port_page = Home_Page::where("ul_update_no",$id)
+								->where("ul_id",$ul_id)
+								->first();
+		$new_portrait_data = array(
+			'home_img' => $request->getParam('home_img'),
+			'next_ul' => $request->getParam('next_ul'),
+			'ul_id' => $ul_id
+		);
 
-        if ($port_page->fill($new_portrait_data) && $port_page->save()) {
 
-            $this->flash->addMessage('success','You have updated Portrait page');
+    if ($port_page->fill($new_portrait_data) && $port_page->save()) {
 
-            return $response->withRedirect($this->router->pathFor('admin.update'));
+        $this->flash->addMessage('success','You have updated Portrait page');
 
-        } else {
+        return $response->withRedirect($this->router->pathFor('admin.update'));
 
-            $this->flash->addMessage('error','You have not updated Portrait page');
+    } else {
 
-            return $response->withRedirect($this->router->pathFor('admin.update'));
-        }
+        $this->flash->addMessage('error','You have not updated Portrait page');
+
+        return $response->withRedirect($this->router->pathFor('admin.update'));
+    }
 
 
 	}
