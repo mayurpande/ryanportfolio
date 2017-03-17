@@ -135,6 +135,7 @@ class AdminController extends Controller{
 		$galleryUpdateData = array(
 			'home_img' => $request->getParam('home_img'),
 			'next_ul' => $request->getParam('next_ul'),
+			'high_res_img' => $request->getParam('high_res_img'),
 			'ul_id' => $ul_id
 		);
 
