@@ -89,11 +89,11 @@ class AdminController extends Controller{
 	}
 
   //Portrait Create
-  public function getPortraitCreate($request,$response){
-		return $this->view->render($response,'admin-portrait.twig');
+  public function getGalleryCreate($request,$response){
+		return $this->view->render($response,'admin-gallery.twig');
 	}
 
-	public function postPortraitCreate($request,$response){
+	public function postGalleryCreate($request,$response){
 
 		$ul_id = $request->getParam('ul_id');
 
@@ -103,17 +103,17 @@ class AdminController extends Controller{
 
 			$ulCount = $obj['count'] + 1;
 
-			$port_page = Home_Page::create([
+			$gallery = Home_Page::create([
 						'home_img' => $request->getParam('home_img'),
 						'ul_id' => $ul_id,
 						'ul_update_no' => $ulCount
 			]);
 
-			if ($port_page) {
-							$this->flash->addMessage('success','You have added item to existing ' . $port_page->ul_id .  ' gallery at id no ' . $port_page->ul_update_no . '.');
+			if ($gallery) {
+							$this->flash->addMessage('success','You have added item to existing ' . $gallery->ul_id .  ' gallery at id no ' . $gallery->ul_update_no . '.');
 							return $response->withRedirect($this->router->pathFor('admin.update'));
 			} else {
-							$this->flash->addMessage('error','You have not added item to existing ' . $port_page->ul_id .  ' gallery at id no ' . $port_page->ul_update_no . '.');
+							$this->flash->addMessage('error','You have not added item to existing ' . $gallery->ul_id .  ' gallery at id no ' . $gallery->ul_update_no . '.');
 							return $response->withRedirect($this->router->pathFor('admin.update'));
 			}
 
