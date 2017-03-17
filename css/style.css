@@ -15,7 +15,7 @@ body{
 	margin-bottom:60px;
 
 }
-#wrapper{
+.wrapper{
 	max-width: 1920px;
 	min-width: 280px;
 	margin: 0 auto;
