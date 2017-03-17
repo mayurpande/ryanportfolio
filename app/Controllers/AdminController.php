@@ -167,6 +167,7 @@ class AdminController extends Controller{
         $newGalleryItem = Home_Page::create([
               'home_img' => $request->getParam('home_img'),
               'ul_id' => $request->getParam('ul_id'),
+							'high_res_img' => $request->getParam('high_res_img'),
 							'ul_update_no' => $ul_update_no
           ]);
         if ($newGalleryItem) {
