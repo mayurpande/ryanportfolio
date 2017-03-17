@@ -4,9 +4,7 @@ namespace App\Controllers;
 
 
 use App\Models\Home_Page;
-use App\Models\Portrait;
-use App\Models\Landscape;
-use App\Models\Miscellaneous;
+
 use App\Controllers\Controller;
 use Illuminate\Database\Capsule\Manager as DB;
 //import validator
@@ -39,6 +37,7 @@ class AdminController extends Controller{
     			$home_page = Home_Page::create([
 	              'home_img' => $request->getParam('home_img'),
 								'next_ul' => $request->getParam('next_ul'),
+
 								'ul_id' => $ul_id,
 								'ul_update_no' => $ulCount
 	        ]);
@@ -106,6 +105,7 @@ class AdminController extends Controller{
 			$gallery = Home_Page::create([
 						'home_img' => $request->getParam('home_img'),
 						'ul_id' => $ul_id,
+						'high_res_img' => $request->getParam('high_res_img'),
 						'ul_update_no' => $ulCount
 			]);
 
