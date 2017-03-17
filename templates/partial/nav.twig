@@ -6,24 +6,50 @@
 
 			<div class="navbar-header">
 
-				<a id="mobHome" onclick='crossfade(".tempActive", ".cycle-slideshow")'
-					{% if active_page == 'home' %}
-						class="navbar-brand navbar-custom"
-					{% else %}
-						class="navbar-brand navbar-custom"
-					{% endif %}>
-						Ryan O Toole Collett
-				</a>
+			  {% if active_page == 'admin' %}
 
-				<a id="tabPcHome" onclick='crossFadePc(".temp", ".home-ul")'
-					{% if active_page == 'home' %}
-						class="navbar-brand navbar-custom"
-					{% else %}
-						class="navbar-brand navbar-custom"
-					{% endif %}>
-						Ryan O Toole Collett
+					<a id="mobHome" href='{{ path_for('home') }}'
+						{% if active_page == 'home' %}
+							class="navbar-brand navbar-custom"
+						{% else %}
+							class="navbar-brand navbar-custom"
+						{% endif %}>
+							Ryan O Toole Collett
+					</a>
 
-				</a>
+					<a id="tabPcHome" href='{{ path_for('home') }}'
+						{% if active_page == 'home' %}
+							class="navbar-brand navbar-custom"
+						{% else %}
+							class="navbar-brand navbar-custom"
+						{% endif %}>
+							Ryan O Toole Collett
+					</a>
+				{% else %}
+
+
+
+					<a id="mobHome" onclick='crossfade(".tempActive", ".cycle-slideshow")'
+						{% if active_page == 'home' %}
+							class="navbar-brand navbar-custom"
+						{% else %}
+							class="navbar-brand navbar-custom"
+						{% endif %}>
+							Ryan O Toole Collett
+					</a>
+
+					<a id="tabPcHome" onclick='crossFadePc(".temp", ".home-ul")'
+						{% if active_page == 'home' %}
+							class="navbar-brand navbar-custom"
+						{% else %}
+							class="navbar-brand navbar-custom"
+						{% endif %}>
+							Ryan O Toole Collett
+
+					</a>
+
+				{% endif %}
+
 
 
 				<div id="navInsta">
