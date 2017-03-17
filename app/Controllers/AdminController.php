@@ -53,7 +53,7 @@ class AdminController extends Controller{
 	}
 
 
-    //Home Update
+  //Home Update
 	public function getHomeUpdate($request,$response){
 		return $this->view->render($response,'admin-home-update.twig');
 	}
@@ -87,7 +87,7 @@ class AdminController extends Controller{
 
 	}
 
-  //Portrait Create
+  //Add new item to existing gallery
   public function getGalleryCreate($request,$response){
 		return $this->view->render($response,'admin-gallery.twig');
 	}
@@ -120,7 +120,7 @@ class AdminController extends Controller{
 		}
 	}
 
-	//Portrait Update
+	//Update existing gallery
 	public function getGalleryUpdate($request,$response){
 		return $this->view->render($response,'admin-gallery-update.twig');
 	}
@@ -156,7 +156,7 @@ class AdminController extends Controller{
 
 	}
 
-    //Landscape Create
+  //create new gallery item
   public function getNewGalleryCreate($request,$response){
 		return $this->view->render($response,'admin-new-gallery.twig');
 	}
@@ -180,90 +180,6 @@ class AdminController extends Controller{
 
 	}
 
-
-    //Landscape Update
-	public function getLandscapeUpdate($request,$response){
-		return $this->view->render($response,'admin-landscape-update.twig');
-	}
-
-	public function postLandscapeUpdate($request,$response){
-
-        $id = $request->getParam('land_id');
-        $land_page = Landscape::where("id",$id)->first();
-        $new_landscape_data = array(
-            'land_img' => $request->getParam('land_img'),
-            'land_light_text' => $request->getParam('land_light_text')
-        );
-
-        if ($land_page->fill($new_landscape_data) && $land_page->save()) {
-
-            $this->flash->addMessage('success','You have updated landscape page');
-
-            return $response->withRedirect($this->router->pathFor('admin.update'));
-
-        } else {
-
-            $this->flash->addMessage('error','You have not updated landscape page');
-
-            return $response->withRedirect($this->router->pathFor('admin.update'));
-        }
-
-
-	}
-
-
-    //Miscellaneous Create
-    public function getMiscellaneousCreate($request,$response){
-		return $this->view->render($response,'admin-miscellaneous.twig');
-	}
-
-	public function postMiscellaneousCreate($request,$response){
-
-
-        $misc_page = Miscellaneous::create([
-              'misc_img' => $request->getParam('misc_img'),
-              'misc_light_text' => $request->getParam('misc_light_text')
-          ]);
-        if ($misc_page) {
-                $this->flash->addMessage('success','You have added item to Miscellaneous page');
-                return $response->withRedirect($this->router->pathFor('admin.update'));
-        } else {
-                $this->flash->addMessage('error','You have not added item to Miscellaneous page');
-                return $response->withRedirect($this->router->pathFor('admin.update'));
-        }
-
-	}
-
-
-    //Miscellanous Update
-	public function getMiscellaneousUpdate($request,$response){
-		return $this->view->render($response,'admin-miscellaneous-update.twig');
-	}
-
-	public function postMiscellaneousUpdate($request,$response){
-
-        $id = $request->getParam('misc_id');
-        $misc_page = Miscellaneous::where("id",$id)->first();
-        $new_misc_data = array(
-            'misc_img' => $request->getParam('misc_img'),
-            'misc_light_text' => $request->getParam('misc_light_text')
-        );
-
-        if ($misc_page->fill($new_misc_data) && $misc_page->save()) {
-
-            $this->flash->addMessage('success','You have updated Miscellaneous page');
-
-            return $response->withRedirect($this->router->pathFor('admin.update'));
-
-        } else {
-
-            $this->flash->addMessage('error','You have not updated Miscellaneous page');
-
-            return $response->withRedirect($this->router->pathFor('admin.update'));
-        }
-
-
-	}
 
 
 }
