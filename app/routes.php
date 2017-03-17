@@ -43,41 +43,23 @@ $app->group('', function () {
 
     $this->post('/admin-update-home','AdminController:postHomeUpdate');
 
-    //for portrait page
+    //for create and update existing gallery item
 
     $this->get('/admin-create-gallery','AdminController:getGalleryCreate')->setName('adminGallery.create');
 
     $this->post('/admin-create-gallery','AdminController:postGalleryCreate');
 
-    $this->get('/admin-update-portrait','AdminController:getGalleryUpdate')->setName('adminGallery.update');
+    $this->get('/admin-update-gallery','AdminController:getGalleryUpdate')->setName('adminGallery.update');
 
-    $this->post('/admin-update-portrait','AdminController:postGalleryUpdate');
+    $this->post('/admin-update-gallery','AdminController:postGalleryUpdate');
 
+    //for new gallery item
 
-    //for landscape page
+    $this->get('/admin-create-new-gallery','AdminController:getNewGalleryCreate')->setName('adminNewGallery.create');
 
-    $this->get('/admin-create-landscape','AdminController:getNewGalleryCreate')->setName('adminNewGallery.create');
+    $this->post('/admin-create-new-gallery','AdminController:postNewGalleryCreate');
 
-    $this->post('/admin-create-landscape','AdminController:postNewGalleryCreate');
-
-    $this->get('/admin-update-landscape','AdminController:getLandscapeUpdate')->setName('adminLandscape.update');
-
-    $this->post('/admin-update-landscape','AdminController:postLandscapeUpdate');
-
-    //for miscellaneous page
-
-    $this->get('/admin-create-miscellaneous','AdminController:getMiscellaneousCreate')->setName('adminMiscellaneous.create');
-
-    $this->post('/admin-create-miscellaneous','AdminController:postMiscellaneousCreate');
-
-    $this->get('/admin-update-miscellaneous','AdminController:getMiscellaneousUpdate')->setName('adminMiscellaneous.update');
-
-    $this->post('/admin-update-miscellaneous','AdminController:postMiscellaneousUpdate');
-
-
-
-
-    //auth controller routes
+  //auth controller routes
     $this->get('/admin-password-change','PasswordController:getChangePassword')->setName('auth.password.change');
 
     $this->post('/admin-password-change','PasswordController:postChangePassword');
