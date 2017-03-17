@@ -121,33 +121,33 @@ class AdminController extends Controller{
 	}
 
 	//Portrait Update
-	public function getPortraitUpdate($request,$response){
-		return $this->view->render($response,'admin-portrait-update.twig');
+	public function getGalleryUpdate($request,$response){
+		return $this->view->render($response,'admin-gallery-update.twig');
 	}
 
-	public function postPortraitUpdate($request,$response){
+	public function postGalleryUpdate($request,$response){
 
 		$id = $request->getParam('ul_update_no');
 		$ul_id = $request->getParam('ul_id');
-		$port_page = Home_Page::where("ul_update_no",$id)
+		$galleryUpdate = Home_Page::where("ul_update_no",$id)
 								->where("ul_id",$ul_id)
 								->first();
-		$new_portrait_data = array(
+		$galleryUpdateData = array(
 			'home_img' => $request->getParam('home_img'),
 			'next_ul' => $request->getParam('next_ul'),
 			'ul_id' => $ul_id
 		);
 
 
-    if ($port_page->fill($new_portrait_data) && $port_page->save()) {
+    if ($galleryUpdate->fill($galleryUpdateData) && $galleryUpdate->save()) {
 
-        $this->flash->addMessage('success','You have updated ' . $port_page->ul_id . ' gallery at id no ' . $port_page->ul_update_no . '.');
+        $this->flash->addMessage('success','You have updated ' . $galleryUpdate->ul_id . ' gallery at id no ' . $galleryUpdate->ul_update_no . '.');
 
         return $response->withRedirect($this->router->pathFor('admin.update'));
 
     } else {
 
-        $this->flash->addMessage('error','You have not updated ' . $port_page->ul_id . ' gallery at id no ' . $port_page->ul_update_no . '.');
+        $this->flash->addMessage('error','You have not updated ' . $galleryUpdate->ul_id . ' gallery at id no ' . $galleryUpdate->ul_update_no . '.');
 
         return $response->withRedirect($this->router->pathFor('admin.update'));
     }
