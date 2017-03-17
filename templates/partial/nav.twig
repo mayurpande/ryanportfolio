@@ -84,9 +84,11 @@
 
 						<li><a href="{{ path_for('contact') }}">Contact</a></li>
 						<li><a href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
-						<li class="hideNavItems" onclick='crossfade(".tempActive", ".port-ul")'><a>Portrait</a></li>
-						<li class="hideNavItems" onclick='crossfade(".tempActive", ".land-ul")'><a>Landscape</a></li>
-						<li class="hideNavItems" onclick='crossfade(".tempActive", ".misc-ul")'><a>Miscellaneous</a></li>
+						{% for homeItem in homePage %}
+							{% if homeItem.ul_id == "home-ul" %}
+								<li class="hideNavItems" onclick='crossfade(".tempActive", ".{{ homeItem.next_ul }}")'><a>{{ homeItem.next_ul }}</a></li>
+							{% endif %}
+						{% endfor %}
 
 						{% if auth.check %}
 
@@ -103,7 +105,7 @@
 		              <li><a href="{{ path_for('adminGallery.update') }}">Update Gallery</a></li>
 
 		              <li><a href="{{ path_for('adminNewGallery.create') }}">Add New Gallery</a></li>
-		 
+
 
 									<li><a href="{{ path_for('adminUpload.update') }}">Upload Image</a></li>
 									<li><a href="{{ path_for('auth.password.change') }}">Change Password</a></li>
