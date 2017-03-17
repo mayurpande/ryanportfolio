@@ -1,4 +1,6 @@
 {% extends 'main.twig' %}
+{% set active_page = 'admin' %}
+
 
 {% block title %}Admin - Update Content{% endblock %}
 
@@ -17,23 +19,23 @@
 
 				<div class="panel-body">
 
-					<form action="{{ path_for('adminLandscape.create') }}" method="post" autcomplete="off">
+					<form action="{{ path_for('adminNewGallery.create') }}" method="post" autcomplete="off">
 
 						<div class="form-group{{ errors.email ? ' has-error' : '' }}">
 
-							<label for="land_img">Landscape Page Img Url</label>
+							<label for="home_img">Add image url</label>
 
-							<input type"text" name="land_img" id="land_img" class="form-control" >
-                            
-                            <label for="land_light_text">Landscape Page Light Box Text</label>
+							<input type"text" name="home_img" id="home_img" class="form-control" >
 
-							<input type"text" name="land_light_text" id="land_light_text" class="form-control" >
+              <label for="ul_id">New Gallery Name</label>
+
+							<input type"text" name="ul_id" id="ul_id" class="form-control" >
 
 
 						</div>
 
 
-						<button type="submit" class="btn btn-default">Add landscape page item</button>
+						<button type="submit" class="btn btn-default">Add New Gallery</button>
 
 						{{ csrf.field | raw }}
 

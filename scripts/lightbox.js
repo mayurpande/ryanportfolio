@@ -1,9 +1,7 @@
 var $overlay = $('<div id="overlay"></div>');
 var $image = $("<img>");
 var $caption = $('<p></p>');
-var $nextButton = $('<button>Next</button>');
-var $imgTest = $('<img>');
-var x;
+
 
 
 //An image to overlay
@@ -12,15 +10,14 @@ $overlay.append($image);
 //A caption to overlay
 $overlay.append($caption);
 
-$overlay.append($nextButton);
 //Add overlay
-$("#wrapper").append($overlay);
+$("body").append($overlay);
 
 //Capture the click event on a link to an image
 $(".lightBox a").click(function(event){
   event.preventDefault();
-  x = this;
-  getNextImage(x);
+//  x = this;
+//  getNextImage(x);
 
 
   var imageLocation = $(this).attr("href");
@@ -40,18 +37,13 @@ $(".lightBox a").click(function(event){
 
 });
 
-
-
-
-
-
 //When overlay is clicked
-/*$overlay.click(function(){
+$overlay.click(function(){
 
   $('.footer').show();
   //Hide the overlay
   $overlay.hide();
-});*/
+});
 
 
 

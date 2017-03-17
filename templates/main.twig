@@ -17,21 +17,49 @@
 		{% endblock %}
 	</head>
 	<body>
-		<div class="landing-page">
-			{% block landing %}{% endblock %}
-			{% block admin %}{% endblock %}
-		</div>
 
-		<div id="wrapper">
 
-			{% include 'partial/nav.twig' %}
-      {% include 'partial/flash.twig' %}
-			<h1>{% block heading %}{% endblock %}</h1>
+		{% if active_page == 'admin' %}
 
-			{% block content %}{% endblock %}
-		</div>
-		{% include 'partial/footer.twig' %}
 
+			<div class="wrapper">
+
+					{% include 'partial/nav.twig' %}
+					{% include 'partial/flash.twig' %}
+					{% block admin %}{% endblock %}
+
+			</div>
+
+		{% elseif active_page == 'contact' %}
+
+			<div class="wrapper">
+
+					{% include 'partial/nav.twig' %}
+					{% include 'partial/flash.twig' %}
+					{% block contact %}{% endblock %}
+
+			</div>
+
+
+
+			{% else %}
+
+				<div class="landing-page">
+					{% block landing %}{% endblock %}
+				</div>
+
+				<div class="wrapper" id="wrap">
+
+					{% include 'partial/nav.twig' %}
+		      {% include 'partial/flash.twig' %}
+					<h1>{% block heading %}{% endblock %}</h1>
+
+					{% block content %}{% endblock %}
+				</div>
+				
+				{% include 'partial/footer.twig' %}
+
+			{% endif %}
 
 
 

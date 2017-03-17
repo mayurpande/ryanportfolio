@@ -5,14 +5,17 @@
 {% block title %}Ryan{% endblock %}
 
 {% block landing %}
-<div id="nameHeader" onclick='crossfade(".landing-page", "#wrapper")'>
+<div id="nameHeader" onclick='crossfade(".landing-page", "#wrap")'>
   <h1>Ryan O Toole Collett</h1>
 </div>
 <div id="moving-line"></div>
 <div id="galleryNames">
-    <div class="galleryItems" onclick='showGallery(".landing-page", ".port-ul")'>Portrait</div>
-    <div class="galleryItems" onclick='showGallery(".landing-page", ".land-ul")'>Landscape</div>
-    <div class="galleryItems" onclick='showGallery(".landing-page", ".misc-ul")'>Miscellaneous</div>
+
+  {% for homeItem in homePage %}
+    {% if homeItem.ul_id == "home-ul" %}
+      <div class="galleryItems" onclick='showGallery(".landing-page", ".{{ homeItem.next_ul }}")'>{{ homeItem.next_ul }}</div>
+    {% endif %}
+  {% endfor %}
 </div>
 
 {% endblock %}

@@ -15,7 +15,7 @@ use Respect\Validation\Validator as v;
 class AdminController extends Controller{
 
 	public function getUpdateSite($request,$response){
-		
+
 		return $this->view->render($response,'admin.twig');
 	}
 
@@ -30,15 +30,25 @@ class AdminController extends Controller{
 	public function postHomeCreate($request,$response){
 
 
-        $home_page = Home_Page::create([
-              'home_img' => $request->getParam('home_img'),
-          ]);
-				if ($home_page) {
-					$this->flash->addMessage('success','You have added item to home page');
-        	return $response->withRedirect($this->router->pathFor('admin.update'));
-				} else {
-					$this->flash->addMessage('error','You have not added item to home page');
-        	return $response->withRedirect($this->router->pathFor('admin.update'));
+				$ul_id = 'home-ul';
+
+				$c = Home_Page::selectRaw('count(*) as count')->where('ul_id','=',$ul_id)->orderBy('count', 'desc')->groupBy('ul_id')->get();
+
+				foreach($c as $obj){
+					$ulCount = $obj['count'] + 1;
+    			$home_page = Home_Page::create([
+	              'home_img' => $request->getParam('home_img'),
+								'next_ul' => $request->getParam('next_ul'),
+								'ul_id' => $ul_id,
+								'ul_update_no' => $ulCount
+	        ]);
+					if ($home_page) {
+						$this->flash->addMessage('success','You have added ' . $home_page->home_img . ' to home page at id no ' . $home_page->ul_update_no . '.');
+	        	return $response->withRedirect($this->router->pathFor('admin.update'));
+					} else {
+						$this->flash->addMessage('error','You have not added ' . $home_page->home_img . ' to home page at id no ' . $home_page->ul_update_no . '.');
+	        	return $response->withRedirect($this->router->pathFor('admin.update'));
+					}
 				}
 
 	}
@@ -51,21 +61,26 @@ class AdminController extends Controller{
 
 	public function postHomeUpdate($request,$response){
 
-        $id = $request->getParam('id');
-				$home_page = Home_Page::where("id",$id)->first();
+				$ul_id = "home-ul";
+        $id = $request->getParam('ul_update_no');
+				$home_page = Home_Page::where("ul_update_no",$id)
+															->where("ul_id",$ul_id)
+															->first();
 				$new_home_data = array(
-					'home_img' => $request->getParam('home_img')
+					'home_img' => $request->getParam('home_img'),
+					'next_ul' => $request->getParam('next_ul'),
+					'ul_id' => $ul_id
 				);
 
         if ($home_page->fill($new_home_data) && $home_page->save()) {
 
-            $this->flash->addMessage('success','You have updated Home page');
+            $this->flash->addMessage('success','You have updated Home page no ' . $home_page->ul_update_no . '.');
 
 		    		return $response->withRedirect($this->router->pathFor('admin.update'));
 
         } else {
 
-            $this->flash->addMessage('error','You have not updated home');
+            $this->flash->addMessage('error','You have not updated home page no ' . $home_page->ul_update_no . '.');
 
             return $response->withRedirect($this->router->pathFor('admin.update'));
         }
@@ -73,76 +88,91 @@ class AdminController extends Controller{
 
 	}
 
-    //Portrait Create
-    public function getPortraitCreate($request,$response){
-		return $this->view->render($response,'admin-portrait.twig');
+  //Portrait Create
+  public function getGalleryCreate($request,$response){
+		return $this->view->render($response,'admin-gallery.twig');
 	}
 
-	public function postPortraitCreate($request,$response){
+	public function postGalleryCreate($request,$response){
 
+		$ul_id = $request->getParam('ul_id');
 
-        $port_page = Portrait::create([
-              'port_img' => $request->getParam('port_img'),
-              'port_light_text' => $request->getParam('port_light_text')
-          ]);
-        if ($port_page) {
-                $this->flash->addMessage('success','You have added item to portrait page');
-                return $response->withRedirect($this->router->pathFor('admin.update'));
-        } else {
-                $this->flash->addMessage('error','You have not added item to portrait page');
-                return $response->withRedirect($this->router->pathFor('admin.update'));
-        }
+		$c = Home_Page::selectRaw('count(*) as count')->where('ul_id','=',$ul_id)->orderBy('count', 'desc')->groupBy('ul_id')->get();
 
+		foreach($c as $obj){
+
+			$ulCount = $obj['count'] + 1;
+
+			$gallery = Home_Page::create([
+						'home_img' => $request->getParam('home_img'),
+						'ul_id' => $ul_id,
+						'ul_update_no' => $ulCount
+			]);
+
+			if ($gallery) {
+							$this->flash->addMessage('success','You have added item to existing ' . $gallery->ul_id .  ' gallery at id no ' . $gallery->ul_update_no . '.');
+							return $response->withRedirect($this->router->pathFor('admin.update'));
+			} else {
+							$this->flash->addMessage('error','You have not added item to existing ' . $gallery->ul_id .  ' gallery at id no ' . $gallery->ul_update_no . '.');
+							return $response->withRedirect($this->router->pathFor('admin.update'));
+			}
+
+		}
 	}
 
-
-    //Portrait Update
-	public function getPortraitUpdate($request,$response){
-		return $this->view->render($response,'admin-portrait-update.twig');
+	//Portrait Update
+	public function getGalleryUpdate($request,$response){
+		return $this->view->render($response,'admin-gallery-update.twig');
 	}
 
-	public function postPortraitUpdate($request,$response){
+	public function postGalleryUpdate($request,$response){
 
-        $id = $request->getParam('port_id');
-        $port_page = Portrait::where("id",$id)->first();
-        $new_portrait_data = array(
-            'port_img' => $request->getParam('port_img'),
-            'port_light_text' => $request->getParam('port_light_text')
-        );
+		$id = $request->getParam('ul_update_no');
+		$ul_id = $request->getParam('ul_id');
+		$galleryUpdate = Home_Page::where("ul_update_no",$id)
+								->where("ul_id",$ul_id)
+								->first();
+		$galleryUpdateData = array(
+			'home_img' => $request->getParam('home_img'),
+			'next_ul' => $request->getParam('next_ul'),
+			'ul_id' => $ul_id
+		);
 
-        if ($port_page->fill($new_portrait_data) && $port_page->save()) {
 
-            $this->flash->addMessage('success','You have updated Portrait page');
+    if ($galleryUpdate->fill($galleryUpdateData) && $galleryUpdate->save()) {
 
-            return $response->withRedirect($this->router->pathFor('admin.update'));
+        $this->flash->addMessage('success','You have updated ' . $galleryUpdate->ul_id . ' gallery at id no ' . $galleryUpdate->ul_update_no . '.');
 
-        } else {
+        return $response->withRedirect($this->router->pathFor('admin.update'));
 
-            $this->flash->addMessage('error','You have not updated Portrait page');
+    } else {
 
-            return $response->withRedirect($this->router->pathFor('admin.update'));
-        }
+        $this->flash->addMessage('error','You have not updated ' . $galleryUpdate->ul_id . ' gallery at id no ' . $galleryUpdate->ul_update_no . '.');
+
+        return $response->withRedirect($this->router->pathFor('admin.update'));
+    }
 
 
 	}
 
     //Landscape Create
-    public function getLandscapeCreate($request,$response){
-		return $this->view->render($response,'admin-landscape.twig');
+  public function getNewGalleryCreate($request,$response){
+		return $this->view->render($response,'admin-new-gallery.twig');
 	}
 
-	public function postLandscapeCreate($request,$response){
+	public function postNewGalleryCreate($request,$response){
 
-
-        $land_page = Landscape::create([
-              'land_img' => $request->getParam('land_img'),
-              'land_light_text' => $request->getParam('land_light_text')
+				$ul_update_no = 1;
+        $newGalleryItem = Home_Page::create([
+              'home_img' => $request->getParam('home_img'),
+              'ul_id' => $request->getParam('ul_id'),
+							'ul_update_no' => $ul_update_no
           ]);
-        if ($land_page) {
-                $this->flash->addMessage('success','You have added item to landscape page');
+        if ($newGalleryItem) {
+                $this->flash->addMessage('success','You have created new gallery ' . $newGalleryItem->ul_id . '.');
                 return $response->withRedirect($this->router->pathFor('admin.update'));
         } else {
-                $this->flash->addMessage('error','You have not added item to landscape page');
+                $this->flash->addMessage('error','You have not created new gallery ' . $newGalleryItem->ul_id . '.');
                 return $response->withRedirect($this->router->pathFor('admin.update'));
         }
 
