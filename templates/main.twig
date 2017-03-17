@@ -30,14 +30,23 @@
 
 			</div>
 
+		{% elseif active_page == 'contact' %}
+
+			<div class="wrapper">
+
+					{% include 'partial/nav.twig' %}
+					{% include 'partial/flash.twig' %}
+					{% block contact %}{% endblock %}
+
+			</div>
+
+
+
 			{% else %}
 
 				<div class="landing-page">
 					{% block landing %}{% endblock %}
-
 				</div>
-
-
 
 				<div class="wrapper" id="wrap">
 
@@ -47,6 +56,7 @@
 
 					{% block content %}{% endblock %}
 				</div>
+				
 				{% include 'partial/footer.twig' %}
 
 			{% endif %}
