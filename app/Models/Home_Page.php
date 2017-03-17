@@ -19,5 +19,6 @@ class Home_Page extends Model{
 		'next_ul',
 		'ul_id',
 		'ul_update_no',
+		'high_res_img',
 	];
 }
