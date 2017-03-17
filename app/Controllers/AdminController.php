@@ -156,23 +156,23 @@ class AdminController extends Controller{
 	}
 
     //Landscape Create
-  public function getLandscapeCreate($request,$response){
-		return $this->view->render($response,'admin-landscape.twig');
+  public function getNewGalleryCreate($request,$response){
+		return $this->view->render($response,'admin-new-gallery.twig');
 	}
 
-	public function postLandscapeCreate($request,$response){
+	public function postNewGalleryCreate($request,$response){
 
 				$ul_update_no = 1;
-        $land_page = Home_Page::create([
+        $newGalleryItem = Home_Page::create([
               'home_img' => $request->getParam('home_img'),
               'ul_id' => $request->getParam('ul_id'),
 							'ul_update_no' => $ul_update_no
           ]);
-        if ($land_page) {
-                $this->flash->addMessage('success','You have created new gallery ' . $land_page->ul_id . '.');
+        if ($newGalleryItem) {
+                $this->flash->addMessage('success','You have created new gallery ' . $newGalleryItem->ul_id . '.');
                 return $response->withRedirect($this->router->pathFor('admin.update'));
         } else {
-                $this->flash->addMessage('error','You have not created new gallery ' . $land_page->ul_id . '.');
+                $this->flash->addMessage('error','You have not created new gallery ' . $newGalleryItem->ul_id . '.');
                 return $response->withRedirect($this->router->pathFor('admin.update'));
         }
 
