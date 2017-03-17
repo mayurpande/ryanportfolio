@@ -39,6 +39,10 @@
 
 @media screen and (min-width:768px){
 
+	.cycle-slideshow{
+		display: none;
+	}
+
 	#mobHome{
 		display:none;
 	}
@@ -52,7 +56,7 @@
 	}
 
 
-	.home-ul li{
+	.homeUl li{
 		position:relative;
 	}
 
@@ -83,14 +87,10 @@
 
 	}
 
-	.home-ul li:hover .textHover{
+	.homeUl li:hover .textHover{
 		visibility: visible;
 		opacity: 1;
 	}
-
-
-
-
 
 	.landing-page{
 		display:block;
@@ -127,7 +127,9 @@
 		color:rgb(42,42,42);
 	}
 
-
+	.homeUl{
+		display:inline-block;
+	}
 
 	#wrapper{
 		display:none;
@@ -219,9 +221,6 @@
 	  width:32%;
 	}
 
-	.ul-list li:nth-child(4n){
-	    clear:left;
-	}
 	.container{
 		margin-left:5px;
 		width:auto;
@@ -359,7 +358,7 @@
 	}
 }
 
-@media screen and (min-width:1880px){
+/*@media screen and (min-width:1880px){
 
 
 	.textHover{
@@ -375,4 +374,4 @@
 
 		width:97%;
 	}
-}
+}*/

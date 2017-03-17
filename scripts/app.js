@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    $(".ul-list").each(function(index){
+    $(".ul-list li").each(function(index){
       if(!$(this).hasClass("home-ul")){
         $(this).hide();
       }
@@ -9,44 +9,30 @@ $(document).ready(function(){
 
 });
 
-
-/*$(window).resize(function(){
- if(window.innerWidth>768){
-  $('.cycle-slideshow').removeClass('.tempActive');
-  $('.home-ul').addClass('.tempActive');
- }
-});
-*/
 function crossfade(curr, next) {
+
     $(curr).fadeOut(700, function() {
       $(next).fadeIn(700);
     });
 
-   if($(curr).closest('div') == 'div'){
-     $(curr).closest('div').removeClass('tempActive');
-     $(next).closest('ul').addClass('tempActive');
-   } else if ($(curr).closest('ul')){
-     $(curr).closest('ul').removeClass('tempActive');
-     $(next).closest('ul').addClass('tempActive');
-   }
+    if($(curr).closest('div').hasClass('tempActive')){
+     $(curr).removeClass('tempActive');
+     $(next).closest('li').addClass('tempActive');
+    }else if($(curr).closest('li').hasClass('tempActive')){
+      $(curr).removeClass('tempActive');
+      $(next).addClass('tempActive');
+    }
 }
-/*if($(curr).closest('div').hasClass('tempActive')){
- $(curr).removeClass('tempActive');
- $(next).addClass('tempActive');
-}else if($(curr).closest('li').hasClass('tempActive')){
-  $(curr).removeClass('tempActive');
-  $(next).addClass('tempActive');
-}
-*/
 
 function crossFadePc(curr, next) {
+
     $(curr).fadeOut(700, function() {
       $(next).fadeIn(700);
     });
 
-    if ($(curr).closest('ul')){
-      $(curr).closest('ul').removeClass('temp');
-      $(next).closest('ul').addClass('temp');
+    if($(curr).closest('li').hasClass('temp')){
+      $(curr).removeClass('temp');
+      $(next).addClass('temp');
     }
 }
 

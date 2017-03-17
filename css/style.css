@@ -68,23 +68,24 @@ HEADER
 	margin-top:110px;
 }
 
-
 .ul-list{
+
   margin: 0;
   padding: 0;
   list-style:none;
 }
 
 .ul-list li{
-  float:left;
+  /*float:left;*/
+  display: inline-block;
   width:45%;
-  margin: 2.5%;
+  margin: 2%;
 
 }
 
-/*.ul-list li:nth-child(3){
-    clear:left;
-}*/
+.homeUl{
+    display:none;
+}
 
 .home-ul{ /*,#port-ul,#land-ul,#misc-ul*/
     display:none;
