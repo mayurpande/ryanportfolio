@@ -252,6 +252,13 @@
 		margin-top: 30%;
 	}
 
+	.contact{
+		width:80%;
+		margin:0 auto;
+	}
+
+
+
 
 
 	#admin-info{
@@ -321,6 +328,11 @@
 
 	.container{
 		width:auto;
+	}
+
+	.contact{
+		width:50%;
+		margin:0 auto;
 	}
 
 
