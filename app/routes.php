@@ -45,9 +45,9 @@ $app->group('', function () {
 
     //for portrait page
 
-    $this->get('/admin-create-portrait','AdminController:getPortraitCreate')->setName('adminPortrait.create');
+    $this->get('/admin-create-portrait','AdminController:getGalleryCreate')->setName('adminGallery.create');
 
-    $this->post('/admin-create-portrait','AdminController:postPortraitCreate');
+    $this->post('/admin-create-portrait','AdminController:postGalleryCreate');
 
     $this->get('/admin-update-portrait','AdminController:getPortraitUpdate')->setName('adminPortrait.update');
 
