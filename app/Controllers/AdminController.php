@@ -15,7 +15,7 @@ use Respect\Validation\Validator as v;
 class AdminController extends Controller{
 
 	public function getUpdateSite($request,$response){
-		
+
 		return $this->view->render($response,'admin.twig');
 	}
 
@@ -30,15 +30,25 @@ class AdminController extends Controller{
 	public function postHomeCreate($request,$response){
 
 
-        $home_page = Home_Page::create([
-              'home_img' => $request->getParam('home_img'),
-          ]);
-				if ($home_page) {
-					$this->flash->addMessage('success','You have added item to home page');
-        	return $response->withRedirect($this->router->pathFor('admin.update'));
-				} else {
-					$this->flash->addMessage('error','You have not added item to home page');
-        	return $response->withRedirect($this->router->pathFor('admin.update'));
+				$ul_id = $request->getParam('ul_id');
+
+				$c = Home_Page::selectRaw('count(*) as count')->where('ul_id','=',$ul_id)->orderBy('count', 'desc')->groupBy('ul_id')->get();
+
+				foreach($c as $obj){
+					$ulCount = $obj['count'] + 1;
+    			$home_page = Home_Page::create([
+	              'home_img' => $request->getParam('home_img'),
+								'next_ul' => $request->getParam('next_ul'),
+								'ul_id' => $ul_id,
+								'ul_update_no' => $ulCount
+	        ]);
+					if ($home_page) {
+						$this->flash->addMessage('success','You have added item to home page');
+	        	return $response->withRedirect($this->router->pathFor('admin.update'));
+					} else {
+						$this->flash->addMessage('error','You have not added item to home page');
+	        	return $response->withRedirect($this->router->pathFor('admin.update'));
+					}
 				}
 
 	}
