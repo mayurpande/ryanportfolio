@@ -61,10 +61,12 @@ class AdminController extends Controller{
 
 	public function postHomeUpdate($request,$response){
 
-        $id = $request->getParam('id');
-				$home_page = Home_Page::where("id",$id)->first();
+        $id = $request->getParam('ul_update_no');
+				$home_page = Home_Page::where("ul_update_no",$id)->first();
 				$new_home_data = array(
-					'home_img' => $request->getParam('home_img')
+					'home_img' => $request->getParam('home_img'),
+					'next_ul' => $request->getParam('next_ul'),
+					'ul_id' => 'home-ul',
 				);
 
         if ($home_page->fill($new_home_data) && $home_page->save()) {
