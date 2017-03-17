@@ -45,13 +45,13 @@ $app->group('', function () {
 
     //for portrait page
 
-    $this->get('/admin-create-portrait','AdminController:getGalleryCreate')->setName('adminGallery.create');
+    $this->get('/admin-create-gallery','AdminController:getGalleryCreate')->setName('adminGallery.create');
 
-    $this->post('/admin-create-portrait','AdminController:postGalleryCreate');
+    $this->post('/admin-create-gallery','AdminController:postGalleryCreate');
 
-    $this->get('/admin-update-portrait','AdminController:getPortraitUpdate')->setName('adminPortrait.update');
+    $this->get('/admin-update-portrait','AdminController:getGalleryUpdate')->setName('adminGallery.update');
 
-    $this->post('/admin-update-portrait','AdminController:postPortraitUpdate');
+    $this->post('/admin-update-portrait','AdminController:postGalleryUpdate');
 
 
     //for landscape page
