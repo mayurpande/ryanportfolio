@@ -6,7 +6,7 @@
 
 			<div class="navbar-header">
 
-			  {% if active_page == 'admin' %}
+			  {% if active_page == 'admin' or active_page == 'contact' %}
 
 					<a id="mobHome" href='{{ path_for('home') }}'
 						{% if active_page == 'home' %}
@@ -25,9 +25,8 @@
 						{% endif %}>
 							Ryan O Toole Collett
 					</a>
-				{% else %}
 
-
+			{% else %}
 
 					<a id="mobHome" onclick='crossfade(".tempActive", ".cycle-slideshow")'
 						{% if active_page == 'home' %}
