@@ -56,9 +56,9 @@ $app->group('', function () {
 
     //for landscape page
 
-    $this->get('/admin-create-landscape','AdminController:getLandscapeCreate')->setName('adminLandscape.create');
+    $this->get('/admin-create-landscape','AdminController:getNewGalleryCreate')->setName('adminNewGallery.create');
 
-    $this->post('/admin-create-landscape','AdminController:postLandscapeCreate');
+    $this->post('/admin-create-landscape','AdminController:postNewGalleryCreate');
 
     $this->get('/admin-update-landscape','AdminController:getLandscapeUpdate')->setName('adminLandscape.update');
 
