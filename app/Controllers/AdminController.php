@@ -30,7 +30,7 @@ class AdminController extends Controller{
 	public function postHomeCreate($request,$response){
 
 
-				$ul_id = $request->getParam('ul_id');
+				$ul_id = 'home-ul';
 
 				$c = Home_Page::selectRaw('count(*) as count')->where('ul_id','=',$ul_id)->orderBy('count', 'desc')->groupBy('ul_id')->get();
 
@@ -43,10 +43,10 @@ class AdminController extends Controller{
 								'ul_update_no' => $ulCount
 	        ]);
 					if ($home_page) {
-						$this->flash->addMessage('success','You have added item to home page');
+						$this->flash->addMessage('success','You have added ' . $home_page->home_img . ' to home page at id no ' . $home_page->ul_update_no . '.');
 	        	return $response->withRedirect($this->router->pathFor('admin.update'));
 					} else {
-						$this->flash->addMessage('error','You have not added item to home page');
+						$this->flash->addMessage('error','You have not added ' . $home_page->home_img . ' to home page at id no ' . $home_page->ul_update_no . '.');
 	        	return $response->withRedirect($this->router->pathFor('admin.update'));
 					}
 				}
@@ -74,13 +74,13 @@ class AdminController extends Controller{
 
         if ($home_page->fill($new_home_data) && $home_page->save()) {
 
-            $this->flash->addMessage('success','You have updated Home page');
+            $this->flash->addMessage('success','You have updated Home page no ' . $home_page->ul_update_no . '.');
 
 		    		return $response->withRedirect($this->router->pathFor('admin.update'));
 
         } else {
 
-            $this->flash->addMessage('error','You have not updated home');
+            $this->flash->addMessage('error','You have not updated home page no ' . $home_page->ul_update_no . '.');
 
             return $response->withRedirect($this->router->pathFor('admin.update'));
         }
@@ -110,10 +110,10 @@ class AdminController extends Controller{
 			]);
 
 			if ($port_page) {
-							$this->flash->addMessage('success','You have added item to ' . $port_page->ul_id .  ' gallery');
+							$this->flash->addMessage('success','You have added item to existing ' . $port_page->ul_id .  ' gallery at id no ' . $port_page->ul_update_no . '.');
 							return $response->withRedirect($this->router->pathFor('admin.update'));
 			} else {
-							$this->flash->addMessage('error','You have not added item to ' . $port_page->ul_id .  ' gallery');
+							$this->flash->addMessage('error','You have not added item to existing ' . $port_page->ul_id .  ' gallery at id no ' . $port_page->ul_update_no . '.');
 							return $response->withRedirect($this->router->pathFor('admin.update'));
 			}
 
@@ -141,13 +141,13 @@ class AdminController extends Controller{
 
     if ($port_page->fill($new_portrait_data) && $port_page->save()) {
 
-        $this->flash->addMessage('success','You have updated Portrait page');
+        $this->flash->addMessage('success','You have updated ' . $port_page->ul_id . ' gallery at id no ' . $port_page->ul_update_no . '.');
 
         return $response->withRedirect($this->router->pathFor('admin.update'));
 
     } else {
 
-        $this->flash->addMessage('error','You have not updated Portrait page');
+        $this->flash->addMessage('error','You have not updated ' . $port_page->ul_id . ' gallery at id no ' . $port_page->ul_update_no . '.');
 
         return $response->withRedirect($this->router->pathFor('admin.update'));
     }
@@ -169,10 +169,10 @@ class AdminController extends Controller{
 							'ul_update_no' => $ul_update_no
           ]);
         if ($land_page) {
-                $this->flash->addMessage('success','You have added item to landscape page');
+                $this->flash->addMessage('success','You have created new gallery ' . $land_page->ul_id . '.');
                 return $response->withRedirect($this->router->pathFor('admin.update'));
         } else {
-                $this->flash->addMessage('error','You have not added item to landscape page');
+                $this->flash->addMessage('error','You have not created new gallery ' . $land_page->ul_id . '.');
                 return $response->withRedirect($this->router->pathFor('admin.update'));
         }
 
