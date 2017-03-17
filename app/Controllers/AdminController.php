@@ -156,16 +156,17 @@ class AdminController extends Controller{
 	}
 
     //Landscape Create
-    public function getLandscapeCreate($request,$response){
+  public function getLandscapeCreate($request,$response){
 		return $this->view->render($response,'admin-landscape.twig');
 	}
 
 	public function postLandscapeCreate($request,$response){
 
-
-        $land_page = Landscape::create([
-              'land_img' => $request->getParam('land_img'),
-              'land_light_text' => $request->getParam('land_light_text')
+				$ul_update_no = 1;
+        $land_page = Home_Page::create([
+              'home_img' => $request->getParam('home_img'),
+              'ul_id' => $request->getParam('ul_id'),
+							'ul_update_no' => $ul_update_no
           ]);
         if ($land_page) {
                 $this->flash->addMessage('success','You have added item to landscape page');
