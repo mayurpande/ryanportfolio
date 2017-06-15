@@ -33,7 +33,7 @@
     {% for homeItem in homePage %}
       {% if homeItem.ul_id != "home-ul" %}
         <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
-          <a href="img/{{ homeItem.high_res_img }}">
+          <a href="img/{{ homeItem.high_res_img }}" data-lightbox="{{ homeItem.ul_id }}" data-title="{{ homeItem.lightbox_text }}">
             <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
           </a>
         </li>
