@@ -18,7 +18,7 @@
   </div>
 </div>
 <div class="landing-page">
-<div id="nameHeader" onclick='crossfade(".landing-page", "#wrap")'>
+<div id="nameHeader"  onclick='showHomePage(".landing-page")'>
   <h1>Ryan O Toole Collett</h1>
 </div>
 <div id="moving-line"></div>
@@ -26,7 +26,9 @@
 
   {% for homeItem in homePage %}
     {% if homeItem.ul_id == "home-ul" %}
-      <div class="galleryItems" onclick='showGallery(".landing-page", ".{{ homeItem.next_ul }}")'>{{ homeItem.next_ul }}</div>
+      <div class="galleryItems" onclick='showGalleryItems(".landing-page", ".{{ homeItem.next_ul }}")'>
+        {{ homeItem.next_ul }}
+      </div>
     {% endif %}
   {% endfor %}
 </div>
