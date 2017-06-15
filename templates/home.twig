@@ -5,6 +5,19 @@
 {% block title %}Ryan{% endblock %}
 
 {% block landing %}
+
+<div id="myCarousel" class="carousel container slide">
+  <div class="carousel-inner">
+    <div class="active item one"></div>
+    <div class="item two"></div>
+    <div class="item three"></div>
+    <div class="item four"></div>
+    <div class="item five"></div>
+    <div class="item six"></div>
+    <div class="item seven"></div>
+  </div>
+</div>
+<div class="landing-page">
 <div id="nameHeader" onclick='crossfade(".landing-page", "#wrap")'>
   <h1>Ryan O Toole Collett</h1>
 </div>
@@ -18,44 +31,6 @@
   {% endfor %}
 </div>
 
-{% endblock %}
-
-{% block content %}
-
-  <div class="cycle-slideshow tempActive" data-cycle-fx="fadeout"
-      data-cycle-speed=1500
-      data-cycle-timeout=4000
-      data-cycle-next="#next"
-      data-cycle-manual-fx="scrollHorz"
-      data-cycle-manual-speed="200" id="home-slide"> <!--data-cycle-slides="li"> -->
-  	{% for homeItem in homePage %}
-      {% if homeItem.ul_id == "home-ul" %}
-              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" onclick='crossfade("#home-slide", ".{{ homeItem.next_ul }}")' />
-      {% endif %}
-    {% endfor %}
-  </div>
-
-  <ul class="ul-list homeUl">
-    {% for homeItem in homePage %}
-      {% if homeItem.ul_id == "home-ul" %}
-        <li class="{{ homeItem.ul_id }} temp" id="{{ homeItem.id }}" onclick='crossFadePc(".temp", ".{{ homeItem.next_ul }}")'>
-          <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
-          <div class="textHover"><p>{{ homeItem.next_ul }}</p></div>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-
-  <ul class="ul-list lightBox">
-    {% for homeItem in homePage %}
-      {% if homeItem.ul_id != "home-ul" %}
-        <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
-          <a href="img/{{ homeItem.high_res_img }}">
-            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
-          </a>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+</div>
 
 {% endblock %}
