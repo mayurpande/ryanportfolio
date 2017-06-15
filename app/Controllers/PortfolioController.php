@@ -20,7 +20,7 @@ class PortfolioController extends Controller{
 			$homeItem = $id->id;
 		}
 
-		return $this->view->render($response, 'home.twig', [
+		return $this->view->render($response, 'portfolio.twig', [
         'homePage' => $homePage,
         'homeItem' => $homeItem
 
