@@ -55,6 +55,14 @@
 
 	}
 
+	.home-ul{
+		display:block;
+	}
+
+	.homeUl{
+		display:inline-block;
+	}
+
 
 	.homeUl li{
 		position:relative;
@@ -127,9 +135,7 @@
 		color:rgb(42,42,42);
 	}
 
-	.homeUl{
-		display:inline-block;
-	}
+
 
 	#wrap{
 		display:none;
@@ -142,9 +148,7 @@
 		display:none;
 	}
 
-	.home-ul{
-		display:block;
-	}
+
 
 
 	.hideNavItems{
