@@ -43,3 +43,13 @@ function showGallery(curr, next) {
     });
     crossFadePc('.home-ul',next);
 }
+
+function showHomePage(curr){
+  newUrl = window.location + 'portfolio';
+  $(curr).click(function() {
+  $("body").fadeOut(1000, function() {
+      window.location = newUrl;
+  });
+});
+
+}
