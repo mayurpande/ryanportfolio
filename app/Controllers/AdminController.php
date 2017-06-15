@@ -170,7 +170,8 @@ class AdminController extends Controller{
               'home_img' => $request->getParam('home_img'),
               'ul_id' => $request->getParam('ul_id'),
 							'high_res_img' => $request->getParam('high_res_img'),
-							'ul_update_no' => $ul_update_no
+							'ul_update_no' => $ul_update_no,
+							'lightbox_text' => $request->getParam('lightbox_text')
           ]);
         if ($newGalleryItem) {
                 $this->flash->addMessage('success','You have created new gallery ' . $newGalleryItem->ul_id . '.');
