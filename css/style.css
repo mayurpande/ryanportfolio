@@ -101,6 +101,12 @@ HEADER
 .lightBoxText{
     display:none;
 }
+
+.itemsText{
+  text-align: center;
+  margin-top:10px;
+  font-size: 20px;
+}
 /******************************
 HOMEPAGE (PORTFOLIO - LIGHTBOX)
 *******************************/
