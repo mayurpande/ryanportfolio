@@ -20,5 +20,6 @@ class Home_Page extends Model{
 		'ul_id',
 		'ul_update_no',
 		'high_res_img',
+		'lightbox_text'
 	];
 }
