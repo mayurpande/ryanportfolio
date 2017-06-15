@@ -51,5 +51,42 @@ function showHomePage(curr){
       window.location = newUrl;
   });
 });
+}
+
+function showGalleryItems(curr,next){
+//  newUrl = window.location + 'portfolio';
+  $.ajax({
+    url:'/portfolio',
+    type:'GET',
+    success:function(data){
+      console.log(data);
+      $("html").load();
+
+    }
+
+
+
+  });
+
+
+
+
+
+
+    //
+    // $("body").fadeOut(1000, function() {
+    //     window.location = newUrl;
+    //
+    // });
+    //
+    // sucess:function(result){
+    //   console.log(result + ' works');
+    // }
+
+
+
+
+
+  //crossFadePc('.home-ul',next);
 
 }
