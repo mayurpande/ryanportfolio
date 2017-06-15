@@ -6,6 +6,8 @@ use App\Middleware\GuestMiddleware;
 //calls homecontroller index fn
 $app->get('/','HomeController:index')->setName('home');
 
+$app->get('/portfolio','PortfolioController:index')->setName('portfolio');
+
 $app->get('/contact','ContactUsController:index')->setName('contact');
 
 $app->group('', function () {
