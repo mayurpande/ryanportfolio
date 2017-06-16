@@ -11,9 +11,22 @@ $(document).ready(function(){
 
 function crossfade(curr, next) {
 
-    $(curr).fadeOut(700, function() {
-      $(next).fadeIn(700);
-    });
+    if($(next).closest('div').hasClass('cycle-slideshow')){
+      $('#projectDetails').fadeOut(700);
+      $(curr).fadeOut(700, function() {
+        $(next).fadeIn(700);
+
+      });
+    }else{
+      $(curr).fadeOut(700, function() {
+        $(next).fadeIn(700);
+        $('#projectDetails').fadeIn(700);
+
+      });
+
+    }
+
+
 
     if($(curr).closest('div').hasClass('tempActive')){
      $(curr).removeClass('tempActive');
