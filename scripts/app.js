@@ -26,9 +26,20 @@ function crossfade(curr, next) {
 
 function crossFadePc(curr, next) {
 
+  if($(next).closest('li').hasClass('home-ul')){
+    $('#projectDetails').fadeOut(700);
     $(curr).fadeOut(700, function() {
       $(next).fadeIn(700);
+
     });
+  }else{
+    $(curr).fadeOut(700, function() {
+      $(next).fadeIn(700);
+      $('#projectDetails').fadeIn(700);
+
+    });
+
+  }
 
     if($(curr).closest('li').hasClass('temp')){
       $(curr).removeClass('temp');
