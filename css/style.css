@@ -107,6 +107,18 @@ HEADER
   margin-top:10px;
   font-size: 20px;
 }
+
+.cycle-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    color: #FFF;
+    background-color: #000;
+    opacity: 0.5;
+}
+
 /******************************
 HOMEPAGE (PORTFOLIO - LIGHTBOX)
 *******************************/
