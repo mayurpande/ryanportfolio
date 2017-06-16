@@ -41,8 +41,17 @@
     {% endfor %}
   </ul>
 
+
+
+ <div id="projectDetails">Some text</div>
+
+
+
+
   <ul class="ul-list lightBox">
+
     {% for homeItem in homePage %}
+
       {% if homeItem.ul_id != "home-ul" %}
         <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
           <a href="img/{{ homeItem.high_res_img }}" data-lightbox="{{ homeItem.ul_id }}" data-title="{{ homeItem.lightbox_text }}">
@@ -52,5 +61,6 @@
       {% endif %}
     {% endfor %}
   </ul>
+
 
 {% endblock %}
