@@ -108,7 +108,7 @@ HEADER
   font-size: 20px;
 }
 
-<<<<<<< Updated upstream
+
 .cycle-overlay {
     position: absolute;
     bottom: 0;
@@ -120,8 +120,10 @@ HEADER
     opacity: 0.5;
 }
 
-=======
->>>>>>> Stashed changes
+
+#projectDetails{
+  display:none;
+}
 /******************************
 HOMEPAGE (PORTFOLIO - LIGHTBOX)
 *******************************/
