@@ -26,8 +26,6 @@ function crossfade(curr, next) {
 
     }
 
-
-
     if($(curr).closest('div').hasClass('tempActive')){
      $(curr).removeClass('tempActive');
      $(next).closest('li').addClass('tempActive');
@@ -38,35 +36,24 @@ function crossfade(curr, next) {
 }
 
 function crossFadePc(curr, next) {
-
-  if($(next).closest('li').hasClass('home-ul')){
-    $('#projectDetails').fadeOut(700);
     $(curr).fadeOut(700, function() {
       $(next).fadeIn(700);
-
     });
-  }else{
-    $(curr).fadeOut(700, function() {
-      $(next).fadeIn(700);
-      $('#projectDetails').fadeIn(700);
-
-    });
-
-  }
-
     if($(curr).closest('li').hasClass('temp')){
       $(curr).removeClass('temp');
       $(next).addClass('temp');
+      $('#projectDetails').addClass('temp');
     }
+
 }
 
-function showGallery(curr, next) {
-
-    $(curr).fadeOut(1000, function() {
-        $('#wrap').fadeIn();
-    });
-    crossFadePc('.home-ul',next);
-}
+// function showGallery(curr, next) {
+//
+//     $(curr).fadeOut(1000, function() {
+//         $('#wrap').fadeIn();
+//     });
+//     crossFadePc('.home-ul',next);
+// }
 
 function showHomePage(curr){
   newUrl = window.location + 'portfolio';
@@ -75,42 +62,4 @@ function showHomePage(curr){
       window.location = newUrl;
   });
 });
-}
-
-function showGalleryItems(curr,next){
-//  newUrl = window.location + 'portfolio';
-  $.ajax({
-    url:'/portfolio',
-    type:'GET',
-    success:function(data){
-      console.log(data);
-      $("html").load();
-
-    }
-
-
-
-  });
-
-
-
-
-
-
-    //
-    // $("body").fadeOut(1000, function() {
-    //     window.location = newUrl;
-    //
-    // });
-    //
-    // sucess:function(result){
-    //   console.log(result + ' works');
-    // }
-
-
-
-
-
-  //crossFadePc('.home-ul',next);
-
 }
