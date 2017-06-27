@@ -103,9 +103,10 @@
 	.landing-page{
 		display:block;
 		max-width: 1920px;
-		width:80%;
-		margin: 0 auto;
-		margin-top:38%;
+		width:100%;
+		height:100%;
+		position:absolute;
+
 	}
 
 
@@ -239,6 +240,7 @@
 	}
 
 
+
 	.carousel { z-index: -99; } /* keeps this behind all content */
  .carousel .item {
      position: fixed;
@@ -329,9 +331,9 @@
 		width:auto;
 	}
 
-	.landing-page{
+	/*.landing-page{
 		margin-top: 30%;
-	}
+	}*/
 
 	.contact{
 		width:80%;
@@ -360,21 +362,22 @@
   and (max-device-width: 1024px)
   and (-webkit-min-device-pixel-ratio: 1) {
 
+/*
 		.landing-page{
 			margin-top:48%;
 		}
-
+*/
 }
 
 @media only screen
   and (min-device-width: 768px)
   and (max-device-width: 1024px)
   and (-webkit-min-device-pixel-ratio: 1) {
-
+/*
 		.landing-page{
 			margin-top:48%;
 		}
-
+*/
 }
 
 @media only screen
@@ -388,6 +391,7 @@
 
 }
 
+/*
 @media screen and (min-width:1024px){
 	.landing-page{
 		margin-top:28%;
@@ -395,14 +399,14 @@
 
 }
 
-
+*/
 
 @media screen and (min-width:1200px){
-
+/*
 	.landing-page{
 		margin-top:23%;
 	}
-
+*/
 	#nameHeader > h1{
 		font-size: 75px;
 	}
@@ -421,18 +425,19 @@
 }
 
 @media screen and (min-width:1280px){
+	/*
 	.landing-page{
 		margin-top:20%;
 	}
-
+*/
 }
 
 @media screen and (min-width:1440px){
 
-	.landing-page{
+	/*.landing-page{
 		margin-top:20%;
 	}
-
+*/
 	#nameHeader > h1{
 		font-size: 75px;
 	}
@@ -444,11 +449,11 @@
 }
 
 @media screen and (min-width:1660px){
-
+/*
   .landing-page{
 		margin-top:15%;
 	}
-
+*/
 	#admin-info{
 		width:40%;
 	}
