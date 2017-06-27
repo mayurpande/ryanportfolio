@@ -11,27 +11,24 @@ $(document).ready(function(){
 
 function crossfade(curr, next) {
 
-    if($(next).closest('div').hasClass('cycle-slideshow')){
-      $('#projectDetails').fadeOut(700);
-      $(curr).fadeOut(700, function() {
-        $(next).fadeIn(700);
 
-      });
-    }else{
-      $(curr).fadeOut(700, function() {
-        $(next).fadeIn(700);
-        $('#projectDetails').fadeIn(700);
+    $(curr).fadeOut(700, function() {
 
-      });
+      $(next).fadeIn(700);
 
-    }
+    });
+
+
 
     if($(curr).closest('div').hasClass('tempActive')){
      $(curr).removeClass('tempActive');
      $(next).closest('li').addClass('tempActive');
-    }else if($(curr).closest('li').hasClass('tempActive')){
+     //$('#projectDetails').addClass('tempActive');
+   }else if($(curr).closest('li').hasClass('tempActive')){
       $(curr).removeClass('tempActive');
       $(next).addClass('tempActive');
+      //$('#projectDetails').addClass('tempActive');
+
     }
 }
 

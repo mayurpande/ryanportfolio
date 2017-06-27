@@ -34,15 +34,19 @@
     {% endfor %}
   </ul>
 
+
   {% for homeItem in homePage %}
-    {% if homeItem.ul_id != "home-ul" %}
-      <div id="projectDetails" class="{{ homeItem.ul_id }}">
+    {% if homeItem.ul_id != "home-ul" and homeItem.gallery_text %}
+
+      <div id="projectDetails" class={{ homeItem.ul_id }}>
         {% autoescape false %}
           {{ homeItem.gallery_text }}
         {% endautoescape %}
       </div>
+
     {% endif %}
   {% endfor %}
+
 
   <ul class="ul-list lightBox">
     {% for homeItem in homePage %}
