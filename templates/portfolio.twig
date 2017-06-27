@@ -12,55 +12,52 @@
       data-cycle-manual-fx="scrollHorz"
       data-cycle-swipe=true
       data-cycle-manual-speed="200" id="home-slide"> <!--data-cycle-slides="li"> -->
-  	{% for homeItem in homePage %}
       <div class="cycle-overlay"></div>
+  	{% for homeItem in homePage %}
       {% if homeItem.ul_id == "home-ul" %}
               <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" data-cycle-title="{{ homeItem.next_ul }}" data-cycle-desc="" onclick='crossfade("#home-slide", ".{{ homeItem.next_ul }}")' />
-
       {% endif %}
-
-
     {% endfor %}
-
   </div>
 
   <ul class="ul-list homeUl">
     {% for homeItem in homePage %}
-      {% if homeItem.ul_id == "home-ul" %}
+      {% if homeItem.ul_id == 'home-ul' %}
         <li class="{{ homeItem.ul_id }} temp" id="{{ homeItem.id }}" onclick='crossFadePc(".temp", ".{{ homeItem.next_ul }}")'>
           <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
           <div class="textHover"></div>
           <div class="itemsText">
             <p>{{ homeItem.next_ul }}</p>
           </div>
-
         </li>
-
-
       {% endif %}
     {% endfor %}
   </ul>
 
 
+  {% for homeItem in homePage %}
+    {% if homeItem.ul_id != "home-ul" and homeItem.gallery_text %}
 
- <div id="projectDetails">Some text</div>
+      <div id="projectDetails" class={{ homeItem.ul_id }}>
+        {% autoescape false %}
+          {{ homeItem.gallery_text }}
+        {% endautoescape %}
+      </div>
 
-
+    {% endif %}
+  {% endfor %}
 
 
   <ul class="ul-list lightBox">
-
     {% for homeItem in homePage %}
-
       {% if homeItem.ul_id != "home-ul" %}
         <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
           <a href="img/{{ homeItem.high_res_img }}" data-lightbox="{{ homeItem.ul_id }}" data-title="{{ homeItem.lightbox_text }}">
-            <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
+              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
           </a>
         </li>
       {% endif %}
     {% endfor %}
   </ul>
-
 
 {% endblock %}
