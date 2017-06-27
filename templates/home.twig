@@ -7,21 +7,9 @@
 {% block landing %}
 
 <div class="landing-page">
-<div id="nameHeader"  onclick='showHomePage(".landing-page")'>
-  <h1>Ryan O Toole Collett</h1>
-</div>
-<div id="moving-line"></div>
-<div id="galleryNames">
-
-  {% for homeItem in homePage %}
-    {% if homeItem.ul_id == "home-ul" %}
-      <div class="galleryItems" onclick='showGalleryItems(".landing-page", ".{{ homeItem.next_ul }}")'>
-        {{ homeItem.next_ul }}
-      </div>
-    {% endif %}
-  {% endfor %}
-</div>
-
+  <div id="nameHeader"  onclick='showHomePage(".landing-page")'>
+    <h1>Ryan O Toole Collett</h1>
+  </div>
 </div>
 
 {% endblock %}
