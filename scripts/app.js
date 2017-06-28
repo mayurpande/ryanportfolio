@@ -50,9 +50,10 @@ function crossfade(curr, next) {
 }
 
 function crossFadePc(curr, next) {
-    $(curr).fadeOut(700, function() {
-      $(next).fadeIn(700);
+    $(curr).fadeOut(700,function() {
+      $(next).fadeIn(1000);
     });
+
     if($(curr).closest('li').hasClass('temp')){
       $(curr).removeClass('temp');
       $(next).addClass('temp');
