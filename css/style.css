@@ -137,6 +137,13 @@ HEADER
   margin-left: 8px;
 }
 
+.enterSite{
+  display:none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 /****************************
  * ADMIN PAGE (INNERBOX)

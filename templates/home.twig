@@ -9,7 +9,29 @@
 <div class="landing-page">
   <div id="nameHeader"  onclick='showHomePage(".landing-page")'>
     <h1>Ryan O Toole Collett</h1>
+
+
   </div>
+  <button class="enterSite" onclick='showHomePage(".landing-page")'>Enter</button>
 </div>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+$(document).ready(function(){
+
+  var timeout = null;
+  $(document).mousemove(function(event){
+      clearTimeout(timeout);
+      $(".enterSite").fadeIn(700);
+      timeout = setTimeout(function(){
+        $(".enterSite").fadeOut(700);
+      },5000);
+
+  });
+
+});
+</script>
 {% endblock %}
