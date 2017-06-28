@@ -23,7 +23,6 @@ $(document).ready(function(){
    $('.landing-page').css('background','url(' + '/img/' + images[x] + ') no-repeat center');
    $('.landing-page').css('background-size','cover');
 
-
 });
 
 function crossfade(curr, next) {
