@@ -9,7 +9,19 @@
 <div class="landing-page">
   <div id="nameHeader"  onclick='showHomePage(".landing-page")'>
     <h1>Ryan O Toole Collett</h1>
+
+
   </div>
+  <button class="test" onclick='showHomePage(".landing-page")'>Enter</button>
 </div>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(document).mousemove(function(event){
+      $(".test").css('display','block');
+  });
+});
+</script>
 {% endblock %}
