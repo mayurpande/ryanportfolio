@@ -66,6 +66,12 @@ HEADER
 
 .cycle-slideshow{
 	margin-top:110px;
+  width:100%;
+}
+
+.cycle-slideshow img {
+  width:100%;
+  height:auto;
 }
 
 .ul-list{
@@ -115,9 +121,10 @@ HEADER
     left: 0;
     right: 0;
     z-index: 999;
-    color: #FFF;
-    background-color: #000;
-    opacity: 0.5;
+    color: #fff;
+    text-align: center;
+    font-size: 1.6em;
+
 }
 
 
