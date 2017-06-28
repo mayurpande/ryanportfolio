@@ -12,16 +12,26 @@
 
 
   </div>
-  <button class="test" onclick='showHomePage(".landing-page")'>Enter</button>
+  <button class="enterSite" onclick='showHomePage(".landing-page")'>Enter</button>
 </div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script type="text/javascript">
+
+
 $(document).ready(function(){
+
+  var timeout = null;
   $(document).mousemove(function(event){
-      $(".test").css('display','block');
+      clearTimeout(timeout);
+      $(".enterSite").fadeIn(700);
+      timeout = setTimeout(function(){
+        $(".enterSite").fadeOut(700);
+      },5000);
+
   });
+
 });
 </script>
 {% endblock %}
