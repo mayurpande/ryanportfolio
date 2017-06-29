@@ -184,6 +184,27 @@ class AdminController extends Controller{
 
 	}
 
+	//create contact page Info
+	public function getNewContactCreate($request,$response){
+		return $this->view->render($response,'admin-contact.twig');
+	}
+
+	public function postNewContactCreate($request,$response){
+
+				$newContactItem = Contact_Page::create([
+							'about_us' => $request->getParam('about_us')
+
+					]);
+				if ($newContactItem) {
+								$this->flash->addMessage('success','You have created new about us section');
+								return $response->withRedirect($this->router->pathFor('admin.update'));
+				} else {
+								$this->flash->addMessage('error','You have not created new about us section');
+								return $response->withRedirect($this->router->pathFor('admin.update'));
+				}
+
+	}
+
 
 
 }
