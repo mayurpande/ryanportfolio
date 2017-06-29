@@ -15,6 +15,6 @@ class Contact_Page extends Model{
 	protected $table = 'contact_page';
 
 	protected $fillable = [
-		'about_us',
+		'about_text',
 	];
 }
