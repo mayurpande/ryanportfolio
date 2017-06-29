@@ -192,19 +192,23 @@ class AdminController extends Controller{
 
 	public function postNewContactCreate($request,$response){
 
-				$newContactItem = Contact_Page::create([
-							'about_us' => $request->getParam('about_us')
+			$newContactItem = Contact_Page::where("id",1)->first();
 
-					]);
-				if ($newContactItem) {
-								$this->flash->addMessage('success','You have created new about us section');
-								return $response->withRedirect($this->router->pathFor('admin.update'));
-				} else {
-								$this->flash->addMessage('error','You have not created new about us section');
-								return $response->withRedirect($this->router->pathFor('admin.update'));
-				}
+			$contactData = array(
+				'about_text' => $request->getParam('about_text')
 
-	}
+			);
+
+
+			if ($newContactItem->fill($contactData) && $newContactItem->save()) {
+							$this->flash->addMessage('success','You have created new about us section');
+							return $response->withRedirect($this->router->pathFor('admin.update'));
+			} else {
+							$this->flash->addMessage('error','You have not created new about us section');
+							return $response->withRedirect($this->router->pathFor('admin.update'));
+			}
+
+	 }
 
 
 
