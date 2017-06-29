@@ -9,8 +9,10 @@
 
 			<div class="contact">
 
-				{% autoescape 'html' %}
-					{{ contactPage }}
+				{% autoescape false %}
+					{% for contactItem in contactPage %}
+						{{ contactItem.about_text }}
+					{% endfor %}
 				{% endautoescape %}
 
 				<h2>Contact</h2>
