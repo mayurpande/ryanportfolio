@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 
 use App\Models\Home_Page;
+use App\Models\Contact_Page;
 
 use App\Controllers\Controller;
 use Illuminate\Database\Capsule\Manager as DB;
