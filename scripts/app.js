@@ -23,6 +23,8 @@ $(document).ready(function(){
    $('.landing-page').css('background','url(' + '/img/' + images[x] + ') no-repeat center');
    $('.landing-page').css('background-size','cover');
 
+   
+
 });
 
 function crossfade(curr, next) {
@@ -78,4 +80,19 @@ function showHomePage(curr){
       window.location = newUrl;
   });
 });
+}
+
+function showGalleryMobile(curr,next){
+
+  $.ajax({
+    method:"GET",
+    url:'/portfolio',
+    success:function(response){
+      window.location.href = './portfolio#' + next;
+      crossfade('.tempActive',next);
+    }
+
+  });
+
+
 }
