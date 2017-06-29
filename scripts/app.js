@@ -23,8 +23,6 @@ $(document).ready(function(){
    $('.landing-page').css('background','url(' + '/img/' + images[x] + ') no-repeat center');
    $('.landing-page').css('background-size','cover');
 
-
-
 });
 
 function crossfade(curr, next) {
@@ -37,11 +35,11 @@ function crossfade(curr, next) {
     if($(curr).closest('div').hasClass('tempActive')){
      $(curr).removeClass('tempActive');
      $(next).closest('li').addClass('tempActive');
-     //$('#projectDetails').addClass('tempActive');
+
    }else if($(curr).closest('li').hasClass('tempActive')){
       $(curr).removeClass('tempActive');
       $(next).addClass('tempActive');
-      //$('#projectDetails').addClass('tempActive');
+
 
     }
 }
