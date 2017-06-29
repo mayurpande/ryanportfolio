@@ -71,6 +71,11 @@ $app->group('', function () {
 
     $this->post('/admin-upload-image','ImageController:postImageUpload');
 
+    $this->get('/admin-contact','AdminController:getNewContactCreate')->setName('adminContact.create');
+
+    $this->post('/admin-contact','AdminController:postNewContactCreate');
+
+
 /*    $this->get('/admin-upload-image','SiriusController:getImageUpload')->setName('adminUpload.update');
 
     $this->post('/admin-upload-image','SiriusController:postImageUpload');
