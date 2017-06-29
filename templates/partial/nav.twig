@@ -83,11 +83,26 @@
 
 						<li><a href="{{ path_for('contact') }}">Contact</a></li>
 						<li><a href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
+
+
+
 						{% for homeItem in homePage %}
-							{% if homeItem.ul_id == "home-ul" %}
+
+							{% if homeItem.ul_id == 'home-ul'%}
+
 								<li class="hideNavItems" onclick='crossfade(".tempActive", ".{{ homeItem.next_ul }}")'><a>{{ homeItem.next_ul }}</a></li>
+
+
+							{% elseif active_page == 'contact' and homeItem.next_ul is not null %}
+
+								<li onclick='crossfade(".tempActive", ".{{ homeItem.next_ul }}")'><a>{{ homeItem.next_ul }}</a></li>
+
 							{% endif %}
+
 						{% endfor %}
+
+
+
 
 						{% if auth.check %}
 
