@@ -20,7 +20,7 @@ class ContactUsController extends Controller{
 		foreach($homePage as $id){
 			$homeItem = $id->id;
 		}
-		return $this->view->render($response, 'contact-us.twig'[
+		return $this->view->render($response, 'contact-us.twig',[
         'homePage' => $homePage,
         'homeItem' => $homeItem
 
