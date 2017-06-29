@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 //import model name
 use App\Models\Home_Page;
+use App\Models\Contact_Page;
 
 //necessary because we are passing slim views instance
 use Slim\Views\Twig as View;
@@ -16,13 +17,19 @@ class ContactUsController extends Controller{
 	//we now have access to our whole container because we have the container in our base controller
 
 		$homePage = Home_Page::all();
+		$contactPage = Contact_Page::all();
 
 		foreach($homePage as $id){
 			$homeItem = $id->id;
 		}
+		foreach($contactPage as $id){
+			$contactItem = $id->id;
+		}
 		return $this->view->render($response, 'contact-us.twig',[
         'tPage' => $homePage,
-        'tItem' => $homeItem
+        'tItem' => $homeItem,
+				'contactPage' => $contactPage,
+				'contactItem' => $contactItem
 
     ]);
 	}
