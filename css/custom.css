@@ -15,9 +15,7 @@ BOOTSTRAP CUSTOM OVERIDES
 .navbar-right{
   display:block !important;
 }
-.dropdown-menu{
-  display:block !important;
-}
+
 
 #navInsta{
   float:right;
