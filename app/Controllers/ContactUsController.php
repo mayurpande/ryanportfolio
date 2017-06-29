@@ -21,8 +21,8 @@ class ContactUsController extends Controller{
 			$homeItem = $id->id;
 		}
 		return $this->view->render($response, 'contact-us.twig',[
-        'homePage' => $homePage,
-        'homeItem' => $homeItem
+        'tPage' => $homePage,
+        'tItem' => $homeItem
 
     ]);
 	}
