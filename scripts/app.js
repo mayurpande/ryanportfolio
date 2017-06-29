@@ -23,19 +23,16 @@ $(document).ready(function(){
    $('.landing-page').css('background','url(' + '/img/' + images[x] + ') no-repeat center');
    $('.landing-page').css('background-size','cover');
 
+
+
 });
 
 function crossfade(curr, next) {
 
 
     $(curr).fadeOut(700, function() {
-
       $(next).fadeIn(700);
-
-
     });
-
-
 
     if($(curr).closest('div').hasClass('tempActive')){
      $(curr).removeClass('tempActive');
@@ -62,20 +59,10 @@ function crossFadePc(curr, next) {
 
 }
 
-// function showGallery(curr, next) {
-//
-//     $(curr).fadeOut(1000, function() {
-//         $('#wrap').fadeIn();
-//     });
-//     crossFadePc('.home-ul',next);
-// }
 
-function showHomePage(curr){
-  newUrl = window.location + 'portfolio';
-  $(curr).click(function() {
+function showHomePage(){
   $("body").fadeOut(1000, function() {
       $('body').css('background','none');
-      window.location = newUrl;
+      window.location.href = "./portfolio";
   });
-});
 }
