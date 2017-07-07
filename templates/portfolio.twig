@@ -37,27 +37,26 @@
   </ul>
 
 
-  {% for homeItem in homePage %}
-    {% if homeItem.ul_id != "home-ul" and homeItem.gallery_text %}
-
-      <div id="projectDetails" class={{ homeItem.ul_id }}>
-        {% autoescape false %}
-          {{ homeItem.gallery_text }}
-        {% endautoescape %}
-      </div>
-
-    {% endif %}
-  {% endfor %}
-
 
   <ul class="ul-list lightBox">
     {% for homeItem in homePage %}
       {% if homeItem.ul_id != "home-ul" %}
-        <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
-          <a href="img/{{ homeItem.high_res_img }}" data-lightbox="{{ homeItem.ul_id }}" data-title="{{ homeItem.lightbox_text }}">
-              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
-          </a>
-        </li>
+
+        {% if homeItem.ul_update_no == 0 %}
+          <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}" style="width:100%;">
+            <div>
+                {% autoescape false %}
+                  {{ homeItem.home_img }}
+                {% endautoescape %}
+            </div>
+          </li>
+        {% else %}
+          <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
+            <a href="img/{{ homeItem.high_res_img }}" data-lightbox="{{ homeItem.ul_id }}" data-title="{{ homeItem.lightbox_text }}">
+                <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
+            </a>
+          </li>
+          {% endif %}
       {% endif %}
     {% endfor %}
   </ul>

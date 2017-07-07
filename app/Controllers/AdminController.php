@@ -101,7 +101,7 @@ class AdminController extends Controller{
 
 		foreach($c as $obj){
 
-			$ulCount = $obj['count'] + 1;
+			$ulCount = $obj['count'];
 
 			$gallery = Home_Page::create([
 						'home_img' => $request->getParam('home_img'),
@@ -165,17 +165,27 @@ class AdminController extends Controller{
 	}
 
 	public function postNewGalleryCreate($request,$response){
+				$ul_update_no_text = 0;
+				$ul_update_no_first = 1;
 
-				$ul_update_no = 1;
-        $newGalleryItem = Home_Page::create([
-              'home_img' => $request->getParam('home_img'),
-              'ul_id' => $request->getParam('ul_id'),
+				$newGalleryText = Home_Page::create([
+              'home_img' => $request->getParam('gallery_text'),
+							'ul_id' => $request->getParam('ul_id'),
+							'ul_update_no' => $ul_update_no_text
+
+        ]);
+
+				$newGalleryItem = Home_Page::create([
+							'home_img' => $request->getParam('home_img'),
+							'ul_id' => $request->getParam('ul_id'),
 							'high_res_img' => $request->getParam('high_res_img'),
-							'ul_update_no' => $ul_update_no,
-							'lightbox_text' => $request->getParam('lightbox_text'),
-							'gallery_text' => $request->getParam('gallery_text')
-          ]);
-        if ($newGalleryItem) {
+							'ul_update_no' => $ul_update_no_first,
+							'lightbox_text' => $request->getParam('lightbox_text')
+					]);
+
+
+
+        if ($newGalleryText && $newGalleryItem) {
                 $this->flash->addMessage('success','You have created new gallery ' . $newGalleryItem->ul_id . '.');
                 return $response->withRedirect($this->router->pathFor('admin.update'));
         } else {

@@ -6,6 +6,7 @@ $(document).ready(function(){
       }
    });
 
+
    var images = [
      'home1.jpg',
      'home2.jpg',
@@ -27,19 +28,18 @@ $(document).ready(function(){
 
 function crossfade(curr, next) {
 
-
     $(curr).fadeOut(700, function() {
       $(next).fadeIn(700);
+
     });
 
     if($(curr).closest('div').hasClass('tempActive')){
      $(curr).removeClass('tempActive');
      $(next).closest('li').addClass('tempActive');
 
-   }else if($(curr).closest('li').hasClass('tempActive')){
+    }else if($(curr).closest('li').hasClass('tempActive')){
       $(curr).removeClass('tempActive');
       $(next).addClass('tempActive');
-
 
     }
 }
@@ -52,7 +52,6 @@ function crossFadePc(curr, next) {
     if($(curr).closest('li').hasClass('temp')){
       $(curr).removeClass('temp');
       $(next).addClass('temp');
-      $('#projectDetails').addClass('temp');
     }
 
 }
