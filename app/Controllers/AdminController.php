@@ -101,7 +101,7 @@ class AdminController extends Controller{
 
 		foreach($c as $obj){
 
-			$ulCount = $obj['count'] + 1;
+			$ulCount = $obj['count'];
 
 			$gallery = Home_Page::create([
 						'home_img' => $request->getParam('home_img'),
@@ -145,13 +145,13 @@ class AdminController extends Controller{
 
     if ($galleryUpdate->fill($galleryUpdateData) && $galleryUpdate->save()) {
 
-        $this->flash->addMessage('success','You have updated ' . $galleryUpdate->ul_id . ' gallery at id no ' . ($galleryUpdate->ul_update_no - 1) . '.');
+        $this->flash->addMessage('success','You have updated ' . $galleryUpdate->ul_id . ' gallery at id no ' . $galleryUpdate->ul_update_no . '.');
 
         return $response->withRedirect($this->router->pathFor('admin.update'));
 
     } else {
 
-        $this->flash->addMessage('error','You have not updated ' . $galleryUpdate->ul_id . ' gallery at id no ' . ($galleryUpdate->ul_update_no - 1) . '.');
+        $this->flash->addMessage('error','You have not updated ' . $galleryUpdate->ul_id . ' gallery at id no ' . $galleryUpdate->ul_update_no . '.');
 
         return $response->withRedirect($this->router->pathFor('admin.update'));
     }
