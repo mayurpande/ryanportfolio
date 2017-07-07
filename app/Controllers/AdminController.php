@@ -169,7 +169,7 @@ class AdminController extends Controller{
 				$ul_update_no_first = 1;
 
 				$newGalleryText = Home_Page::create([
-              'home_img' => $request->getParam('gallery_text'),
+              'gallery_text' => $request->getParam('gallery_text'),
 							'ul_id' => $request->getParam('ul_id'),
 							'ul_update_no' => $ul_update_no_text
 
