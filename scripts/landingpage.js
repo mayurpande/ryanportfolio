@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $("#nameHeader").animate({
         'opacity': '1'
-    },4000);
+    },2000);
 
   $("#galleryNames").animate({
         'opacity': '1'
