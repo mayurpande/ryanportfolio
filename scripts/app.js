@@ -24,6 +24,17 @@ $(document).ready(function(){
    $('.landing-page').css('background','url(' + '/img/' + images[x] + ') no-repeat center');
    $('.landing-page').css('background-size','cover');
 
+   $(window).on('load resize',function(event){
+     event.preventDefault();
+
+     if($(window).width() < 768 && window.location.href == 'http://ryanotoolecollett.com/'){
+
+       window.location.href = "http://ryanotoolecollett.com/portfolio";
+
+     }
+
+   });
+
 });
 
 function crossfade(curr, next) {
@@ -58,7 +69,7 @@ function crossFadePc(curr, next) {
 
 
 function showHomePage(){
-  $("body").fadeOut(1000, function() {
+  $("body").fadeOut(700, function() {
       $('body').css('background','none');
       window.location.href = "./portfolio";
   });
