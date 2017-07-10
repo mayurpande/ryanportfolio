@@ -15,7 +15,7 @@
       <div class="cycle-overlay"></div>
   	{% for homeItem in homePage %}
       {% if homeItem.ul_id == "home-ul" %}
-              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" data-cycle-title="{{ homeItem.next_ul }}" data-cycle-desc="" onclick='crossfade("#home-slide", ".{{ homeItem.next_ul }}")' />
+              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" data-cycle-title="{{ homeItem.next_ul }}" data-cycle-desc="" onclick='javascript:crossfade("#home-slide", ".{{ homeItem.next_ul }}")' />
       {% endif %}
     {% endfor %}
   </div>
@@ -25,13 +25,15 @@
   <ul class="ul-list homeUl">
     {% for homeItem in homePage %}
       {% if homeItem.ul_id == 'home-ul' %}
-        <li class="{{ homeItem.ul_id }} temp" id="{{ homeItem.id }}" onclick='crossFadePc(".temp", ".{{ homeItem.next_ul }}")'>
+      <a href='javascript:crossFadePc(".temp", ".{{ homeItem.next_ul }}")'>
+        <li class="{{ homeItem.ul_id }} temp" id="{{ homeItem.id }}" >
           <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
           <div class="textHover"></div>
           <div class="itemsText">
             <p>{{ homeItem.next_ul }}</p>
           </div>
         </li>
+      </a>
       {% endif %}
     {% endfor %}
   </ul>
@@ -43,7 +45,7 @@
       {% if homeItem.ul_id != "home-ul" %}
 
         {% if homeItem.ul_update_no == 0 %}
-          <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}" style="width:100%;">
+          <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}" style="width:97%;">
             <div>
                 {% autoescape false %}
                   {{ homeItem.gallery_text }}
