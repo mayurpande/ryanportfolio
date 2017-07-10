@@ -14,7 +14,7 @@
 						{% else %}
 							class="navbar-brand navbar-custom"
 						{% endif %}>
-							Ryan O Toole Collett
+							Ryan O'Toole Collett
 					</a>
 
 					<a id="tabPcHome" href='{{ path_for('portfolio') }}'
@@ -23,27 +23,27 @@
 						{% else %}
 							class="navbar-brand navbar-custom"
 						{% endif %}>
-							Ryan O Toole Collett
+							Ryan O'Toole Collett
 					</a>
 
 			{% else %}
 
-					<a id="mobHome" onclick='crossfade(".tempActive", ".cycle-slideshow")'
+					<a id="mobHome" href='javascript:crossfade(".tempActive", ".cycle-slideshow")'
 						{% if active_page == 'home' %}
 							class="navbar-brand navbar-custom"
 						{% else %}
 							class="navbar-brand navbar-custom"
 						{% endif %}>
-							Ryan O Toole Collett
+							Ryan O'Toole Collett
 					</a>
 
-					<a id="tabPcHome" onclick='crossFadePc(".temp", ".home-ul")'
+					<a id="tabPcHome" href='javascript:crossFadePc(".temp", ".home-ul")'
 						{% if active_page == 'home' %}
 							class="navbar-brand navbar-custom"
 						{% else %}
 							class="navbar-brand navbar-custom"
 						{% endif %}>
-							Ryan O Toole Collett
+							Ryan O'Toole Collett
 
 					</a>
 
@@ -125,6 +125,8 @@
 		              <li><a href="{{ path_for('adminGallery.update') }}">Update Gallery</a></li>
 
 		              <li><a href="{{ path_for('adminNewGallery.create') }}">Add New Gallery</a></li>
+									<li><a href="{{ path_for('adminContact.create') }}">Add/update contact</a></li>
+
 
 
 									<li><a href="{{ path_for('adminUpload.update') }}">Upload Image</a></li>

@@ -47,3 +47,7 @@ BOOTSTRAP CUSTOM OVERIDES
 
     color:rgb(7,50,150);
 }
+
+a:hover{
+  text-decoration: none;
+}
