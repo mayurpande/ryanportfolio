@@ -12,10 +12,9 @@
       data-cycle-manual-fx="scrollHorz"
       data-cycle-swipe=true
       data-cycle-manual-speed="200" id="home-slide"> <!--data-cycle-slides="li"> -->
-      <div class="cycle-overlay"></div>
   	{% for homeItem in homePage %}
       {% if homeItem.ul_id == "home-ul" %}
-              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" data-cycle-title="{{ homeItem.next_ul }}" data-cycle-desc="" onclick='javascript:crossfade("#home-slide", ".{{ homeItem.next_ul }}")' />
+              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" onclick='javascript:crossfade("#home-slide", ".{{ homeItem.next_ul }}")' />
       {% endif %}
     {% endfor %}
   </div>
