@@ -16,6 +16,14 @@
 		font-size: 18px;
 	}
 
+	.contact-info li.phone a {
+		font-size:1.5em;
+	}
+
+	.contact-info li.email a {
+		font-size:1.5em;
+	}
+
 }
 
 
