@@ -82,8 +82,8 @@
 
 					<ul class="nav navbar-nav">
 
-						<li><a href="{{ path_for('contact') }}">Contact</a></li>
-						<li><a href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
+						<li><a data-toggle="collapse" data-target=".in" href="{{ path_for('contact') }}">Contact</a></li>
+						<li><a data-toggle="collapse" data-target=".in" href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
 
 
 
@@ -91,7 +91,7 @@
 
 							{% if homeItem.ul_id == 'home-ul'%}
 
-								<li class="hideNavItems" onclick='crossfade(".tempActive", ".{{ homeItem.next_ul }}")'><a>{{ homeItem.next_ul }}</a></li>
+								<li class="hideNavItems" onclick='crossfade(".tempActive", ".{{ homeItem.next_ul }}")'><a data-toggle="collapse" data-target=".in">{{ homeItem.next_ul }}</a></li>
 
 							{% endif %}
 
@@ -101,7 +101,7 @@
 
 							{% if active_page == 'contact' and tItem.next_ul is not null %}
 
-								<li class="hideNavItems" onclick='showHomePage()'><a>{{ tItem.next_ul }}</a></li>
+								<li class="hideNavItems" onclick='showHomePage()'><a data-toggle="collapse" data-target=".in">{{ tItem.next_ul }}</a></li>
 
 							{% endif %}
 
