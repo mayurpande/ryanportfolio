@@ -50,10 +50,6 @@
         margin-top:0;
     }
 
-    .footer{
-			bottom: -50px;
-		}
-
 		#overlay{
 			position:fixed;
 		}
@@ -201,9 +197,6 @@
 		display:block;
 	}
 
-	.footer{
-		display:none;
-	}
 
 	#navInsta{
 		display:none;
@@ -232,6 +225,10 @@
 	.row{
 		width:50%;
 	}
+
+	.homeUl a{
+		text-decoration: none;
+	}
 }
 
 @media screen and (min-width: 940px){
@@ -256,9 +253,6 @@
 		width:50%;
 	}
 
-	.footer{
-		display:none;
-	}
 
 	#misc-ul{
 		margin-top:2.5%;

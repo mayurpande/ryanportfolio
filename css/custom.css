@@ -42,6 +42,7 @@ BOOTSTRAP CUSTOM OVERIDES
 }
 .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a{
   color:rgb(42,42,42);
+  text-decoration: none;
 }
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
 
