@@ -9,16 +9,12 @@
 
 			<div class="contact">
 
-		<!--		{% autoescape false %}-->
+				{% autoescape false %}
 					{% for aboutItem in aboutPage %}
 						{{ aboutItem.about_text }}
 					{% endfor %}
-				<!--{% endautoescape %}-->
+				{% endautoescape %}
 
 			</div>
-
-      {{ aboutPage }}
-
-
 
 {% endblock %}
