@@ -6,6 +6,8 @@ $(document).ready(function(){
       }
    });
 
+   $('a').attr('target','_blank');
+
 
    var images = [
      'home1.jpg',
