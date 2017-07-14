@@ -29,9 +29,8 @@
           <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
           <div class="textHover"></div>
           <div class="itemsText">
-            <!--{% set foo =  homeItem.next_ul |split('-') %}
-            <p>{% for i in foo %}{{ i }} {% endfor %}</p>-->
-            {{ homeItem.next_ul }}
+            {% set foo =  homeItem.next_ul |split('-') %}
+            <p>{% for i in foo %}{{ i }} {% endfor %}</p>
           </div>
         </li>
       </a>
