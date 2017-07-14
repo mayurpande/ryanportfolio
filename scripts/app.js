@@ -40,6 +40,7 @@ $(document).ready(function(){
 function crossfade(curr, next) {
 
     $(curr).fadeOut(700, function() {
+
       $(next).fadeIn(700);
 
     });
@@ -48,9 +49,12 @@ function crossfade(curr, next) {
      $(curr).removeClass('tempActive');
      $(next).closest('li').addClass('tempActive');
 
+
     }else if($(curr).closest('li').hasClass('tempActive')){
       $(curr).removeClass('tempActive');
       $(next).addClass('tempActive');
+
+
 
     }
 }
