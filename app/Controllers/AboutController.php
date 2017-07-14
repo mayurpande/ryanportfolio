@@ -20,6 +20,7 @@ class AboutController extends Controller{
 		foreach($aboutPage as $id){
 			$aboutItem = $id->id;
 		}
+
 		return $this->view->render($response, 'about-us.twig',[
 				'aboutPage' => $aboutPage,
 				'aboutItem' => $aboutItem
