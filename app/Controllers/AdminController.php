@@ -5,6 +5,7 @@ namespace App\Controllers;
 
 use App\Models\Home_Page;
 use App\Models\Contact_Page;
+use App\Models\About_Page;
 
 use App\Controllers\Controller;
 use Illuminate\Database\Capsule\Manager as DB;
@@ -212,10 +213,10 @@ class AdminController extends Controller{
 
 
 			if ($newContactItem->fill($contactData) && $newContactItem->save()) {
-							$this->flash->addMessage('success','You have created new about us section');
+							$this->flash->addMessage('success','You have created new contact section');
 							return $response->withRedirect($this->router->pathFor('admin.update'));
 			} else {
-							$this->flash->addMessage('error','You have not created new about us section');
+							$this->flash->addMessage('error','You have not created new contact section');
 							return $response->withRedirect($this->router->pathFor('admin.update'));
 			}
 
@@ -237,10 +238,10 @@ class AdminController extends Controller{
 
 
 			 if ($newAboutItem->fill($aboutData) && $newAboutItem->save()) {
-							 $this->flash->addMessage('success','You have created new contact section');
+							 $this->flash->addMessage('success','You have created new about section');
 							 return $response->withRedirect($this->router->pathFor('admin.update'));
 			 } else {
-							 $this->flash->addMessage('error','You have not created new contact section');
+							 $this->flash->addMessage('error','You have not created new about section');
 							 return $response->withRedirect($this->router->pathFor('admin.update'));
 			 }
 
