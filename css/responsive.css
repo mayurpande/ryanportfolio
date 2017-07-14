@@ -1,3 +1,32 @@
+@media screen and (min-width: 320px){
+  /************************
+  TWO COLUMN LAYOUT
+  ************************/
+	#mobHome{
+		font-size: 1.15em;
+	}
+
+}
+
+@media screen and (min-width: 375px){
+  /************************
+  TWO COLUMN LAYOUT
+  ************************/
+	#mobHome{
+		font-size: 18px;
+	}
+
+	.contact-info li.phone a {
+		font-size:1.5em;
+	}
+
+	.contact-info li.email a {
+		font-size:1.5em;
+	}
+
+}
+
+
 @media screen and (min-width: 480px){
   /************************
   TWO COLUMN LAYOUT

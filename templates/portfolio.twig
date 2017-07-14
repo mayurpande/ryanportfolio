@@ -12,10 +12,9 @@
       data-cycle-manual-fx="scrollHorz"
       data-cycle-swipe=true
       data-cycle-manual-speed="200" id="home-slide"> <!--data-cycle-slides="li"> -->
-      <div class="cycle-overlay"></div>
   	{% for homeItem in homePage %}
       {% if homeItem.ul_id == "home-ul" %}
-              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" data-cycle-title="{{ homeItem.next_ul }}" data-cycle-desc="" onclick='javascript:crossfade("#home-slide", ".{{ homeItem.next_ul }}")' />
+              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" onclick='javascript:crossfade("#home-slide", ".{{ homeItem.next_ul }}")' />
       {% endif %}
     {% endfor %}
   </div>
@@ -30,7 +29,9 @@
           <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
           <div class="textHover"></div>
           <div class="itemsText">
-            <p>{{ homeItem.next_ul }}</p>
+            <!--{% set foo =  homeItem.next_ul |split('-') %}
+            <p>{% for i in foo %}{{ i }} {% endfor %}</p>-->
+            {{ homeItem.next_ul }}
           </div>
         </li>
       </a>
@@ -53,14 +54,35 @@
             </div>
           </li>
         {% else %}
-          <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
-            <a href="img/{{ homeItem.high_res_img }}" data-lightbox="{{ homeItem.ul_id }}" data-title="{{ homeItem.lightbox_text }}">
-                <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
-            </a>
-          </li>
-          {% endif %}
+            <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
+              <a href="img/{{ homeItem.high_res_img }}" data-lightbox="{{ homeItem.ul_id }}" data-title="{{ homeItem.lightbox_text }}">
+                  <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
+              </a>
+            </li>
+
+        {% endif %}
+
+        <!--<a class="{{ homeItem.ul_id }}" href='javascript:crossfade(".tempActive", ".cycle-slideshow")'>
+          Go Back
+        </a>-->
+
+
+
       {% endif %}
     {% endfor %}
+
+
+
+
+
+
   </ul>
+
+
+
+
+
+
+
 
 {% endblock %}
