@@ -67,8 +67,21 @@
       {% endif %}
     {% endfor %}
 
-        <!--<a class="{{ homeItem.ul_id }}" href='javascript:crossfade(".tempActive", ".cycle-slideshow")'>
-          Go Back
-        </a>-->
+
+   {% for homeItem in homePage %}
+      {% if homeItem.ul_id != "home-ul" %}
+        {% if homeItem.ul_update_no == 0 %}
+          <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}" style="width:97%;">
+            <a href='javascript:crossFadePc(".temp", ".home-ul")' class="pcGoBack">
+              Go Back
+            </a>
+          <!--  <a href='javascript:crossfade(".tempActive", ".cycle-slideshow")' class="mobGoBack">
+              Go Back
+            </a>-->
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    
   </ul>
 {% endblock %}

@@ -68,6 +68,12 @@
 		display: none;
 	}
 
+	.pcGoBack{
+		display:block;
+	}
+	.mobGoBack{
+		display:none;
+	}
 	#mobHome{
 		display:none;
 	}
