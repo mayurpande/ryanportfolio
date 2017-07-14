@@ -91,7 +91,12 @@
 
 							{% if homeItem.ul_id == 'home-ul'%}
 
-								<li class="hideNavItems" onclick='crossfade(".tempActive", ".{{ homeItem.next_ul }}")'><a data-toggle="collapse" data-target=".in">{{ homeItem.next_ul }}</a></li>
+								<li class="hideNavItems" onclick='crossfade(".tempActive", ".{{ homeItem.next_ul }}")'>
+									<a data-toggle="collapse" data-target=".in">
+									{% set foo =  homeItem.next_ul |split('-') %}
+									{% for i in foo %}{{ i }} {% endfor %}
+									</a>
+								</li>
 
 							{% endif %}
 
@@ -101,7 +106,12 @@
 
 							{% if active_page == 'contact' and tItem.next_ul is not null %}
 
-								<li class="hideNavItems" onclick='showHomePage()'><a data-toggle="collapse" data-target=".in">{{ tItem.next_ul }}</a></li>
+								<li class="hideNavItems" onclick='showHomePage()'>
+									<a data-toggle="collapse" data-target=".in">
+									{% set foo =  tItem.next_ul |split('-') %}
+									{% for i in foo %}{{ i }} {% endfor %}
+									</a>
+								</li>
 
 							{% endif %}
 
