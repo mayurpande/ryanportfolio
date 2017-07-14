@@ -1,0 +1,49 @@
+{% extends 'main.twig' %}
+{% set active_page = 'admin' %}
+
+{% block title %}Admin - Update Content{% endblock %}
+
+
+{% block heading %}Create Contact{% endblock %}
+
+{% block admin %}
+
+	<div class="row">
+
+		<div class=".col-md-6 col-md-offset-3 for">
+
+			<div class="panel panel-default">
+
+				<div class="panel-heading">Update About</div>
+
+				<div class="panel-body">
+
+					<form action="{{ path_for('adminAbout.create') }}" method="post" autcomplete="off">
+
+						<div class="form-group{{ errors.email ? ' has-error' : '' }}">
+
+							<label for="about_text">Create about</label>
+
+							<textarea name="about_text" id="about_text" class="text_area" rows="10" cols="80"></textarea>
+
+
+						</div>
+
+
+						<button type="submit" class="btn btn-default">Update About</button>
+
+						{{ csrf.field | raw }}
+
+					</form>
+
+				</div>
+
+
+        </div>
+
+		</div>
+
+	</div>
+
+
+{% endblock %}

@@ -6,7 +6,7 @@ $(document).ready(function(){
       }
    });
 
-   $('a').attr('target','_blank');
+   //$('a').attr('target','_blank');
 
 
    var images = [

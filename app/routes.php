@@ -10,6 +10,8 @@ $app->get('/portfolio','PortfolioController:index')->setName('portfolio');
 
 $app->get('/contact','ContactUsController:index')->setName('contact');
 
+$app->get('/about','AboutController:index')->setName('about');
+
 $app->group('', function () {
     //comment out these two lines - for sigining up another user
     //$this->get('/admin/siginup','AuthController:getSignUp')->setName('auth.signup');
@@ -74,6 +76,10 @@ $app->group('', function () {
     $this->get('/admin-contact','AdminController:getNewContactCreate')->setName('adminContact.create');
 
     $this->post('/admin-contact','AdminController:postNewContactCreate');
+
+    $this->get('/admin-about','AdminController:getNewAboutCreate')->setName('adminAbout.create');
+
+    $this->post('/admin-about','AdminController:postNewAboutCreate');
 
 
 /*    $this->get('/admin-upload-image','SiriusController:getImageUpload')->setName('adminUpload.update');
