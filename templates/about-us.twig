@@ -1,0 +1,22 @@
+{% extends 'main.twig' %}
+
+{% set active_page = 'about' %}
+
+{% block title %}About{% endblock %}
+
+
+{% block contact %}
+
+			<div class="contact">
+
+				{% autoescape false %}
+					{% for aboutItem in aboutPage %}
+						{{ aboutItem.about_text }}
+					{% endfor %}
+				{% endautoescape %}
+
+			</div>
+
+
+
+{% endblock %}
