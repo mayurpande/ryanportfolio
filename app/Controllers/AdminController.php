@@ -221,6 +221,31 @@ class AdminController extends Controller{
 
 	 }
 
+	 //create contact page Info
+	 public function getNewAboutCreate($request,$response){
+		 return $this->view->render($response,'admin-about.twig');
+	 }
+
+	 public function postNewAboutCreate($request,$response){
+
+			 $newAboutItem = About_Page::where("id",1)->first();
+
+			 $aboutData = array(
+				 'about_text' => $request->getParam('about_text')
+
+			 );
+
+
+			 if ($newAboutItem->fill($aboutData) && $newAboutItem->save()) {
+							 $this->flash->addMessage('success','You have created new contact section');
+							 return $response->withRedirect($this->router->pathFor('admin.update'));
+			 } else {
+							 $this->flash->addMessage('error','You have not created new contact section');
+							 return $response->withRedirect($this->router->pathFor('admin.update'));
+			 }
+
+		}
+
 
 
 }
