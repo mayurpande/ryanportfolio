@@ -182,6 +182,7 @@ class AdminController extends Controller{
 							'ul_id' => $request->getParam('ul_id'),
 							'high_res_img' => $request->getParam('high_res_img'),
 							'ul_update_no' => $ul_update_no_first,
+							'font_logo'	=> $request->getParam('font_logo'),
 							'lightbox_text' => $request->getParam('lightbox_text')
 					]);
 
@@ -246,6 +247,8 @@ class AdminController extends Controller{
 			 }
 
 		}
+
+
 
 
 
