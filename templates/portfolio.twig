@@ -24,7 +24,7 @@
   <ul class="ul-list homeUl">
     {% for homeItem in homePage|sort|reverse %}
       {% if homeItem.ul_id == 'home-ul' %}
-      <a href='javascript:crossFadePc(".temp", ".{{ homeItem.next_ul }}")'>
+      <a href='javascript:crossFadePc(".temp", ".{{ homeItem.next_ul }}")' class="links">
         <li class="{{ homeItem.ul_id }} temp" id="{{ homeItem.id }}" >
           <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
           <div class="textHover"></div>
@@ -63,7 +63,7 @@
       {% if homeItem.ul_id != "home-ul" %}
         {% if homeItem.ul_update_no != 0 %}
           <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
-            <a href="img/{{ homeItem.high_res_img }}" data-lightbox="{{ homeItem.ul_id }}" data-title="{{ homeItem.lightbox_text }}">
+            <a href="img/{{ homeItem.high_res_img }}" data-lightbox="{{ homeItem.ul_id }}" data-title="{{ homeItem.lightbox_text }}" class="links">
               <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
             </a>
           </li>
@@ -76,7 +76,7 @@
       {% if homeItem.ul_id != "home-ul" %}
         {% if homeItem.ul_update_no == 0 %}
           <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}" style="width:97%;">
-            <a href='javascript:crossFadePc(".temp", ".home-ul")' class="pcGoBack">
+            <a href='javascript:crossFadePc(".temp", ".home-ul")' class="pcGoBack links">
               Go Back
             </a>
           <!--  <a href='javascript:crossfade(".tempActive", ".cycle-slideshow")' class="mobGoBack">
