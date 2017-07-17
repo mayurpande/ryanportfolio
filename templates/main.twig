@@ -86,7 +86,11 @@
 	<script>CKEDITOR.replaceAll('text_area');</script>
 
 	<script type="text/javascript">
-
+	$("a").each(function(){
+		 if (!$(this).hasClass('links')){
+			 $(this).attr('target','_blank');
+		 }
+	});
 	</script>
 
 	</body>

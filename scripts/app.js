@@ -6,7 +6,9 @@ $(document).ready(function(){
       }
    });
 
-   //$('a').attr('target','_blank');
+
+
+
 
 
    var images = [
@@ -38,6 +40,8 @@ $(document).ready(function(){
    });
 
 });
+
+
 
 function crossfade(curr, next) {
 
