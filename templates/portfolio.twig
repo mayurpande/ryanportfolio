@@ -30,7 +30,7 @@
           <div class="textHover"></div>
           <div class="itemsText">
             {% if homeItem.font_logo %}
-              <img src="img/{{ homeItem.font_logo }}" alt="{{ homeItem.font_logo }}" />
+              <img class="child-img" src="img/{{ homeItem.font_logo }}" alt="{{ homeItem.font_logo }}" />
             {% else %}
               {% set foo =  homeItem.next_ul |split('-') %}
               <p>{% for i in foo %}{{ i }} {% endfor %}</p>
