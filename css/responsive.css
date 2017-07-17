@@ -64,6 +64,8 @@
 
 @media screen and (min-width:768px){
 
+
+
 	.cycle-slideshow{
 		display: none;
 	}
@@ -106,7 +108,7 @@
 		left: 0;
 		right: 0;
 		width:100%;
-		height:calc(100% - 48px);
+		height:calc(100% - 110px);
 		opacity: 0;
 		visibility: hidden;
 		background: rgba(0,0,0,0.5);
@@ -235,6 +237,20 @@
 	.homeUl a{
 		text-decoration: none;
 	}
+
+	.itemsText{
+		display:flex;
+		height:100px;
+
+	}
+
+
+	.itemsText p, .child-img{
+		width:auto;
+		height:auto;
+		margin: auto;
+	}
+
 }
 
 @media screen and (min-width: 940px){
