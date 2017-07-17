@@ -8,7 +8,7 @@
 
 			  {% if active_page == 'admin' or active_page == 'contact' or  active_page == 'about' %}
 
-					<a id="mobHome" href='{{ path_for('portfolio') }}'
+					<a id="mobHome" class="links" href='{{ path_for('portfolio') }}'
 						{% if active_page == 'home' %}
 							class="navbar-brand navbar-custom"
 						{% else %}
@@ -18,7 +18,7 @@
 							Ryan O'Toole Collett
 					</a>
 
-					<a id="tabPcHome" href='{{ path_for('portfolio') }}'
+					<a id="tabPcHome" class="links" href='{{ path_for('portfolio') }}'
 						{% if active_page == 'home' %}
 							class="navbar-brand navbar-custom"
 						{% else %}
@@ -29,7 +29,7 @@
 
 			{% else %}
 
-					<a id="mobHome" href='javascript:crossfade(".tempActive", ".cycle-slideshow")'
+					<a id="mobHome" class="links" href='javascript:crossfade(".tempActive", ".cycle-slideshow")'
 						{% if active_page == 'home' %}
 							class="navbar-brand navbar-custom"
 						{% else %}
@@ -38,7 +38,7 @@
 							Ryan O'Toole Collett
 					</a>
 
-					<a id="tabPcHome" href='javascript:crossFadePc(".temp", ".home-ul")'
+					<a id="tabPcHome" class="links" href='javascript:crossFadePc(".temp", ".home-ul")'
 						{% if active_page == 'home' %}
 							class="navbar-brand navbar-custom"
 						{% else %}
@@ -82,8 +82,8 @@
 
 					<ul class="nav navbar-nav">
 
-						<li><a data-toggle="collapse" data-target=".in" href="{{ path_for('contact') }}">Contact</a></li>
-						<li><a data-toggle="collapse" data-target=".in" href="{{ path_for('about') }}">About</a></li>
+						<li><a data-toggle="collapse" data-target=".in" href="{{ path_for('contact') }}" class="links">Contact</a></li>
+						<li><a data-toggle="collapse" data-target=".in" href="{{ path_for('about') }}" class="links">About</a></li>
 						<li><a data-toggle="collapse" data-target=".in" href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
 
 
@@ -93,7 +93,7 @@
 							{% if homeItem.ul_id == 'home-ul'%}
 
 								<li class="hideNavItems" onclick='crossfade(".tempActive", ".{{ homeItem.next_ul }}")'>
-									<a data-toggle="collapse" data-target=".in">
+									<a data-toggle="collapse" data-target=".in" class="links">
 									{% set foo =  homeItem.next_ul |split('-') %}
 									{% for i in foo %}{{ i }} {% endfor %}
 									</a>
@@ -108,7 +108,7 @@
 							{% if (active_page == 'contact' or active_page == 'about') and tItem.next_ul is not null %}
 
 								<li class="hideNavItems">
-									<a data-toggle="collapse" data-target=".in" href="javascript:showHomePage()">
+									<a data-toggle="collapse" data-target=".in" href="javascript:showHomePage()" class="links">
 									{% set foo =  tItem.next_ul |split('-') %}
 									{% for i in foo %}{{ i }} {% endfor %}
 									</a>
@@ -131,20 +131,20 @@
 								</a>
 
 								<ul class="dropdown-menu">
-									<li><a href="{{ path_for('adminHome.create') }}">Add to Home Page</a></li>
-		              <li><a href="{{ path_for('adminHome.update') }}">Update Home Page</a></li>
-		              <li><a href="{{ path_for('adminGallery.create') }}">Add to Gallery</a></li>
-		              <li><a href="{{ path_for('adminGallery.update') }}">Update Gallery</a></li>
+									<li><a href="{{ path_for('adminHome.create') }}" class="links">Add to Home Page</a></li>
+		              <li><a href="{{ path_for('adminHome.update') }}" class="links">Update Home Page</a></li>
+		              <li><a href="{{ path_for('adminGallery.create') }}" class="links">Add to Gallery</a></li>
+		              <li><a href="{{ path_for('adminGallery.update') }}" class="links">Update Gallery</a></li>
 
-		              <li><a href="{{ path_for('adminNewGallery.create') }}">Add New Gallery</a></li>
-									<li><a href="{{ path_for('adminContact.create') }}">Add/update contact</a></li>
-									<li><a href="{{ path_for('adminAbout.create') }}">Add/update about</a></li>
+		              <li><a href="{{ path_for('adminNewGallery.create') }}" class="links">Add New Gallery</a></li>
+									<li><a href="{{ path_for('adminContact.create') }}" class="links">Add/update contact</a></li>
+									<li><a href="{{ path_for('adminAbout.create') }}" class="links">Add/update about</a></li>
 
 
 
-									<li><a href="{{ path_for('adminUpload.update') }}">Upload Image</a></li>
-									<li><a href="{{ path_for('auth.password.change') }}">Change Password</a></li>
-									<li><a href="{{ path_for('auth.signout') }}">Sign Out</a></li>
+									<li><a href="{{ path_for('adminUpload.update') }}" class="links">Upload Image</a></li>
+									<li><a href="{{ path_for('auth.password.change') }}" class="links">Change Password</a></li>
+									<li><a href="{{ path_for('auth.signout') }}" class="links">Sign Out</a></li>
 
 								</ul>
 
