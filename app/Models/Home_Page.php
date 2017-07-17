@@ -22,5 +22,6 @@ class Home_Page extends Model{
 		'high_res_img',
 		'lightbox_text',
 		'gallery_text',
+		'font_logo',
 	];
 }
