@@ -71,6 +71,7 @@ class AdminController extends Controller{
 				$new_home_data = array(
 					'home_img' => $request->getParam('home_img'),
 					'next_ul' => $request->getParam('next_ul'),
+					'font_logo' => $request->getParam('font_logo'),
 
 					'ul_id' => $ul_id
 				);
