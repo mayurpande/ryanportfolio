@@ -26,7 +26,7 @@ $(document).ready(function(){
      'home12.jpg',
      'home13.jpg',
      'home14.jpg',
-     'home15.jpg',
+     'home15.jpg'
 
    ];
 
