@@ -94,7 +94,8 @@
 	}
 
 	.homeUl{
-		display:inline-block;
+		display:inline;
+
 	}
 
 
@@ -109,7 +110,7 @@
 		left: 0;
 		right: 0;
 		width:100%;
-		height:calc(100% - 110px);
+		height:calc(100% - 80px);
 		opacity: 0;
 		visibility: hidden;
 		background: rgba(0,0,0,0.5);
@@ -133,7 +134,7 @@
 
 	.homeUl li:hover .textHover{
 		visibility: visible;
-		opacity: 1;
+		opacity: 0.8;
 	}
 
 	.landing-page{
@@ -191,6 +192,7 @@
 		float:right;
 		opacity: 0;
 		margin-right:5%;
+		text-decoration: none;
 	}
 
 
@@ -198,13 +200,6 @@
 		color:rgb(7,50,150);
 	}
 
-	.back-mobile{
-		display:none;
-	}
-
-	.back-tablet-pc{
-		display:block;
-	}
 
 
 	#navInsta{
@@ -240,17 +235,20 @@
 	}
 
 	.itemsText{
-		display:flex;
-		height:100px;
+		display:inline-block;
+		vertical-align: middle;
+		height:70px;
+		width:100%;
 
 	}
 
-
-	.itemsText p, .child-img{
-		width:auto;
-		height:auto;
-		margin: auto;
+	.itemsText p{
+		text-align: center;
 	}
+
+
+
+
 
 }
 

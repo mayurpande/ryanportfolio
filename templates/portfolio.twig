@@ -20,7 +20,6 @@
   </div>
 
 
-
   <ul class="ul-list homeUl">
     {% for homeItem in homePage|sort|reverse %}
       {% if homeItem.ul_id == 'home-ul' %}
@@ -44,6 +43,7 @@
 
 
 
+
   <ul class="ul-list lightBox">
     {% for homeItem in homePage %}
       {% if homeItem.ul_id != "home-ul" %}
@@ -59,7 +59,7 @@
       {% endif %}
     {% endfor %}
 
-    {% for homeItem in homePage|sort|reverse %}
+    {% for homeItem in homePage %}
       {% if homeItem.ul_id != "home-ul" %}
         {% if homeItem.ul_update_no != 0 %}
           <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
@@ -88,4 +88,5 @@
     {% endfor %}
 
   </ul>
+
 {% endblock %}
