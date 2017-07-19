@@ -19,6 +19,14 @@ $(document).ready(function(){
      'home5.jpg',
      'home6.jpg',
      'home7.jpg',
+     'home8.jpg',
+     'home9.jpg',
+     'home10.jpg',
+     'home11.jpg',
+     'home12.jpg',
+     'home13.jpg',
+     'home14.jpg',
+     'home15.jpg',
 
    ];
 
