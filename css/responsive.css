@@ -89,9 +89,31 @@
 
 	}
 
+
 	.home-ul{
+
 		display:block;
+		z-index: 5;
 	}
+
+	.t {
+		width:100%;
+		height:150px;
+		object-fit: cover;
+	}
+
+	.t:hover{
+		background:black;
+		opacity: 0.5;
+		z-index:10;
+	}
+
+/*	.home-ul:hover img{
+		opacity:0.8;
+	}
+	.home-ul img{
+		transition: all 0.15 ease-in;
+	}*/
 
 	.homeUl{
 		display:inline;
@@ -103,14 +125,14 @@
 		position:relative;
 	}
 
-	.textHover{
+	/*.textHover{
 		position: absolute;
 		top:0;
 		bottom: 0;
 		left: 0;
 		right: 0;
 		width:100%;
-		height:calc(100% - 80px);
+		height:calc(100% - 117.34px);
 		opacity: 0;
 		visibility: hidden;
 		background: rgba(0,0,0,0.5);
@@ -135,7 +157,7 @@
 	.homeUl li:hover .textHover{
 		visibility: visible;
 		opacity: 0.8;
-	}
+	}*/
 
 	.landing-page{
 		display:block;
@@ -237,7 +259,7 @@
 	.itemsText{
 		display:inline-block;
 		vertical-align: middle;
-		height:70px;
+		/*height:70px;*/
 		width:100%;
 
 	}
@@ -278,6 +300,10 @@
 	#misc-ul{
 		margin-top:2.5%;
 	}
+
+	.t{
+		height:200px;
+	}
 }
 
 
@@ -295,6 +321,13 @@
 
 
 
+
+}
+
+@media screen and (min-width:1350px){
+	.t{
+		height:250px;
+	}
 }
 
 
@@ -308,10 +341,19 @@
 	#admin-info{
 		width:40%;
 	}
+	.t{
+		height:275px;
+	}
 }
 
 @media screen and (min-width:1660px){
 	.textHover{
 		width:99%;
+	}
+}
+
+@media screen and (min-width:1760px){
+	.t{
+		height:350px;
 	}
 }
