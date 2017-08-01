@@ -25,7 +25,8 @@
       {% if homeItem.ul_id == 'home-ul' %}
       <a href='javascript:crossFadePc(".temp", ".{{ homeItem.next_ul }}")' class="links">
         <li class="{{ homeItem.ul_id }} temp" id="{{ homeItem.id }}" >
-          <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
+          <img class="t" src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
+
           <div class="textHover"></div>
           <div class="itemsText">
             {% if homeItem.font_logo %}
