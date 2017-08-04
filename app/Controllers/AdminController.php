@@ -101,7 +101,8 @@ class AdminController extends Controller{
 
         if ($home_page->fill($new_home_data) && $home_page->save()) {
 
-
+					$delNextUl = Home_Page::where("ul_id",$nextUl)->delete();
+					//unlink('img/' . $checkedCheckbox);
 
 
 
