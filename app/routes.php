@@ -83,6 +83,10 @@ $app->group('', function () {
 
     $this->post('/admin-about','AdminController:postNewAboutCreate');
 
+    $this->get('/admin-land','AdminController:getNewLandingCreate')->setName('adminLand.create');
+
+    $this->post('/admin-land','AdminController:postNewLandingCreate');
+
 
 /*    $this->get('/admin-upload-image','SiriusController:getImageUpload')->setName('adminUpload.update');
 
