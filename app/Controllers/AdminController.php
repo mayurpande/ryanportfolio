@@ -6,6 +6,7 @@ namespace App\Controllers;
 use App\Models\Home_Page;
 use App\Models\Contact_Page;
 use App\Models\About_Page;
+use App\Models\Landing_Page;
 
 use App\Controllers\Controller;
 use Illuminate\Database\Capsule\Manager as DB;
@@ -250,6 +251,29 @@ class AdminController extends Controller{
 			 }
 
 		}
+
+		//create contact page Info
+		public function getNewLandingCreate($request,$response){
+			return $this->view->render($response,'admin-landing.twig');
+		}
+
+		public function postNewLandingCreate($request,$response){
+
+			$landing = Landing_Page::create([
+						'landing_img' => $request->getParam('landing_img')
+			]);
+
+			if ($landing) {
+							$this->flash->addMessage('success','You have added image ' . $landing->landing_img . ' to landing page gallery');
+							return $response->withRedirect($this->router->pathFor('admin.update'));
+			} else {
+							$this->flash->addMessage('error','You have not added image ' . $landing->landing_image . ' to landing page gallery');
+							return $response->withRedirect($this->router->pathFor('admin.update'));
+			}
+
+
+
+		 }
 
 
 
