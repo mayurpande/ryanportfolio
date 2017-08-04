@@ -290,10 +290,12 @@ class AdminController extends Controller{
 		 public function postLandingDelete($request,$response){
 			 $checkedCheckboxes = $request->getParam('land_img');
 
+			 $delNumber = [];
 			 foreach($checkedCheckboxes as $checkedCheckbox){
 				  $deleteLandImg = Landing_Page::where("landing_img",$checkedCheckbox)->delete();
+					array_push($delNumber,$deleteLandImg);
 			 }
-			 die();
+
 		 }
 
 
