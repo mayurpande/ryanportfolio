@@ -25,7 +25,7 @@
               {% for landItem in landPage %}
 
 							       {{ landItem.landing_img }}
-                     <input type="checkbox" name="{{ landItem.landing_img }}" id="{{ landItem.landing_img }}" />
+                     <input type="checkbox" name="land_img[]" id="{{ landItem.landing_img }}" value="{{ landItem.landing_img }}" />
                      <br />
 
               {% endfor %}
