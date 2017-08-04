@@ -1,3 +1,36 @@
+@media screen and (min-width: 320px){
+  /************************
+  TWO COLUMN LAYOUT
+  ************************/
+	#mobHome{
+		font-size: 1.15em;
+		position: relative;
+		top:12px;
+		margin-left:5px;
+		text-decoration: none;
+	}
+
+}
+
+@media screen and (min-width: 375px){
+  /************************
+  TWO COLUMN LAYOUT
+  ************************/
+	#mobHome{
+		font-size: 18px;
+	}
+
+	.contact-info li.phone a {
+		font-size:1.5em;
+	}
+
+	.contact-info li.email a {
+		font-size:1.5em;
+	}
+
+}
+
+
 @media screen and (min-width: 480px){
   /************************
   TWO COLUMN LAYOUT
@@ -21,10 +54,6 @@
         margin-top:0;
     }
 
-    .footer{
-			bottom: -50px;
-		}
-
 		#overlay{
 			position:fixed;
 		}
@@ -37,54 +66,186 @@
 
 
 
-
 @media screen and (min-width:768px){
+
+
+
+	.cycle-slideshow{
+		display: none;
+	}
+
+	.pcGoBack{
+		display:block;
+	}
+	.mobGoBack{
+		display:none;
+	}
+	#mobHome{
+		display:none;
+	}
+
+	#tabPcHome{
+		display:block;
+		width:100%;
+		font-size: 40px;
+		text-align: center;
+		text-decoration: none;
+
+	}
+
+
+	.home-ul{
+
+		display:block;
+		z-index: 5;
+	}
+
+	.t {
+		width:100%;
+		height:150px;
+		object-fit: cover;
+	}
+
+	.t:hover{
+		background:black;
+		opacity: 0.5;
+		z-index:10;
+	}
+
+/*	.home-ul:hover img{
+		opacity:0.8;
+	}
+	.home-ul img{
+		transition: all 0.15 ease-in;
+	}*/
+
+	.homeUl{
+		display:inline;
+
+	}
+
+
+	.homeUl li{
+		position:relative;
+	}
+
+	/*.textHover{
+		position: absolute;
+		top:0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width:100%;
+		height:calc(100% - 117.34px);
+		opacity: 0;
+		visibility: hidden;
+		background: rgba(0,0,0,0.5);
+		color:#fff;
+		-webkit-transition: opacity 500ms;
+		-moz-transition: opacity 500ms;
+		-o-transition: opacity 500ms;
+		transition: opacity 500ms;
+
+	}
+
+
+
+	.textHover p{
+		text-align: center;
+		vertical-align: middle;
+		margin-top: 30%;
+		font-size: 20px;
+
+	}
+
+	.homeUl li:hover .textHover{
+		visibility: visible;
+		opacity: 0.8;
+	}*/
+
+	.landing-page{
+		display:block;
+		max-width: 1920px;
+		width:100%;
+		height:100%;
+		position:absolute;
+
+	}
+
+
+	.navbar-header{
+		float:none;
+		width:100%;
+		margin-top:20px;
+
+	}
+
+	.navbar .navbar-nav {
+			display: inline-block !important;
+			float: none;
+			border-top: 1px solid black;
+			color: rgb(42,42,42);
+			margin-top:20px;
+			font-size: 25px;
+			padding-top:8px;
+
+	}
+
+	.navbar .navbar-collapse {
+			text-align: center;
+	}
+
+	.navbar-custom{
+		color:rgb(42,42,42);
+	}
+
+	#wrap{
+		display:none;
+
+	}
 
 	#home-slide{
 		display:none;
 	}
 
-	#home-ul{
-		display:block;
+
+	.hideNavItems{
+		display:none !important;
 	}
 
-	.back-mobile{
+	#nameHeader{
+
+		float:right;
+		opacity: 0;
+		margin-right:5%;
+		text-decoration: none;
+	}
+
+
+	#nameHeader > h1:hover{
+		color:rgb(7,50,150);
+	}
+
+
+
+	#navInsta{
 		display:none;
 	}
 
-	.back-tablet-pc{
-		display:block;
-	}
-
-	.footer{
-		display:none;
-	}
-
-	#wrapper{
+	.wrapper{
 		width:80%;
 	}
 
-	#overlay{
-		position:absolute;
-	}
-	#overlay img{
-		margin-top:30%;
-		width:100%;
-
-	}
 
 	#misc-ul{
 		margin-top:30%;
 	}
 
 	.ul-list li{
-		margin-right:2%;
-	  width:28.3333%;
+		margin:0.5%;
+	  width:31.7%;
 	}
 
-	.ul-list li:nth-child(4n){
-	    clear:left;
-	}
 	.container{
 		margin-left:5px;
 		width:auto;
@@ -95,20 +256,61 @@
 		width:50%;
 	}
 
+	.homeUl a{
+		text-decoration: none;
+	}
+
+	.itemsText{
+		display:inline-block;
+		vertical-align: middle;
+		/*height:70px;*/
+		width:100%;
+
+	}
+
+	.itemsText p{
+		text-align: center;
+	}
+
+
+
+
+
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 940px){
+
+	#overlay img{
+		margin-top:2.5%;
+		width:60%;
+
+	}
 
 	.container{
 		width:auto;
 	}
 
 
+	.contact{
+		width:80%;
+		margin:0 auto;
+	}
 
 	#admin-info{
 		width:50%;
 	}
+
+
+	#misc-ul{
+		margin-top:2.5%;
+	}
+
+	.t{
+		height:200px;
+	}
 }
+
+
 
 @media screen and (min-width:1200px){
 
@@ -116,23 +318,46 @@
 		width:auto;
 	}
 
+	.contact{
+		width:50%;
+		margin:0 auto;
+	}
+
+
 
 
 }
 
+@media screen and (min-width:1350px){
+	.t{
+		height:250px;
+	}
+}
+
+
 @media screen and (min-width:1440px){
-
-
 	#admin-info{
 		width:45%;
 	}
 }
 
 @media screen and (min-width:1660px){
-
-
-
 	#admin-info{
 		width:40%;
+	}
+	.t{
+		height:275px;
+	}
+}
+
+@media screen and (min-width:1660px){
+	.textHover{
+		width:99%;
+	}
+}
+
+@media screen and (min-width:1760px){
+	.t{
+		height:350px;
 	}
 }

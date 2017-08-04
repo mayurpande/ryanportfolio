@@ -4,31 +4,26 @@
 
 {% block title %}Contact Us{% endblock %}
 
-{% block heading %}Contact Us{% endblock %}
 
-{% block content %}
-			<div class="news-image">
-				<div id="map"></div>
-			</div>
-			<div class="verticalLine"></div>
+{% block contact %}
+
 			<div class="contact">
-				<h2>Contact Info</h2>
 
+				{% autoescape false %}
+					{% for contactItem in contactPage %}
+						{{ contactItem.about_text }}
+					{% endfor %}
+				{% endautoescape %}
+
+				<h2>Contact</h2>
 				<ul class="contact-info">
-					<li class="phone"><a href="tel:07340334933">07340334933</a></li>
-					<li class="email"><a href="mailto:toby@decorumbuildingconsultancy.com">toby@decorumbuildingconsultancy.com</a></li>
-					<li class="address">
-						<a href="/contact-us"> 
-							<p>360 Wandsworth Bridge Road</p>
-							<p>London</p>
-							<p>SW6 2TZ</p>
-							<p>England</p>
-						</a>
-					</li>
+					<li class="phone"><a href="tel:07780830375">07780830375</a></li>
+					<li class="email"><a href="mailto:contact@ryanotoolecollett.com">contact@ryanotoolecollett.com</a></li>
+
 
 				</ul>
 			</div>
-			<div class="horizontalLine"></div>
+
 
 
 {% endblock %}

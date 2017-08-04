@@ -5,3 +5,50 @@ BOOTSTRAP CUSTOM OVERIDES
   background-color:#fff;
   border-color:#fff;
 }
+
+.nav{
+  display:block !important;
+}
+.navbar-nav{
+  display:block !important;
+}
+.navbar-right{
+  display:block !important;
+}
+
+
+#navInsta{
+  float:right;
+}
+.insta{
+  display:inline-block !important;
+  list-style: none;
+}
+
+.insta img{
+  margin-bottom:10px;
+}
+
+.navbar-toggle{
+  float:none;
+}
+
+#footer-social{
+  padding-bottom: 8px;
+}
+
+.navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover{
+  color:rgb(7,50,150);
+}
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a{
+  color:rgb(42,42,42);
+  text-decoration: none;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+
+    color:rgb(7,50,150);
+}
+
+a:hover{
+  text-decoration: none;
+}

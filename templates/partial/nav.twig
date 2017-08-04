@@ -1,71 +1,165 @@
-<div class="navbar navbar-default">
+<div class="navbar navbar-default navbar-custom">
 
-	<div class="container">
-
-		<div class="navbar-header">
-
-			<a href="{{ path_for('home') }}"
-				{% if active_page == 'home' %}
-					class="navbar-brand active"
-				{% else %}
-					class="navbar-brand"
-				{% endif %}>
-					Ryan O Toole Collett
-			</a>
+	<!--<div class="container">-->
 
 
-			<!-- <button type="button" class="navbar-toggle" data-toggle="collapse"
-			data-target=".navbar-collapse">-->
 
-			<span class="sr-only">Toggle navigation</span>
+			<div class="navbar-header">
 
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
+			  {% if active_page == 'admin' or active_page == 'contact' or  active_page == 'about' %}
 
-		</div>
+					<a id="mobHome" class="links" href='{{ path_for('portfolio') }}'
+						{% if active_page == 'home' %}
+							class="navbar-brand navbar-custom"
+						{% else %}
+							class="navbar-brand navbar-custom"
+						{% endif %}>
 
-		<div class="collapse navbar-collapse">
+							Ryan O'Toole Collett
+					</a>
 
-			<ul class="nav navbar-nav navbar-right">
+					<a id="tabPcHome" class="links" href='{{ path_for('portfolio') }}'
+						{% if active_page == 'home' %}
+							class="navbar-brand navbar-custom"
+						{% else %}
+							class="navbar-brand navbar-custom"
+						{% endif %}>
+							Ryan O'Toole Collett
+					</a>
 
+			{% else %}
 
-				<li{% if active_page == 'contact' %} class="active"{% endif %}><a href="{{ path_for('contact') }}">Contact</a></li>
-				<li><a href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
-				{% if auth.check %}
+					<a id="mobHome" class="links" href='javascript:crossfade(".tempActive", ".cycle-slideshow")'
+						{% if active_page == 'home' %}
+							class="navbar-brand navbar-custom"
+						{% else %}
+							class="navbar-brand navbar-custom"
+						{% endif %}>
+							Ryan O'Toole Collett
+					</a>
 
+					<a id="tabPcHome" class="links" href='javascript:crossFadePc(".temp", ".home-ul")'
+						{% if active_page == 'home' %}
+							class="navbar-brand navbar-custom"
+						{% else %}
+							class="navbar-brand navbar-custom"
+						{% endif %}>
+							Ryan O'Toole Collett
 
-					<li class="dropdown">
-
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin
-						<span class="caret"></span>
-						</a>
-
-						<ul class="dropdown-menu">
-							<li><a href="{{ path_for('adminHome.create') }}">Add to Home Page</a></li>
-                            <li><a href="{{ path_for('adminHome.update') }}">Update Home Page</a></li>
-                            <li><a href="{{ path_for('adminPortrait.create') }}">Add to Portrait Page</a></li>
-                            <li><a href="{{ path_for('adminPortrait.update') }}">Update Portrait Page</a></li>
-                            
-                            <li><a href="{{ path_for('adminLandscape.create') }}">Add to Lanscape Page</a></li>
-                            <li><a href="{{ path_for('adminLandscape.update') }}">Update Portrait Page</a></li>
-                            
-                            <li><a href="{{ path_for('adminMiscellaneous.create') }}">Add to Miscellaneous Page</a></li>
-                            <li><a href="{{ path_for('adminMiscellaneous.update') }}">Update Miscellaneous Page</a></li>
-                            
-							<li><a href="{{ path_for('adminUpload.update') }}">Upload Image</a></li>
-							<li><a href="{{ path_for('auth.password.change') }}">Change Password</a></li>
-							<li><a href="{{ path_for('auth.signout') }}">Sign Out</a></li>
-
-						</ul>
-
-					</li>
+					</a>
 
 				{% endif %}
-			</ul>
 
-		</div>
 
-	</div>
+
+				<div id="navInsta">
+					<div class="insta" id="footer-social">
+							<a href="https://www.instagram.com/ryanotoolecollett/"><img src="img/Instagram.png" alt="Instagram Social" width="30px" height="30px"/></a>
+					</div>
+
+					<div class="insta">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+
+
+
+
+
+				<div class="collapse navbar-collapse">
+
+
+					<ul class="nav navbar-nav">
+
+					 <li><a data-toggle="collapse" data-target=".in" href="{{ path_for('about') }}" class="links">About</a></li>
+
+						<li><a data-toggle="collapse" data-target=".in" href="{{ path_for('contact') }}" class="links">Contact</a></li>
+
+						<li><a data-toggle="collapse" data-target=".in" href="https://www.instagram.com/ryanotoolecollett/">Instagram</a></li>
+
+
+
+						{% for homeItem in homePage %}
+
+							{% if homeItem.ul_id == 'home-ul'%}
+
+								<li class="hideNavItems" onclick='crossfade(".tempActive", ".{{ homeItem.next_ul }}")'>
+									<a data-toggle="collapse" data-target=".in" class="links">
+									{% set foo =  homeItem.next_ul |split('-') %}
+									{% for i in foo %}{{ i }} {% endfor %}
+									</a>
+								</li>
+
+							{% endif %}
+
+						{% endfor %}
+
+						{% for tItem in tPage %}
+
+							{% if (active_page == 'contact' or active_page == 'about') and tItem.next_ul is not null %}
+
+								<li class="hideNavItems">
+									<a data-toggle="collapse" data-target=".in" href="javascript:showHomePage()" class="links">
+									{% set foo =  tItem.next_ul |split('-') %}
+									{% for i in foo %}{{ i }} {% endfor %}
+									</a>
+								</li>
+
+							{% endif %}
+
+						{% endfor %}
+
+
+
+
+
+						{% if auth.check %}
+
+							<li class="dropdown">
+
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin
+								<span class="caret"></span>
+								</a>
+
+								<ul class="dropdown-menu">
+									<li><a href="{{ path_for('adminHome.create') }}" class="links">Add to Home Page</a></li>
+		              <li><a href="{{ path_for('adminHome.update') }}" class="links">Update Home Page</a></li>
+		              <li><a href="{{ path_for('adminGallery.create') }}" class="links">Add to Gallery</a></li>
+		              <li><a href="{{ path_for('adminGallery.update') }}" class="links">Update Gallery</a></li>
+
+		              <li><a href="{{ path_for('adminNewGallery.create') }}" class="links">Add New Gallery</a></li>
+									<li><a href="{{ path_for('adminContact.create') }}" class="links">Add/update contact</a></li>
+									<li><a href="{{ path_for('adminAbout.create') }}" class="links">Add/update about</a></li>
+
+
+
+									<li><a href="{{ path_for('adminUpload.update') }}" class="links">Upload Image</a></li>
+									<li><a href="{{ path_for('auth.password.change') }}" class="links">Change Password</a></li>
+									<li><a href="{{ path_for('auth.signout') }}" class="links">Sign Out</a></li>
+
+								</ul>
+
+							</li>
+
+						{% endif %}
+
+					</ul>
+
+				</div>
+
+
+
+<!--		</div>-->
 
 </div>

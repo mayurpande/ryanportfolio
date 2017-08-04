@@ -119,11 +119,18 @@ $container['HomeController'] = function($container){
 	return new \App\Controllers\HomeController($container);
 };
 
+$container['PortfolioController'] = function($container){
+	return new \App\Controllers\PortfolioController($container);
+};
 
 $container['ContactUsController'] = function($container){
 	return new \App\Controllers\ContactUsController($container);
 };
 
+
+$container['AboutController'] = function($container){
+	return new \App\Controllers\AboutController($container);
+};
 $container['AuthController'] = function($container){
 	return new \App\Controllers\Auth\AuthController($container);
 };

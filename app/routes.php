@@ -6,7 +6,11 @@ use App\Middleware\GuestMiddleware;
 //calls homecontroller index fn
 $app->get('/','HomeController:index')->setName('home');
 
-$app->get('/contact-us','ContactUsController:index')->setName('contact');
+$app->get('/portfolio','PortfolioController:index')->setName('portfolio');
+
+$app->get('/contact','ContactUsController:index')->setName('contact');
+
+$app->get('/about','AboutController:index')->setName('about');
 
 $app->group('', function () {
     //comment out these two lines - for sigining up another user
@@ -31,9 +35,9 @@ $app->group('', function () {
 $app->group('', function () {
 
     $this->get('/signout','AuthController:getSignOut')->setName('auth.signout');
-    
+
     $this->get('/admin-update-site','AdminController:getUpdateSite')->setName('admin.update');
-    
+
     //for home page
     $this->get('/admin-create-home','AdminController:getHomeCreate')->setName('adminHome.create');
 
@@ -42,42 +46,24 @@ $app->group('', function () {
     $this->get('/admin-update-home','AdminController:getHomeUpdate')->setName('adminHome.update');
 
     $this->post('/admin-update-home','AdminController:postHomeUpdate');
-    
-    //for portrait page
-    
-    $this->get('/admin-create-portrait','AdminController:getPortraitCreate')->setName('adminPortrait.create');
 
-    $this->post('/admin-create-portrait','AdminController:postPortraitCreate');
+    //for create and update existing gallery item
 
-    $this->get('/admin-update-portrait','AdminController:getPortraitUpdate')->setName('adminPortrait.update');
+    $this->get('/admin-create-gallery','AdminController:getGalleryCreate')->setName('adminGallery.create');
 
-    $this->post('/admin-update-portrait','AdminController:postPortraitUpdate');
-    
-    
-    //for landscape page
-    
-    $this->get('/admin-create-landscape','AdminController:getLandscapeCreate')->setName('adminLandscape.create');
+    $this->post('/admin-create-gallery','AdminController:postGalleryCreate');
 
-    $this->post('/admin-create-landscape','AdminController:postLandscapeCreate');
+    $this->get('/admin-update-gallery','AdminController:getGalleryUpdate')->setName('adminGallery.update');
 
-    $this->get('/admin-update-landscape','AdminController:getLandscapeUpdate')->setName('adminLandscape.update');
+    $this->post('/admin-update-gallery','AdminController:postGalleryUpdate');
 
-    $this->post('/admin-update-landscape','AdminController:postLandscapeUpdate');
-    
-    //for miscellaneous page
-    
-    $this->get('/admin-create-miscellaneous','AdminController:getMiscellaneousCreate')->setName('adminMiscellaneous.create');
+    //for new gallery item
 
-    $this->post('/admin-create-miscellaneous','AdminController:postMiscellaneousCreate');
+    $this->get('/admin-create-new-gallery','AdminController:getNewGalleryCreate')->setName('adminNewGallery.create');
 
-    $this->get('/admin-update-miscellaneous','AdminController:getMiscellaneousUpdate')->setName('adminMiscellaneous.update');
+    $this->post('/admin-create-new-gallery','AdminController:postNewGalleryCreate');
 
-    $this->post('/admin-update-miscellaneous','AdminController:postMiscellaneousUpdate');
-    
-    
-    
-
-    //auth controller routes
+  //auth controller routes
     $this->get('/admin-password-change','PasswordController:getChangePassword')->setName('auth.password.change');
 
     $this->post('/admin-password-change','PasswordController:postChangePassword');
@@ -86,6 +72,15 @@ $app->group('', function () {
     $this->get('/admin-upload-image','ImageController:getImageUpload')->setName('adminUpload.update');
 
     $this->post('/admin-upload-image','ImageController:postImageUpload');
+
+    $this->get('/admin-contact','AdminController:getNewContactCreate')->setName('adminContact.create');
+
+    $this->post('/admin-contact','AdminController:postNewContactCreate');
+
+    $this->get('/admin-about','AdminController:getNewAboutCreate')->setName('adminAbout.create');
+
+    $this->post('/admin-about','AdminController:postNewAboutCreate');
+
 
 /*    $this->get('/admin-upload-image','SiriusController:getImageUpload')->setName('adminUpload.update');
 

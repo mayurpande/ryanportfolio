@@ -1,0 +1,93 @@
+{% extends 'main.twig' %}
+{% set active_page = 'portfolio' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block content %}
+
+  <div class="cycle-slideshow tempActive" data-cycle-fx="fadeout"
+      data-cycle-speed=1500
+      data-cycle-timeout=4000
+      data-cycle-next="#next"
+      data-cycle-manual-fx="scrollHorz"
+      data-cycle-swipe=true
+      data-cycle-manual-speed="200" id="home-slide"> <!--data-cycle-slides="li"> -->
+  	{% for homeItem in homePage|sort|reverse %}
+      {% if homeItem.ul_id == "home-ul" %}
+              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img}}" onclick='javascript:crossfade("#home-slide", ".{{ homeItem.next_ul }}")' />
+      {% endif %}
+    {% endfor %}
+  </div>
+
+
+  <ul class="ul-list homeUl">
+    {% for homeItem in homePage|sort|reverse %}
+      {% if homeItem.ul_id == 'home-ul' %}
+      <a href='javascript:crossFadePc(".temp", ".{{ homeItem.next_ul }}")' class="links">
+        <li class="{{ homeItem.ul_id }} temp" id="{{ homeItem.id }}" >
+          <img class="t" src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
+
+          <div class="textHover"></div>
+          <div class="itemsText">
+            {% if homeItem.font_logo %}
+              <img class="child-img" src="img/{{ homeItem.font_logo }}" alt="{{ homeItem.font_logo }}" />
+            {% else %}
+              {% set foo =  homeItem.next_ul |split('-') %}
+              <p>{% for i in foo %}{{ i }} {% endfor %}</p>
+            {% endif %}
+          </div>
+        </li>
+      </a>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+
+
+
+  <ul class="ul-list lightBox">
+    {% for homeItem in homePage %}
+      {% if homeItem.ul_id != "home-ul" %}
+        {% if homeItem.ul_update_no == 0 %}
+          <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}" style="width:97%;">
+            <div>
+                {% autoescape false %}
+                  {{ homeItem.gallery_text }}
+                {% endautoescape %}
+            </div>
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% for homeItem in homePage %}
+      {% if homeItem.ul_id != "home-ul" %}
+        {% if homeItem.ul_update_no != 0 %}
+          <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}">
+            <a href="img/{{ homeItem.high_res_img }}" data-lightbox="{{ homeItem.ul_id }}" data-title="{{ homeItem.lightbox_text }}" class="links">
+              <img src="img/{{ homeItem.home_img }}" alt="{{ homeItem.home_img }}"/>
+            </a>
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+
+   {% for homeItem in homePage %}
+      {% if homeItem.ul_id != "home-ul" %}
+        {% if homeItem.ul_update_no == 0 %}
+          <li class="{{ homeItem.ul_id }}" id="{{ homeItem.ul_update_no }}" style="width:97%;">
+            <a href='javascript:crossFadePc(".temp", ".home-ul")' class="pcGoBack links">
+              Go Back
+            </a>
+          <!--  <a href='javascript:crossfade(".tempActive", ".cycle-slideshow")' class="mobGoBack">
+              Go Back
+            </a>-->
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+  </ul>
+
+{% endblock %}

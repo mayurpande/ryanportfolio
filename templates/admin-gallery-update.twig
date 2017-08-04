@@ -1,0 +1,68 @@
+{% extends 'main.twig' %}
+{% set active_page = 'admin' %}
+
+{% block title %}Admin - Update Content{% endblock %}
+
+
+{% block heading %}Update Existing Gallery{% endblock %}
+
+{% block admin %}
+
+	<div class="row">
+
+		<div class=".col-md-6 col-md-offset-3 for">
+
+			<div class="panel panel-default">
+
+				<div class="panel-heading">Update Existing Gallery</div>
+
+				<div class="panel-body">
+
+					<form action="{{ path_for('adminGallery.update') }}" method="post" autcomplete="off">
+
+						<div class="form-group{{ errors.email ? ' has-error' : '' }}">
+
+							<label for="home_img">Update Gallery Img Url</label>
+
+							<input type="text" name="home_img" id="home_img" class="form-control" >
+
+							<label for="high_res_img">Update Gallery High Res Img Url</label>
+
+							<input type"text" name="high_res_img" id="high_res_img" class="form-control" >
+
+							<label for="lightbox_text">Update Gallery High res img text</label>
+
+							<input type"text" name="lightbox_text" id="lightbox_text" class="form-control" >
+
+							<label for="ul_id">Update Gallery Name</label>
+
+							<input type="text" name="ul_id" id="ul_id" class="form-control" >
+
+							<label for="ul_update_no">Update ID no</label>
+
+							<input type="text" name="ul_update_no" id="ul_update_no" class="form-control" >
+
+							<label for="gallery_text">Update gallery text (only id no 0)</label>
+
+							<textarea name="gallery_text" id="gallery_text" class="text_area" rows="10" cols="80"></textarea>
+
+						</div>
+
+
+						<button type="submit" class="btn btn-default">Update Gallery</button>
+
+						{{ csrf.field | raw }}
+
+					</form>
+
+				</div>
+
+
+            </div>
+
+		</div>
+
+	</div>
+
+
+{% endblock %}

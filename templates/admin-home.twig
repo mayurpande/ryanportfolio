@@ -1,4 +1,6 @@
 {% extends 'main.twig' %}
+{% set active_page = 'admin' %}
+
 
 {% block title %}Admin - Update Content{% endblock %}
 
@@ -13,7 +15,7 @@
 
 			<div class="panel panel-default">
 
-				<div class="panel-heading">Home Page</div>
+				<div class="panel-heading">Add to Home Page</div>
 
 				<div class="panel-body">
 
@@ -23,13 +25,21 @@
 
 							<label for="home_img">Home Page Img Url</label>
 
-							<input type"text" name="home_img" id="home_img" class="form-control" >
+							<input type="text" name="home_img" id="home_img" class="form-control" >
+
+							<label for="font_logo">Home Page font_logo</label>
+
+							<input type="text" name="font_logo" id="font_logo" class="form-control" >
+
+
+							<label for="next_ul">Next Gallery</label>
+
+							<input type="text" name="next_ul" id="next_ul" class="form-control" >
 
 
 						</div>
 
-
-						<button type="submit" class="btn btn-default">Add home page img url</button>
+						<button type="submit" class="btn btn-default">Add Home Page</button>
 
 						{{ csrf.field | raw }}
 
@@ -38,7 +48,7 @@
 				</div>
 
 
-            </div>
+      </div>
 
 		</div>
 

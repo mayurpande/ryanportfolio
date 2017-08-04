@@ -5,23 +5,71 @@
 			<meta charset="UTF-8">
 			<title>{% block title %}{% endblock %}</title>
 			<!-- Latest compiled and minified CSS -->
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 			<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 			<link rel="stylesheet" type="text/css" href="css/style.css" />
 			<link rel="stylesheet" type="text/css" href="css/custom.css" />
 			<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+			<link rel="stylesheet" type="text/css" href="lightbox2-master/src/css/lightbox.css" />
+			<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
 		{% endblock %}
 	</head>
 	<body>
-		<div id="wrapper">
-			{% include 'partial/nav.twig' %}
-        	{% include 'partial/flash.twig' %}
-			{% block admin %}{% endblock %}
-			{% block content %}{% endblock %}
-		</div>
-		{% include 'partial/footer.twig' %}
 
+
+		{% if active_page == 'admin' %}
+
+
+			<div class="wrapper">
+
+					{% include 'partial/nav.twig' %}
+					{% include 'partial/flash.twig' %}
+					{% block admin %}{% endblock %}
+
+			</div>
+
+		{% elseif active_page == 'contact' or active_page == 'about' %}
+
+			<div class="wrapper">
+
+					{% include 'partial/nav.twig' %}
+					{% include 'partial/flash.twig' %}
+					{% block contact %}{% endblock %}
+
+			</div>
+
+
+
+			{% elseif active_page == 'home' %}
+
+				{% block landing %}{% endblock %}
+
+		 {% else %}
+
+
+
+
+
+
+
+				<div class="wrapper">
+
+					{% include 'partial/nav.twig' %}
+		      {% include 'partial/flash.twig' %}
+					<h1>{% block heading %}{% endblock %}</h1>
+
+					{% block content %}{% endblock %}
+				</div>
+
+				{% include 'partial/footer.twig' %}
+
+			{% endif %}
 
 
 
@@ -29,8 +77,21 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script type="text/javascript" src='/scripts/cycle2.js'></script>
-    <script type="text/javascript" src='/scripts/app.js'></script>
-    <script type="text/javascript" src='/scripts/lightbox.js'></script>
+  <script type="text/javascript" src='/scripts/cycle2.js'></script>
+	<script type="text/javascript" src='/scripts/cycle2-slide.js'></script>
+	<script type="text/javascript" src='/scripts/app.js'></script>
+	<script type="text/javascript" src="/lightbox2-master/src/js/lightbox.js"></script>
+	<script type="text/javascript" src='/scripts/landingpage.js'></script>
+	<script type="text/javascript" src='/ckeditor/ckeditor.js'></script>
+	<script>CKEDITOR.replaceAll('text_area');</script>
+
+	<script type="text/javascript">
+	$("a").each(function(){
+		 if (!$(this).hasClass('links')){
+			 $(this).attr('target','_blank');
+		 }
+	});
+	</script>
+
 	</body>
 </html>
