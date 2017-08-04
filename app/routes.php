@@ -12,6 +12,8 @@ $app->get('/contact','ContactUsController:index')->setName('contact');
 
 $app->get('/about','AboutController:index')->setName('about');
 
+$app->get('/land-images','LandingController:index')->setName('land');
+
 $app->group('', function () {
     //comment out these two lines - for sigining up another user
     //$this->get('/admin/siginup','AuthController:getSignUp')->setName('auth.signup');
