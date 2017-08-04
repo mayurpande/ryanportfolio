@@ -295,7 +295,14 @@ class AdminController extends Controller{
 				  $deleteLandImg = Landing_Page::where("landing_img",$checkedCheckbox)->delete();
 					array_push($delNumber,$deleteLandImg);
 			 }
+			 if(count($checkedCheckboxes) === count($delNumber)){
+				 $this->flash->addMessage('success','You have deleted images from landing page gallery');
+				 return $response->withRedirect($this->router->pathFor('admin.update'));
+			 }else{
+				 $this->flash->addMessage('error','You have not added deleted imgage from landing page gallery');
+				 return $response->withRedirect($this->router->pathFor('admin.update'));
 
+			 }
 		 }
 
 
