@@ -21,7 +21,7 @@ class LandingController extends Controller{
     foreach($landingPage as $obj){
       array_push($land_images,$obj->landing_img);
     }
-    var_dump($land_images);
+    return $response->withJson($land_images);
     die();
 
 
