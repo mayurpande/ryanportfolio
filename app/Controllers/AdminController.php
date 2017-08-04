@@ -252,7 +252,7 @@ class AdminController extends Controller{
 
 		}
 
-		//create contact page Info
+		//create landing page img
 		public function getNewLandingCreate($request,$response){
 			return $this->view->render($response,'admin-landing.twig');
 		}
@@ -273,6 +273,18 @@ class AdminController extends Controller{
 
 
 
+		 }
+
+		 public function getLandingDelete($request,$response){
+			 $landPage = Landing_Page::all();
+			 foreach($landing as $id){
+				 $landItem = $id->id;
+			 }
+			 return $this->view->render($response, 'admin-landing-delete.twig', [
+						'landPage' => $landPage,
+						'landItem' => $homeItem
+
+				]);
 		 }
 
 
