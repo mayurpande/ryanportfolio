@@ -287,6 +287,12 @@ class AdminController extends Controller{
 				]);
 		 }
 
+		 public function postLandingDelete($request,$response){
+			 $testCheckboxes = $request->getParam('land_img');
+			 var_dump($testCheckboxes);
+			 die();
+		 }
+
 
 
 
