@@ -17,8 +17,11 @@ class LandingController extends Controller{
 	//we now have access to our whole container because we have the container in our base controller
 
 		$landingPage = Landing_Page::all();
-
-    var_dump($landingPage);
+    $land_images = [];
+    foreach($landingPage as $obj){
+      array_push($land_images,$obj->landing_img);
+    }
+    var_dump($land_images);
     die();
 
 
