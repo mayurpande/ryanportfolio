@@ -8,6 +8,7 @@ use App\Models\Contact_Page;
 use App\Models\About_Page;
 use App\Models\Landing_Page;
 
+
 use App\Controllers\Controller;
 use Illuminate\Database\Capsule\Manager as DB;
 //import validator
@@ -252,7 +253,7 @@ class AdminController extends Controller{
 
 		}
 
-		//create contact page Info
+		//create landing page img
 		public function getNewLandingCreate($request,$response){
 			return $this->view->render($response,'admin-landing.twig');
 		}
@@ -273,6 +274,37 @@ class AdminController extends Controller{
 
 
 
+		 }
+
+		 public function getLandingDelete($request,$response){
+			 $landPage = Landing_Page::all();
+			 foreach($landing as $id){
+				 $landItem = $id->id;
+			 }
+			 return $this->view->render($response, 'admin-landing-delete.twig', [
+						'landPage' => $landPage,
+						'landItem' => $homeItem
+
+				]);
+		 }
+
+		 public function postLandingDelete($request,$response){
+			 $checkedCheckboxes = $request->getParam('land_img');
+
+			 $delNumber = [];
+			 foreach($checkedCheckboxes as $checkedCheckbox){
+				  $deleteLandImg = Landing_Page::where("landing_img",$checkedCheckbox)->delete();
+					unlink('img/' . $checkedCheckbox);
+					array_push($delNumber,$deleteLandImg);
+			 }
+			 if(count($checkedCheckboxes) === count($delNumber)){
+				 $this->flash->addMessage('success','You have deleted images from landing page gallery');
+				 return $response->withRedirect($this->router->pathFor('admin.update'));
+			 }else{
+				 $this->flash->addMessage('error','You have not added deleted imgage from landing page gallery');
+				 return $response->withRedirect($this->router->pathFor('admin.update'));
+
+			 }
 		 }
 
 

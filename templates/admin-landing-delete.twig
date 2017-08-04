@@ -1,0 +1,53 @@
+{% extends 'main.twig' %}
+{% set active_page = 'admin' %}
+
+{% block title %}Admin - Update Content{% endblock %}
+
+
+{% block heading %}Delete Landing Image{% endblock %}
+
+{% block admin %}
+
+	<div class="row">
+
+		<div class=".col-md-6 col-md-offset-3 for">
+
+			<div class="panel panel-default">
+
+				<div class="panel-heading">Delete Landing img</div>
+
+				<div class="panel-body">
+
+					<form action="{{ path_for('adminLand.delete') }}" method="post" autcomplete="off">
+
+						<div class="form-group{{ errors.email ? ' has-error' : '' }}">
+
+              {% for landItem in landPage %}
+
+							       {{ landItem.landing_img }}
+                     <input type="checkbox" name="land_img[]" id="{{ landItem.landing_img }}" value="{{ landItem.landing_img }}" />
+                     <br />
+
+              {% endfor %}
+
+
+						</div>
+
+
+						<button type="submit" class="btn btn-default">Delete Landing Img</button>
+
+						{{ csrf.field | raw }}
+
+					</form>
+
+				</div>
+
+
+        </div>
+
+		</div>
+
+	</div>
+
+
+{% endblock %}
