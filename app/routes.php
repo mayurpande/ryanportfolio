@@ -89,6 +89,8 @@ $app->group('', function () {
 
     $this->get('/admin-land-delete','AdminController:getLandingDelete')->setName('adminLand.delete');
 
+    $this->post('/admin-land-delete','AdminController:postLandingDelete');
+
 
 /*    $this->get('/admin-upload-image','SiriusController:getImageUpload')->setName('adminUpload.update');
 
