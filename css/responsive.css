@@ -4,6 +4,10 @@
   ************************/
 	#mobHome{
 		font-size: 1.15em;
+		position: relative;
+		top:12px;
+		margin-left:5px;
+		text-decoration: none;
 	}
 
 }
