@@ -22,9 +22,6 @@ class LandingController extends Controller{
       array_push($land_images,$obj->landing_img);
     }
     return $response->withJson($land_images);
-    die();
-
-
 
 	}
 }
