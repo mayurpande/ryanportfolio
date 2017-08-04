@@ -8,6 +8,7 @@ use App\Models\Contact_Page;
 use App\Models\About_Page;
 use App\Models\Landing_Page;
 
+
 use App\Controllers\Controller;
 use Illuminate\Database\Capsule\Manager as DB;
 //import validator
@@ -293,6 +294,7 @@ class AdminController extends Controller{
 			 $delNumber = [];
 			 foreach($checkedCheckboxes as $checkedCheckbox){
 				  $deleteLandImg = Landing_Page::where("landing_img",$checkedCheckbox)->delete();
+					unlink('img/' . $checkedCheckbox);
 					array_push($delNumber,$deleteLandImg);
 			 }
 			 if(count($checkedCheckboxes) === count($delNumber)){
