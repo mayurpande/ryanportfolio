@@ -355,6 +355,17 @@ class AdminController extends Controller{
 			 }
 			 if(count($checkedCheckboxes) === count($delNumber)){
 
+				 foreach($ulIds as $ulId){
+					 $updateUlIdInfo = Home_Page::where('ul_id','=',$ulId)->where('ul_update_no','!=',0)->get();
+					 $intUlIds = [];
+					 foreach($updateUlIdInfo as $update){
+						 array_push($intUlIds,$update['ul_update_no']);
+					 }
+	
+					 die();
+
+				 }
+
 				 $this->flash->addMessage('success','You have deleted images from gallery');
 				 return $response->withRedirect($this->router->pathFor('admin.update'));
 			 }else{
