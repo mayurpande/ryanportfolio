@@ -48,7 +48,8 @@ class AdminController extends Controller{
 
 								'ul_id' => $ul_id,
 								'ul_update_no' => $ulCount,
-								'font_logo' => $request->getParam('font_logo')
+								'font_logo' => $request->getParam('font_logo'),
+								'orientation' => 'landscape'
 	        ]);
 					if ($home_page) {
 						$this->flash->addMessage('success','You have added ' . $home_page->home_img . ' to home page at id no ' . $home_page->ul_update_no . '.');
@@ -90,7 +91,8 @@ class AdminController extends Controller{
 					'next_ul' => $request->getParam('next_ul'),
 					'font_logo' => $request->getParam('font_logo'),
 
-					'ul_id' => $ul_id
+					'ul_id' => $ul_id,
+					'orientation' => 'landscape'
 				);
 
 				if ($home_page->fill($new_home_data) && $home_page->save()) {
