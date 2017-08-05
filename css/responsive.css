@@ -100,16 +100,23 @@
 		z-index: 5;
 	}
 
-	.t {
+	.landscape {
 		width:100%;
 		height:150px;
 		object-fit: cover;
 	}
 
-	.t:hover{
+	.landscape:hover{
 		background:black;
 		opacity: 0.5;
 		z-index:10;
+	}
+
+
+	.portrait{
+		width:100%;
+		height:371px;
+		object-fit: cover;
 	}
 
 /*	.home-ul:hover img{
@@ -305,7 +312,7 @@
 		margin-top:2.5%;
 	}
 
-	.t{
+	.landscape{
 		height:200px;
 	}
 }
@@ -329,7 +336,7 @@
 }
 
 @media screen and (min-width:1350px){
-	.t{
+	.landscape{
 		height:250px;
 	}
 }
@@ -345,7 +352,7 @@
 	#admin-info{
 		width:40%;
 	}
-	.t{
+	.landscape{
 		height:275px;
 	}
 }
@@ -357,7 +364,7 @@
 }
 
 @media screen and (min-width:1760px){
-	.t{
+	.landscape{
 		height:350px;
 	}
 }
