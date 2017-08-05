@@ -13,7 +13,7 @@ use App\Models\Landing_Page;
 
 use App\Controllers\Controller;
 use Illuminate\Database\Capsule\Manager as DB;
-
+use Illuminate\Support\Facades\File;
 
 //import validator
 use Respect\Validation\Validator as v;
@@ -81,8 +81,6 @@ class AdminController extends Controller{
 						$nextUl = $i['next_ul'];
 				}
 
-
-
 				$home_page = Home_Page::where("ul_update_no",$id)
 															->where("ul_id",$ul_id)
 															->first();
@@ -95,21 +93,14 @@ class AdminController extends Controller{
 					'ul_id' => $ul_id
 				);
 
-
-
-
-
-        if ($home_page->fill($new_home_data) && $home_page->save()) {
+				if ($home_page->fill($new_home_data) && $home_page->save()) {
 
 					$delNextUl = Home_Page::where("ul_id",$nextUl)->delete();
 					//unlink('img/' . $checkedCheckbox);
 
+					$this->flash->addMessage('success','You have updated Home page no ' . $home_page->ul_update_no . '.');
 
-
-
-            $this->flash->addMessage('success','You have updated Home page no ' . $home_page->ul_update_no . '.');
-
-		    		return $response->withRedirect($this->router->pathFor('admin.update'));
+		    	return $response->withRedirect($this->router->pathFor('admin.update'));
 
         } else {
 
