@@ -14,7 +14,7 @@
 
 			<div class="panel panel-default">
 
-				<div class="panel-heading">Select Gallery To delete from</div>
+				<div class="panel-heading">Select img(s) to delete</div>
 
 				<div class="panel-body">
 
@@ -24,18 +24,15 @@
 
               {% for homeItem in homePage %}
 
-                    {% if homeItem.ul_id == 'home-ul' %}
+                    {% if homeItem.ul_id != 'home-ul' and homeItem.ul_update_no != 0 %}
 
-                    <!--      <p>Gallery: {{ homeItem.ul_id }}</p>
+                          <p>Gallery: {{ homeItem.ul_id }}</p>
                           <p>Id No: {{ homeItem.ul_update_no }}</p>
                           <p>Image title: {{ homeItem.home_img }}</p>
                           <p>High Res Img title: {{ homeItem.high_res_img }}</p>
-                          <p><input type="checkbox" name="home_img[]" id="{{ homeItem.home_img }}" value="{{ homeItem.home_img }}" /></p>
-                          <hr />-->
+                          <p><input type="checkbox" name="home_img[]" id="{{ homeItem.id }}" value="{{ homeItem.id }}" /></p>
+                          <hr />
 
-                          <p>{{ homeItem.next_ul }}
-                             <span><input type="checkbox" name="next[]" id="{{ homeItem.next_ul }}" value="{{ homeItem.next_ul }}"  /></span>
-                          </p>
 
                      {% endif %}
 
@@ -45,7 +42,7 @@
 						</div>
 
 
-						<button type="submit" class="btn btn-default">Select Gallery to delete from</button>
+						<button type="submit" class="btn btn-default">Select img(s) to delete</button>
 
 						{{ csrf.field | raw }}
 
