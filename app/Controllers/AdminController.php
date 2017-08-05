@@ -336,6 +336,16 @@ class AdminController extends Controller{
 				]);
 		 }
 
+		 public function postGalleryDelete($request,$response){
+			 $checkedCheckboxes = $request->getParam('next');
+			 var_dump($checkedCheckboxes);
+			 die();
+
+
+
+	 	}
+
+
 
 
 
