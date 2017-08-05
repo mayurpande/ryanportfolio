@@ -340,10 +340,7 @@ class AdminController extends Controller{
 			 $checkedCheckboxes = $request->getParam('next');
 			 var_dump($checkedCheckboxes);
 			 die();
-
-
-
-	 	}
+		 }
 
 
 
