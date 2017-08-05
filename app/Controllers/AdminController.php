@@ -361,6 +361,21 @@ class AdminController extends Controller{
 					 	 array_push($intUlIds,$update['ul_update_no']);
 					 }
 
+					 $count = 1;
+					 foreach($intUlIds as $intUlId){
+						 $currentUlIdContent = Home_Page::where("ul_id",'=',$ulId)
+												 ->where("ul_update_no",'=',$intUlId)
+												 ->first();
+						 $newData = array(
+							 'ul_update_no' => $count
+
+						 );
+
+						 $currentUlIdContent->fill($newData);
+						 $currentUlIdContent->save();
+						 $count++;
+					 }
+
 
 				 }
 
