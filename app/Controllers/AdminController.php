@@ -354,15 +354,13 @@ class AdminController extends Controller{
 					array_push($delNumber,$deleteLandImg);
 			 }
 			 if(count($checkedCheckboxes) === count($delNumber)){
-
 				 foreach($ulIds as $ulId){
 					 $updateUlIdInfo = Home_Page::where('ul_id','=',$ulId)->where('ul_update_no','!=',0)->get();
 					 $intUlIds = [];
 					 foreach($updateUlIdInfo as $update){
-						 array_push($intUlIds,$update['ul_update_no']);
+					 	 array_push($intUlIds,$update['ul_update_no']);
 					 }
-	
-					 die();
+
 
 				 }
 
