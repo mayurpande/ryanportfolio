@@ -295,12 +295,12 @@ class AdminController extends Controller{
 
 		 public function getLandingDelete($request,$response){
 			 $landPage = Landing_Page::all();
-			 foreach($landing as $id){
+			 foreach($landPage as $id){
 				 $landItem = $id->id;
 			 }
 			 return $this->view->render($response, 'admin-landing-delete.twig', [
 						'landPage' => $landPage,
-						'landItem' => $homeItem
+						'landItem' => $landItem
 
 				]);
 		 }
@@ -323,6 +323,20 @@ class AdminController extends Controller{
 
 			 }
 		 }
+
+		 public function getGalleryDelete($request,$response){
+			 $homePage = Home_Page::all();
+			 foreach($homePage as $id){
+				 $homeItem = $id->id;
+			 }
+			 return $this->view->render($response, 'admin-gallery-delete.twig', [
+						'homePage' => $homePage,
+						'homeItem' => $homeItem
+
+				]);
+		 }
+
+
 
 
 
