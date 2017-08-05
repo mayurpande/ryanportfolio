@@ -37,6 +37,8 @@ $container = $app->getContainer();
 
 $capsule = new \Illuminate\Database\Capsule\Manager;
 
+
+
 //from this what we can do is invoke addconnection method and this data is coming from of course
 //from our settings
 
