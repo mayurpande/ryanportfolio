@@ -13,7 +13,7 @@ use App\Models\Landing_Page;
 
 use App\Controllers\Controller;
 use Illuminate\Database\Capsule\Manager as DB;
-use Illuminate\Support\Facades\File;
+
 
 //import validator
 use Respect\Validation\Validator as v;
@@ -295,12 +295,12 @@ class AdminController extends Controller{
 
 		 public function getLandingDelete($request,$response){
 			 $landPage = Landing_Page::all();
-			 foreach($landing as $id){
+			 foreach($landPage as $id){
 				 $landItem = $id->id;
 			 }
 			 return $this->view->render($response, 'admin-landing-delete.twig', [
 						'landPage' => $landPage,
-						'landItem' => $homeItem
+						'landItem' => $landItem
 
 				]);
 		 }
@@ -324,8 +324,71 @@ class AdminController extends Controller{
 			 }
 		 }
 
+		 public function getGalleryDelete($request,$response){
+			 $homePage = Home_Page::all();
+			 foreach($homePage as $id){
+				 $homeItem = $id->id;
+			 }
+			 return $this->view->render($response, 'admin-gallery-delete.twig', [
+						'homePage' => $homePage,
+						'homeItem' => $homeItem
+
+				]);
+		 }
+
+		 public function postGalleryDelete($request,$response){
+			 $checkedCheckboxes = $request->getParam('home_img');
 
 
+
+			 $ulIds = [];
+			 $delNumber = [];
+			 foreach($checkedCheckboxes as $checkedCheckbox){
+				  $ulId = Home_Page::selectRaw('ul_id')->where("id","=",$checkedCheckbox)->get();
+					foreach($ulId as $id){
+						array_push($ulIds,$id['ul_id']);
+					}
+
+					$deleteLandImg = Home_Page::where("id",$checkedCheckbox)->delete();
+					unlink('img/' . $checkedCheckbox);
+					array_push($delNumber,$deleteLandImg);
+			 }
+			 if(count($checkedCheckboxes) === count($delNumber)){
+				 foreach($ulIds as $ulId){
+					 $updateUlIdInfo = Home_Page::where('ul_id','=',$ulId)->where('ul_update_no','!=',0)->get();
+					 $intUlIds = [];
+					 foreach($updateUlIdInfo as $update){
+					 	 array_push($intUlIds,$update['ul_update_no']);
+					 }
+
+					 $count = 1;
+					 foreach($intUlIds as $intUlId){
+						 $currentUlIdContent = Home_Page::where("ul_id",'=',$ulId)
+												 ->where("ul_update_no",'=',$intUlId)
+												 ->first();
+						 $newData = array(
+							 'ul_update_no' => $count
+
+						 );
+
+						 $currentUlIdContent->fill($newData);
+						 $currentUlIdContent->save();
+						 $count++;
+					 }
+
+
+				 }
+
+				 $this->flash->addMessage('success','You have deleted images from gallery');
+				 return $response->withRedirect($this->router->pathFor('admin.update'));
+			 }else{
+				 $this->flash->addMessage('error','You have not deleted images from gallery');
+				 return $response->withRedirect($this->router->pathFor('admin.update'));
+
+			 }
+
+
+		 }
 
 
 }

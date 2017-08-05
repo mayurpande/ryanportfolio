@@ -91,7 +91,9 @@ $app->group('', function () {
 
     $this->post('/admin-land-delete','AdminController:postLandingDelete');
 
+    $this->get('/admin-gallery-delete','AdminController:getGalleryDelete')->setName('adminGallery.delete');
 
+    $this->post('/admin-gallery-delete','AdminController:postGalleryDelete');
 /*    $this->get('/admin-upload-image','SiriusController:getImageUpload')->setName('adminUpload.update');
 
     $this->post('/admin-upload-image','SiriusController:postImageUpload');
