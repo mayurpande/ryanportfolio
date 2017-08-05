@@ -13,7 +13,7 @@ use App\Models\Landing_Page;
 
 use App\Controllers\Controller;
 use Illuminate\Database\Capsule\Manager as DB;
-use Illuminate\Support\Facades\File;
+
 
 //import validator
 use Respect\Validation\Validator as v;
@@ -337,16 +337,11 @@ class AdminController extends Controller{
 		 }
 
 		 public function postGalleryDelete($request,$response){
-			 $checkedCheckboxes = $request->getParam('next');
+			 $checkedCheckboxes = $request->getParam('home_img');
 			 var_dump($checkedCheckboxes);
 			 die();
+
 		 }
-
-
-
-
-
-
 
 
 }
