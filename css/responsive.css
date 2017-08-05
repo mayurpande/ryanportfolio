@@ -317,6 +317,11 @@
 	}
 }
 
+@media screen and (min-width:1130px){
+	.portrait{
+		height:500px;
+	}
+}
 
 
 @media screen and (min-width:1200px){
@@ -341,10 +346,22 @@
 	}
 }
 
+@media screen and (min-width:1370px){
+	.portrait{
+		height:600px;
+	}
+}
+
 
 @media screen and (min-width:1440px){
 	#admin-info{
 		width:45%;
+	}
+}
+
+@media screen and (min-width:1560px){
+	.portrait{
+		height:630px;
 	}
 }
 
@@ -355,16 +372,39 @@
 	.landscape{
 		height:275px;
 	}
-}
 
-@media screen and (min-width:1660px){
 	.textHover{
 		width:99%;
 	}
 }
 
+
 @media screen and (min-width:1760px){
 	.landscape{
 		height:350px;
 	}
+
+	.portrait{
+		height:680px;
+	}
+
+
+}
+
+@media screen and (min-width:1840px){
+
+	.portrait{
+		height:725px;
+	}
+
+
+}
+
+@media screen and (min-width:1905px){
+
+	.portrait{
+		height:750px;
+	}
+
+
 }
