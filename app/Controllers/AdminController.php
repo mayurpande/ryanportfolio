@@ -338,8 +338,22 @@ class AdminController extends Controller{
 
 		 public function postGalleryDelete($request,$response){
 			 $checkedCheckboxes = $request->getParam('home_img');
-			 var_dump($checkedCheckboxes);
-			 die();
+
+			 $delNumber = [];
+			 foreach($checkedCheckboxes as $checkedCheckbox){
+					$deleteLandImg = Home_Page::where("id",$checkedCheckbox)->delete();
+					unlink('img/' . $checkedCheckbox);
+					array_push($delNumber,$deleteLandImg);
+			 }
+			 if(count($checkedCheckboxes) === count($delNumber)){
+				 $this->flash->addMessage('success','You have deleted images from gallery');
+				 return $response->withRedirect($this->router->pathFor('admin.update'));
+			 }else{
+				 $this->flash->addMessage('error','You have not deleted images from gallery');
+				 return $response->withRedirect($this->router->pathFor('admin.update'));
+
+			 }
+
 
 		 }
 
