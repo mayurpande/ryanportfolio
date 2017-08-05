@@ -132,7 +132,9 @@ class AdminController extends Controller{
 						'ul_id' => $ul_id,
 						'high_res_img' => $request->getParam('high_res_img'),
 						'ul_update_no' => $ulCount,
-						'lightbox_text' => $request->getParam('lightbox_text')
+						'lightbox_text' => $request->getParam('lightbox_text'),
+						'orientation' => $request->getParam('orientation')
+
 			]);
 
 			if ($gallery) {
