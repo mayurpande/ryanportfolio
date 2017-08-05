@@ -23,5 +23,6 @@ class Home_Page extends Model{
 		'lightbox_text',
 		'gallery_text',
 		'font_logo',
+		'orientation',
 	];
 }
