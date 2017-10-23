@@ -9,32 +9,20 @@ $(document).ready(function(){
 
 
 
+ $.ajax({
+  url:'/land-images',
+  type:'GET',
+  dataType:'json',
+  success:function(data){
+    var size = data.length;
+    var x = Math.floor(size*Math.random())
+
+    $('.landing-page').css('background','url(' + '/img/' + data[x] + ') no-repeat center');
+    $('.landing-page').css('background-size','cover');
+  }
+  });
 
 
-   var images = [
-     'home1.jpg',
-     'home2.jpg',
-     'home3.jpg',
-     'home4.jpg',
-     'home5.jpg',
-     'home6.jpg',
-     'home7.jpg',
-     'home8.jpg',
-     'home9.jpg',
-     'home10.jpg',
-     'home11.jpg',
-     'home12.jpg',
-     'home13.jpg',
-     'home14.jpg',
-     'home15.jpg'
-
-   ];
-
-   var size = images.length;
-   var x = Math.floor(size*Math.random())
-
-   $('.landing-page').css('background','url(' + '/img/' + images[x] + ') no-repeat center');
-   $('.landing-page').css('background-size','cover');
 
    $(window).on('load resize',function(event){
      event.preventDefault();

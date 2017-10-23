@@ -139,6 +139,11 @@ HEADER
   display:none;
 }
 
+.portrait{
+  height:250px;
+  object-fit: cover;
+}
+
 /****************************
  * ADMIN PAGE (INNERBOX)
  * ************************/

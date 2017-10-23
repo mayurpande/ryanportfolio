@@ -12,6 +12,8 @@ $app->get('/contact','ContactUsController:index')->setName('contact');
 
 $app->get('/about','AboutController:index')->setName('about');
 
+$app->get('/land-images','LandingController:index')->setName('land');
+
 $app->group('', function () {
     //comment out these two lines - for sigining up another user
     //$this->get('/admin/siginup','AuthController:getSignUp')->setName('auth.signup');
@@ -81,7 +83,17 @@ $app->group('', function () {
 
     $this->post('/admin-about','AdminController:postNewAboutCreate');
 
+    $this->get('/admin-land','AdminController:getNewLandingCreate')->setName('adminLand.create');
 
+    $this->post('/admin-land','AdminController:postNewLandingCreate');
+
+    $this->get('/admin-land-delete','AdminController:getLandingDelete')->setName('adminLand.delete');
+
+    $this->post('/admin-land-delete','AdminController:postLandingDelete');
+
+    $this->get('/admin-gallery-delete','AdminController:getGalleryDelete')->setName('adminGallery.delete');
+
+    $this->post('/admin-gallery-delete','AdminController:postGalleryDelete');
 /*    $this->get('/admin-upload-image','SiriusController:getImageUpload')->setName('adminUpload.update');
 
     $this->post('/admin-upload-image','SiriusController:postImageUpload');

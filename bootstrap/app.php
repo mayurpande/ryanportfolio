@@ -37,6 +37,8 @@ $container = $app->getContainer();
 
 $capsule = new \Illuminate\Database\Capsule\Manager;
 
+
+
 //from this what we can do is invoke addconnection method and this data is coming from of course
 //from our settings
 
@@ -130,6 +132,10 @@ $container['ContactUsController'] = function($container){
 
 $container['AboutController'] = function($container){
 	return new \App\Controllers\AboutController($container);
+};
+
+$container['LandingController'] = function($container){
+	return new \App\Controllers\LandingController($container);
 };
 $container['AuthController'] = function($container){
 	return new \App\Controllers\Auth\AuthController($container);
