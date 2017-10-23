@@ -74,13 +74,13 @@ class AdminController extends Controller{
 
         $id = $request->getParam('ul_update_no');
 
-				$nextUlObj = Home_Page::selectRaw('next_ul')->where('ul_update_no','=',$id)
-																							->where('ul_id','=',$ul_id)
-				  			    													->get();
-				$nextUl = '';
-				foreach($nextUlObj as $i){
-						$nextUl = $i['next_ul'];
-				}
+				// $nextUlObj = Home_Page::selectRaw('next_ul')->where('ul_update_no','=',$id)
+				// 																			->where('ul_id','=',$ul_id)
+				//   			    													->get();
+				// $nextUl = '';
+				// foreach($nextUlObj as $i){
+				// 		$nextUl = $i['next_ul'];
+				// }
 
 				$home_page = Home_Page::where("ul_update_no",$id)
 															->where("ul_id",$ul_id)
@@ -97,7 +97,7 @@ class AdminController extends Controller{
 
 				if ($home_page->fill($new_home_data) && $home_page->save()) {
 
-					$delNextUl = Home_Page::where("ul_id",$nextUl)->delete();
+					//$delNextUl = Home_Page::where("ul_id",$nextUl)->delete();
 					//unlink('img/' . $checkedCheckbox);
 
 					$this->flash->addMessage('success','You have updated Home page no ' . $home_page->ul_update_no . '.');
@@ -195,13 +195,15 @@ class AdminController extends Controller{
 	}
 
 	public function postNewGalleryCreate($request,$response){
+
 				$ul_update_no_text = 0;
 				$ul_update_no_first = 1;
 
 				$newGalleryText = Home_Page::create([
               'gallery_text' => $request->getParam('gallery_text'),
 							'ul_id' => $request->getParam('ul_id'),
-							'ul_update_no' => $ul_update_no_text
+							'ul_update_no' => $ul_update_no_text,
+							'orientation' => 'landscape'
 
         ]);
 
@@ -210,7 +212,8 @@ class AdminController extends Controller{
 							'ul_id' => $request->getParam('ul_id'),
 							'high_res_img' => $request->getParam('high_res_img'),
 							'ul_update_no' => $ul_update_no_first,
-							'lightbox_text' => $request->getParam('lightbox_text')
+							'lightbox_text' => $request->getParam('lightbox_text'),
+							'orientation' => $request->getParam('orientation')
 					]);
 
 
